@@ -1,0 +1,136 @@
+# ================================
+# Python
+# ================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python compiled files
+*.pyo
+*.pyd
+
+# ================================
+# Virtual Environments
+# ================================
+
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ================================
+# IDE / Editors
+# ================================
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ================================
+# Jupyter Notebook
+# ================================
+
+.ipynb_checkpoints/
+
+# ================================
+# Testing / Coverage
+# ================================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+
+# ================================
+# Type Checking
+# ================================
+
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# ================================
+# Python Packaging
+# ================================
+
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ================================
+# Environment / Secrets
+# ================================
+
+.env
+.env.*
+!.env.example
+
+# ================================
+# Logs
+# ================================
+
+*.log
+
+# ================================
+# OS Generated Files
+# ================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# ================================
+# Temporary Files
+# ================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# ================================
+# Local Database Files
+# ================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ================================
+# Data / Large Files
+# ================================
+
+
+*.parquet
+
+# ================================
+# Secrets / Credentials
+# ================================
+
+*.pem
+*.key
+credentials.json
+secrets.json
