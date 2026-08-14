@@ -1,4 +1,4 @@
-# System Design Complete Roadmap
+    # System Design Complete Roadmap
 ## HLD · LLD · Distributed Systems · Production Architecture
 ### 0 → 100 | 22 Levels | 74 Topics | 2–4 YOE Edition
 
@@ -16,6 +16,93 @@ It covers both:
 Every topic is a **copy-paste block** you drop into the Teaching Prompt below.
 Claude then teaches that topic with a full lesson: analogy, architecture diagram,
 trade-offs, failure scenarios, production considerations, and interview Q&As.
+
+---
+
+## 🎯 Your Personal Learning Roadmap
+
+This section maps your exact video resources to the 22-level roadmap below.
+Follow this order — do not skip phases.
+
+---
+
+### 📺 Your Video Resources
+
+| # | Resource | What It Covers | Link |
+|---|----------|---------------|------|
+| 1 | **Backend from First Principles** (Playlist) | Backend fundamentals — how systems work from the ground up | [▶ Watch Playlist](https://youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1) |
+| 2 | **System Design Interview Prep** (Playlist) | HLD interview walkthroughs — real system design problems | [▶ Watch Playlist](https://youtube.com/playlist?list=PLRtLu6rCuAlkO-HiER3AKoKkSG5DPp9TX) |
+| 3 | **LLD Masterclass — Day 1 Intro** (Single Video) | Introduction to Low-Level Design, start of 8-week LLD challenge | [▶ Watch Video](https://youtu.be/AK0hu0Zxua4) |
+| 4 | **Comprehensive System Design Series** (Playlist) | Full system design concepts — databases, caching, scaling, etc. | [▶ Watch Playlist](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_) |
+
+---
+
+### 🗺️ Phase-by-Phase Order
+
+#### ✅ PHASE 1 — Foundations (Weeks 1–2)
+**Watch: [Backend from First Principles](https://youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1)**
+
+Start here. This covers how backend systems actually work — processes, networking, I/O, HTTP.
+Maps to **Levels 0–2** of this roadmap (Topics 1–13).
+
+> 💡 After each video, paste the matching topic block from this file into the Teaching Prompt below and get a full Claude lesson on it.
+
+---
+
+#### ✅ PHASE 2 — Core System Design Concepts (Weeks 3–9)
+**Watch: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)**
+
+Your main HLD curriculum. Covers APIs, databases, caching, load balancing, Kafka, microservices.
+Maps to **Levels 3–15** of this roadmap (Topics 14–52).
+
+> 💡 For every topic covered in a video, find it in the roadmap below and run it through the Teaching Prompt. Do the Design Challenge at the end of every lesson.
+
+---
+
+#### ✅ PHASE 3 — Low-Level Design Deep Dive (Weeks 10–13)
+**Watch: [LLD Masterclass Intro](https://youtu.be/AK0hu0Zxua4) → then follow the full 8-week LLD series from that channel**
+
+Start with this intro video to understand the structure, then complete the full series.
+Maps to **Level 17** of this roadmap (Topics 58–63: SOLID, Design Patterns, LLD Case Studies).
+
+> 💡 LLD is what separates good candidates from great ones. Don't skip this phase.
+
+---
+
+#### ✅ PHASE 4 — HLD Interview Drills (Weeks 14–16)
+**Watch: [System Design Interview Prep](https://youtube.com/playlist?list=PLRtLu6rCuAlkO-HiER3AKoKkSG5DPp9TX)**
+
+Now that you understand *why* things work, this playlist drills you on *how to present designs* in interviews.
+Maps to **Levels 16 & 20** of this roadmap (Topics 53–57 and 69–71).
+
+> 💡 Before watching each solution, answer the 10 HLD interview questions from the Cheat Sheet section yourself first, then compare.
+
+---
+
+#### ✅ PHASE 5 — Advanced & Staff Level (Weeks 17–18+)
+**Use the Teaching Prompt only — no more videos needed**
+
+Topics 64–74: Distributed transactions, CRDT, multi-region, engineering trade-offs.
+These are best learned through deep dialogue with the Teaching Prompt.
+
+> 💡 Start doing mock interview sessions at this stage. Design a system end-to-end within 45 minutes.
+
+---
+
+### ⚡ Weekly Schedule Summary
+
+| Weeks | Resource | Roadmap Levels |
+|-------|----------|----------------|
+| 1–2 | [Backend from First Principles](https://youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1) | Level 0–2 (Topics 1–13) |
+| 3–9 | [Comprehensive SD Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_) | Level 3–15 (Topics 14–52) |
+| 10–13 | [LLD Masterclass](https://youtu.be/AK0hu0Zxua4) + full series | Level 17 (Topics 58–63) |
+| 14–16 | [SD Interview Prep](https://youtube.com/playlist?list=PLRtLu6rCuAlkO-HiER3AKoKkSG5DPp9TX) | Level 16 & 20 (Topics 53–57, 69–71) |
+| 17–18+ | Teaching Prompt only | Level 18–21 (Topics 64–74) |
+
+---
+
+### 🔑 The Golden Rule
+**Never just watch.** After every video → find the matching topic below → paste it into the Teaching Prompt → do the Design Challenge. Active recall + structured depth = real mastery.
 
 ---
 
@@ -130,6 +217,7 @@ LEVEL 21  Staff / Principal Level             Topics 72–74
 ## All 74 Topics at a Glance
 
 ### LEVEL 0 — System Design Fundamentals
+> 📺 Resource: [Backend from First Principles](https://youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1)
 ```
 Topic 1   What is System Design? HLD vs LLD
 Topic 2   Requirements Engineering — Functional vs Non-Functional
@@ -138,6 +226,7 @@ Topic 4   Availability, Reliability, Scalability, Performance
 ```
 
 ### LEVEL 1 — CS & Backend Foundations
+> 📺 Resource: [Backend from First Principles](https://youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1)
 ```
 Topic 5   How Computers Work — What System Designers Must Know
 Topic 6   Processes, Threads, Concurrency and Parallelism
@@ -146,6 +235,7 @@ Topic 8   Serialization — JSON, Protobuf, Avro, MessagePack
 ```
 
 ### LEVEL 2 — Networking Fundamentals
+> 📺 Resource: [Backend from First Principles](https://youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1)
 ```
 Topic 9   OSI Model and TCP/IP — What Matters for System Design
 Topic 10  HTTP/1.1 vs HTTP/2 vs HTTP/3 — The Evolution
@@ -155,6 +245,7 @@ Topic 13  WebSockets, SSE, Long Polling — Real-Time Communication
 ```
 
 ### LEVEL 3 — API Design
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 14  REST API Design Principles
 Topic 15  REST vs GraphQL vs gRPC — When to Use Which
@@ -164,6 +255,7 @@ Topic 18  Idempotency in APIs — Why It Matters in Production
 ```
 
 ### LEVEL 4 — Database Fundamentals
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 19  Relational Databases — SQL Deep Dive
 Topic 20  NoSQL Databases — Types and When to Use
@@ -171,6 +263,7 @@ Topic 21  SQL vs NoSQL — Decision Framework
 ```
 
 ### LEVEL 5 — Database Design & Data Modeling
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 22  Database Replication — Master-Slave and Master-Master
 Topic 23  Database Sharding — Horizontal Partitioning at Scale
@@ -179,6 +272,7 @@ Topic 25  Connection Pooling — Why You Cannot Open a New DB Connection Per Req
 ```
 
 ### LEVEL 6 — Caching
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 26  Caching Fundamentals — What, Why, and When
 Topic 27  Cache Strategies — Cache-Aside, Write-Through, Write-Back, Write-Around
@@ -187,6 +281,7 @@ Topic 29  Distributed Caching — Cache at Scale
 ```
 
 ### LEVEL 7 — Scalability
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 30  Vertical vs Horizontal Scaling — When to Use Which
 Topic 31  Consistent Hashing — The Algorithm Behind Scalable Distributed Systems
@@ -194,12 +289,14 @@ Topic 32  Async Processing and Queue-Based Load Leveling
 ```
 
 ### LEVEL 8 — Load Balancing
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 33  Load Balancing — Algorithms and Types
 Topic 34  Sticky Sessions, Global Load Balancing, and Single Points of Failure
 ```
 
 ### LEVEL 9 — Distributed Systems Fundamentals
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 35  CAP Theorem — The Most Important Concept in Distributed Systems
 Topic 36  Consistency Models — Strong, Eventual, Causal
@@ -208,6 +305,7 @@ Topic 38  Distributed Locking — How to Coordinate Across Services
 ```
 
 ### LEVEL 10 — Messaging & Event-Driven Architecture
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 39  Message Queues vs Event Streaming — The Core Difference
 Topic 40  Apache Kafka — Deep Dive for System Design
@@ -216,6 +314,7 @@ Topic 42  Saga Pattern — Distributed Transactions Without 2PC
 ```
 
 ### LEVEL 11 — Microservices
+> 📺 Resource: [Comprehensive System Design Series](https://youtube.com/playlist?list=PLdNCznBZ77NriBGbbHTdM34cvx7dLKi-_)
 ```
 Topic 43  Monolith vs Microservices — The Most Misunderstood Topic
 Topic 44  Service Communication — Sync vs Async in Microservices
