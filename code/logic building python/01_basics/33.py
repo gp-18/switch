@@ -1,4 +1,6 @@
 # Count how many elements are positive, negative, or zero in an array.
+# Example 1: Input: 5 -> Output: the number is positive
+# Example 2: Input: -5 -> Output: the number is negative
 
 array = [-100,0,200,0,1300,-140.25,-500.5]
 postive = negative = zero = 0 

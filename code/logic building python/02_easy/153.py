@@ -1,4 +1,6 @@
 # Replace all vowels in a string with '*'.
+# Example 1: Input: 'a' -> Output: Vowel
+# Example 2: Input: 'b' -> Output: Consonant
 
 if (string := input("Enter the string: ")):
 

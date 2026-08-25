@@ -1,4 +1,6 @@
 # Check if a number is an Armstrong number.
+# Example 1: Input: 153 -> Output: Armstrong number
+# Example 2: Input: 120 -> Output: Not an Armstrong number
 
 def count_digits(number: int) -> int:
     count = 0

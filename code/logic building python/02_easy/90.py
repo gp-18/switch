@@ -1,4 +1,6 @@
 # Find HCF (GCD) of two numbers using loops.
+# Example 1: Input: 12, 18 -> Output: 6
+# Example 2: Input: 8, 20 -> Output: 4
 
 if (number1 := int(input("Enter the number 1: "))) >= 1 and (number2 := int(input("Enter the number 2: "))) >= 1:
 

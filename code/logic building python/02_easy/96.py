@@ -1,4 +1,6 @@
 # Find the smallest and largest digit in a given number.
+# Example 1: Input: 10, 20 -> Output: 20
+# Example 2: Input: 5, 3, 9 -> Output: 9
 
 if (number := int(input("Enter the number: "))) >= 1:
     smallest = float("inf")

@@ -1,4 +1,6 @@
 # Take a 3-digit number and check if all digits are distinct.
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 number = int(input("Enter the 3 digit number: "))
 set_value = set()

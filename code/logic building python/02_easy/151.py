@@ -1,4 +1,6 @@
 # Remove all vowels from a string.
+# Example 1: Input: 'a' -> Output: Vowel
+# Example 2: Input: 'b' -> Output: Consonant
 
 if (string := input("Enter the string: ")) and len(string) >= 2:
 

@@ -1,4 +1,6 @@
 # Take an alphabet character and check if it lies between 'a' and 'm' or 'n' and 'z'.
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 character = input("Enter the character: ")
 

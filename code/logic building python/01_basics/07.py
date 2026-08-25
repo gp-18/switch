@@ -1,4 +1,6 @@
 # Take three numbers and print the largest.
+# Example 1: Input: 10, 20 -> Output: 20
+# Example 2: Input: 5, 3, 9 -> Output: 9
 
 number1 = float(input("Enter the number 1 : "))
 number2 = float(input("Enter the number 2 : "))

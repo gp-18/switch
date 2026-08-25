@@ -1,4 +1,6 @@
 # Print the reverse of a given number.
+# Example 1: Input: 'hello' -> Output: olleh
+# Example 2: Input: 1234 -> Output: 4321
 
 number = int(input("Enter the number: "))
 

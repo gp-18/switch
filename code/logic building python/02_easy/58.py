@@ -1,4 +1,7 @@
 # Take two numbers and determine whether both are even, both are odd, or one is even and one is odd.
+# Example 1: Input: 4 -> Output: the number is even
+# Example 2: Input: 7 -> Output: the number is odd
+
 number1 = int(input("Enter the number 1: "))
 number2 = int(input("Enter the number 2: "))
 

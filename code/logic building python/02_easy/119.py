@@ -1,4 +1,7 @@
 # Count how many numbers in an array are divisible by both 3 and 5.
+# Example 1: Input: 15 -> Output: divisible by both 3 and 5
+# Example 2: Input: 10 -> Output: not divisible by both 3 and 5
+
 if (number := int(input("Enter the length of array: "))) >= 1:
     array = []
 

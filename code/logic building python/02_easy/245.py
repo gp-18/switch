@@ -1,0 +1,4 @@
+data = {'a': 1, 'b': 2, 'c': 1, 'd': 3, 'e': 2}
+
+print(type(data.keys()))
+print(data.values())

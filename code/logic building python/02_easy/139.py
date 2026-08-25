@@ -1,4 +1,6 @@
 # Compare two strings lexicographically (dictionary order).
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 string1 = input("Enter the first string: ")
 string2 = input("Enter the second string: ")

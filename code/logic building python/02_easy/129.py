@@ -1,6 +1,6 @@
 # Swap alternate elements of an array (1st↔2nd, 3rd↔4th, etc.).
-
-
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 if (number := int(input("Enter the length of array: "))) >= 1:
     array = []

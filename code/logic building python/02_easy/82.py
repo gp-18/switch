@@ -1,4 +1,6 @@
 # Find the sum of digits of a number.
+# Example 1: Input: 123 -> Output: 6
+# Example 2: Input: 456 -> Output: 15
 
 if (number := int(input("Enter the number: "))) != 0:
     digit_sum = 0

@@ -1,4 +1,6 @@
 # Reverse an array without using built-in reverse.
+# Example 1: Input: 'hello' -> Output: olleh
+# Example 2: Input: 1234 -> Output: 4321
 
 if (number := int(input("Enter the length of array: "))) >= 1:
     array = []

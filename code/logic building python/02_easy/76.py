@@ -1,5 +1,6 @@
-# Take a password string and check basic rules
-# (length >= 8 and contains at least one digit).
+# Take a password string and check basic rules (length >= 8 and contains at least one digit).
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 password = input("Enter the string: ")
 

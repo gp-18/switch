@@ -1,4 +1,7 @@
 # Check if a number is prime or not.
+# Example 1: Input: 7 -> Output: yes
+# Example 2: Input: 9 -> Output: no
+
 if (number := int(input("Enter the number: "))) > 1:
     is_prime = True
 

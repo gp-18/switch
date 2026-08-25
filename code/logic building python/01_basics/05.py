@@ -1,4 +1,6 @@
 # Check if a given year is a leap year.
+# Example 1: Input: 2024 -> Output: Leap year
+# Example 2: Input: 2023 -> Output: Not a leap year
 
 number = int(input("give the year : "))
 

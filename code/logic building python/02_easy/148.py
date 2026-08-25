@@ -1,4 +1,6 @@
 # Check if two strings are the reverse of each other.
+# Example 1: Input: 'hello' -> Output: olleh
+# Example 2: Input: 1234 -> Output: 4321
 
 if (string1 := input("Enter the string: ")) and len(string1) >= 1  :
     if (string2 := input("Enter the string: ")) and len(string1) >= 1 :

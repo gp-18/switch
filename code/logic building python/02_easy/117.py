@@ -1,10 +1,6 @@
 # Find the sum of even elements only in an array.
-
-# # Filtering
-# [x for x in array if condition]
-
-# # Transformation with if/else
-# [x if condition else y for x in array]
+# Example 1: Input: 5 -> Output: 15
+# Example 2: Input: 10 -> Output: 55
 
 if (number := int(input("Enter the length of array: "))) >= 1:
     array = []

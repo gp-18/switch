@@ -1,4 +1,7 @@
 # Take the hour of the day (0–23) and print 'Good Morning', 'Good Afternoon', 'Good Evening', or 'Good Night'.
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
+
 hour = int(input("Enter the hour (0-23): "))
 
 if 0 <= hour < 12:

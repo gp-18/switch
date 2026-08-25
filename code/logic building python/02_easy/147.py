@@ -1,5 +1,6 @@
 # Check whether a string is a palindrome.
-
+# Example 1: Input: 'madam' -> Output: yes
+# Example 2: Input: 'hello' -> Output: no
 
 if (string := input("Enter the string: ")) and len(string) >= 1:
 

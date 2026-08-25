@@ -1,4 +1,6 @@
 # Replace all even numbers in an array with 1 and all odd numbers with 0.
+# Example 1: Input: 4 -> Output: the number is even
+# Example 2: Input: 7 -> Output: the number is odd
 
 if (number := int(input("Enter the length of array: "))) >= 1:
     array = []

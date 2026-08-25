@@ -1,4 +1,6 @@
 # Find the sum of odd elements only in an array.
+# Example 1: Input: 5 -> Output: 15
+# Example 2: Input: 10 -> Output: 55
 
 if (number := int(input("Enter the length of array: "))) >= 1:
     array = []

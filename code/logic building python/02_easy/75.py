@@ -1,4 +1,6 @@
-# Calculate electricity bill based on units consumed.
+# Take electricity units consumed and calculate the bill as per slabs (using if-else).
+# Example 1: Input: 5 -> Output: 15
+# Example 2: Input: 10 -> Output: 55
 
 units = int(input("Enter electricity units consumed: "))
 

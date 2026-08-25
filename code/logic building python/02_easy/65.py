@@ -1,4 +1,6 @@
 # Take coordinates (x, y) and determine which quadrant the point lies in.
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 x = int(input("Enter the x coordinate: "))
 y = int(input("Enter the y coordinate: "))

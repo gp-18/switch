@@ -1,4 +1,6 @@
-# Check if a number is a palindrome.    
+# Check if a number is a palindrome.
+# Example 1: Input: 'madam' -> Output: yes
+# Example 2: Input: 'hello' -> Output: no
 
 def reverse_number(number:int) :
     reverse = 0 
@@ -19,4 +21,4 @@ if ( number:= int(input("Enter the number : "))) >= 0 :
     reverse = reverse_number(copy_number)
     print(is_palindrome(number = number , reverse=reverse))
 else : 
-    pass 
+    pass

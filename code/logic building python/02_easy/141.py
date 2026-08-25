@@ -1,4 +1,6 @@
 # Count how many vowels and consonants are in a string.
+# Example 1: Input: 'a' -> Output: Vowel
+# Example 2: Input: 'b' -> Output: Consonant
 
 if (string := input("Enter the string: ")):
     vowels = 0

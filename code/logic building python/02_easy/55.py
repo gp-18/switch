@@ -1,4 +1,6 @@
 # Take marks (0–100) and print the corresponding grade (A/B/C/D/F).
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
 
 marks = int(input("Enter the marks : "))
 

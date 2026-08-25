@@ -1,4 +1,7 @@
 # Take a 3-digit number and determine if the middle digit is the largest, smallest, or neither.
+# Example 1: Input: 10, 20 -> Output: 20
+# Example 2: Input: 5, 3, 9 -> Output: 9
+
 number = list(map(int, input("Enter the 3 digit number: ")))
 
 if len(number) != 3:

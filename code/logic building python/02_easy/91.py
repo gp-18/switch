@@ -1,4 +1,6 @@
 # Find LCM of two numbers using loops.
+# Example 1: Input: 4, 6 -> Output: 12
+# Example 2: Input: 5, 10 -> Output: 10
 
 if (number1 := int(input("Enter the number 1: "))) > 0 and \
    (number2 := int(input("Enter the number 2: "))) > 0:

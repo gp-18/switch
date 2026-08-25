@@ -1,4 +1,6 @@
 # Print the sum of all odd digits and even digits separately in a given number.
+# Example 1: Input: 4 -> Output: the number is even
+# Example 2: Input: 7 -> Output: the number is odd
 
 if (number := int(input("Enter the number: "))) >= 0:
 

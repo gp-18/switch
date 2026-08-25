@@ -1,4 +1,7 @@
 # Check if a number is a perfect number.
+# Example 1: Input: 5 -> Output: Sample Output 1
+# Example 2: Input: 10 -> Output: Sample Output 2
+
 def perfect_square(number:int) -> bool : 
     number_sum = 0 
 
@@ -11,4 +14,4 @@ def perfect_square(number:int) -> bool :
 if(number := int(input("Enter the number : "))) > 0 :
     print(perfect_square(number=number))
 else : 
-    print("Enter the correct number") 
+    print("Enter the correct number")
