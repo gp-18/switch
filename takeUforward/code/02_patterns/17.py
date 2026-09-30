@@ -16,3 +16,14 @@
 #  ABCBA
 # ABCDCBA
 
+
+number = int(input("Enter the number : "))
+
+for i in range(1 , number + 1 ) :
+    for j in range( 1 , number - i + 1 ) :
+        print(" " , end = "")
+    for k in range( 1 , i + 1 ) :
+        print(chr(ord("A") + k - 1 ), end = "")
+    for l in range( 1 , i ) :
+        print(chr(ord("A") + i - l - 1 ), end = "")
+    print()

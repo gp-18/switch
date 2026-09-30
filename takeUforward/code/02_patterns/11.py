@@ -16,3 +16,13 @@
 # 101. 
 # 0101
 
+
+number = int(input("Enter the number : "))
+
+for i in range( 1 , number + 1 ) :
+    for j in range( i) :
+        if ( i + j ) % 2 == 0 :
+            print("1" , end = "" ) 
+        else :
+            print("0" , end = "" ) 
+    print()

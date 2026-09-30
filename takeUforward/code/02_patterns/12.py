@@ -16,3 +16,15 @@
 # 123  321
 # 12344321
 
+
+number = int(input("Enter the number : "))
+
+for i in range ( 1 , number + 1 ) :
+    for j in range ( 1 , i + 1 ) :
+        print(j , end = "")
+    for k in range ( 2 * ( number - i ) ) :
+        print(" " , end = "")
+    for l in range ( 1 , i + 1 ) :
+        print( i - l + 1 , end = "" ) 
+    print()
+

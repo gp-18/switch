@@ -16,3 +16,10 @@
 # BCD
 # ABCD
 
+number = int(input("Enter the number : "))
+
+for i in range(1, number + 1):
+    for j in range(i):
+        print(chr(ord("A") + number - i + j), end="")
+    print()
+        

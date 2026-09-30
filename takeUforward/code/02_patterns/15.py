@@ -16,3 +16,10 @@
 # AB
 # A
 
+
+number = int(input("Enter the number : "))
+
+for i in range ( 1 , number + 1 ) :
+    for j in range( 1 , number - i + 2 ) :
+        print(chr(ord("A")+j-1), end = "")
+    print()
