@@ -28,15 +28,21 @@
 
 class Book:
     def __init__(self, title, author, price):
-        pass
+        self.title = title 
+        self.author = author 
+        self.price = price 
 
     def get_details(self):
-        pass
+        if self.price >= 0 : 
+            return f"{self.title} by {self.author}: {self.price}" 
+        else : 
+            return "Invalid Price"
 
 
 def solution(title, author, price):
     # Create Book and return details
-    pass
+    s = Book(title, author, price) 
+    return s.get_details() 
 
 
 # ---- TEST CASES ----

@@ -28,18 +28,22 @@
 
 class Student:
     def __init__(self, name, marks):
-        pass
+        self.name = name 
+        self.marks = marks 
 
     def get_result(self):
-        pass
+        if self.marks >= 40 :
+            return "Pass"
+        else : 
+            return "Fail"
 
     def get_profile(self):
-        pass
+        return f"{self.name}: {self.get_result()}"
 
 
 def solution(name, marks):
-    # Create a Student and return profile
-    pass
+    s = Student(name, marks) 
+    return s.get_profile()
 
 
 # ---- TEST CASES ----

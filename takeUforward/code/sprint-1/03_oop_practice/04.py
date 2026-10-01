@@ -26,24 +26,29 @@
 
 class Rectangle:
     def __init__(self, length, width):
-        pass
+        self.length = length
+        self.width = width
 
     def is_valid(self):
-        pass
+        return self.length > 0 and self.width > 0
 
     def area(self):
-        pass
+        return self.length * self.width
 
     def perimeter(self):
-        pass
+        return 2 * (self.length + self.width)
 
     def get_stats(self):
-        pass
+        if self.is_valid() :
+            return f"Area: {self.area()}, Perimeter: {self.perimeter()}"
+        else :
+            return "Invalid Dimensions"
 
 
 def solution(length, width):
     # Create Rectangle and return stats
-    pass
+    r = Rectangle(length, width)
+    return r.get_stats()
 
 
 # ---- TEST CASES ----

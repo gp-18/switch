@@ -29,21 +29,34 @@
 
 class BankAccount:
     def __init__(self, account_holder, balance):
-        pass
+        self.account_holder = account_holder 
+        self.balance = balance 
 
     def deposit(self, amount):
-        pass
+        if amount > 0 : 
+            self.balance += amount 
+        else : 
+            return None 
 
     def withdraw(self, amount):
-        pass
+        if amount > 0 and amount <= self.balance :
+            self.balance -= amount 
+        else :
+            return None
 
     def get_balance(self):
-        pass
+        return self.balance
 
 
 def solution(account_holder, initial_balance, operations):
     # Execute operations and return final balance
-    pass
+    s = BankAccount(account_holder, initial_balance) 
+    for i in operations :
+        if i[0] == "deposit" : 
+            s.deposit(i[1])
+        elif i[0] == "withdraw" : 
+            s.withdraw(i[1])
+    return s.get_balance() 
 
 
 # ---- TEST CASES ----
