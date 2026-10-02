@@ -1,0 +1,10 @@
+# Count the frequency of numbers using defaultdict(int).
+
+# Example 1:
+# Input: nums = [1, 2, 2, 3, 1, 1]
+# Output: defaultdict(<class 'int'>, {1: 3, 2: 2, 3: 1})
+
+# Example 2:
+# Input: nums = [4, 5, 4]
+# Output: defaultdict(<class 'int'>, {4: 2, 5: 1})
+
