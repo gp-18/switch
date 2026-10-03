@@ -1,0 +1,14 @@
+# Sum of Largest and Smallest Element
+# Given an array `nums` of integers, find the sum of the maximum and minimum elements in the array.
+#
+# Example 1:
+# Input: nums = [1, 2, 3, 4, 5]
+# Output: 6  # min = 1, max = 5 -> 1 + 5 = 6
+#
+# Example 2:
+# Input: nums = [10, 20, 30]
+# Output: 40  # min = 10, max = 30 -> 10 + 30 = 40
+#
+# Example 3 (Edge Case - Negative Numbers):
+# Input: nums = [-15, 2, 8, -3]
+# Output: -7  # min = -15, max = 8 -> -15 + 8 = -7
