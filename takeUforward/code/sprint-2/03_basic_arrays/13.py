@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - Negative Elements at Even Indices):
 # Input: nums = [-10, 5, -20, 15]
 # Output: -30  # (-10) + (-20) = -30
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0 , length) :
+  value = int(input(f"Enter the value to insert at index {i} : "))
+  array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+

@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - Repeating Negative Element):
 # Input: nums = [-1, -2, -3, -2, -1]
 # Output: -1  # -1 is the first element that repeats
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0 , length) :
+  value = int(input(f"Enter the value to insert at index {i} : "))
+  array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+

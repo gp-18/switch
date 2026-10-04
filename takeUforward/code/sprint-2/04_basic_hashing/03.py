@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - All Elements Have Same Frequency):
 # Input: nums = [1, 2, 3]
 # Output: -1  # All elements appear once; no second highest frequency
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0 , length) :
+  value = int(input(f"Enter the value to insert at index {i} : "))
+  array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+

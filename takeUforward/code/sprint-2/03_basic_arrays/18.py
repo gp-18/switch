@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - All Negatives / All Identical):
 # Input: nums = [-10, -5, -2, -20]
 # Output: -5  # Largest is -2, second largest is -5
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0 , length) :
+  value = int(input(f"Enter the value to insert at index {i} : "))
+  array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+

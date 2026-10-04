@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - All Negatives / Insufficient Distinct Elements):
 # Input: nums = [-10, -5, -2, -1]
 # Output: -5  # Third largest is -5 (after -1 and -2)
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0 , length) :
+  value = int(input(f"Enter the value to insert at index {i} : "))
+  array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+

@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - Negative Numbers):
 # Input: nums = [-15, 2, 8, -3]
 # Output: -7  # min = -15, max = 8 -> -15 + 8 = -7
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0 , length) :
+  value = int(input(f"Enter the value to insert at index {i} : "))
+  array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+
