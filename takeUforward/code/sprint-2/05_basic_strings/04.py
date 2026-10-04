@@ -1,0 +1,14 @@
+# Count Digits in a String
+# Given a string `s`, count how many characters are numeric digits ('0'-'9').
+#
+# Example 1:
+# Input: s = 'user123abc45'
+# Output: 5  # Digits: 1, 2, 3, 4, 5
+#
+# Example 2:
+# Input: s = 'Hello World'
+# Output: 0
+#
+# Example 3 (Edge Case - String of Only Digits):
+# Input: s = '9876543210'
+# Output: 10
