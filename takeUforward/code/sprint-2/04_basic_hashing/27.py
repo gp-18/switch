@@ -12,3 +12,17 @@
 # Example 3 (Edge Case - All Identical Characters):
 # Input: s = 'zzzz'
 # Output: 'z'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : {s} and now doing the operations on it.")
+
+seen = set()
+result = ""
+
+for char in s:
+    if char not in seen:
+        seen.add(char)
+        result += char
+
+print(f"The string after removing duplicates is : {result}")

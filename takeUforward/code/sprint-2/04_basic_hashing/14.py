@@ -22,3 +22,11 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq = {}
+pairs = 0
+
+for value in array:
+    pairs += freq.get(value, 0)
+    freq[value] = freq.get(value, 0) + 1
+
+print(f"The number of pairs with equal elements is : {pairs}")

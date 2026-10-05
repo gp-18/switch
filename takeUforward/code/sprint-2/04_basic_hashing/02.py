@@ -22,3 +22,37 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq  = {}
+
+for value in array : 
+  freq[value] = freq.get(value, 0) + 1
+
+
+length = int(input("Enter the length of the array : "))
+array = []
+
+for i in range(0, length):
+    value = int(input(f"Enter the value to insert at index {i} : "))
+    array.append(value)
+
+print(f"Your array has become : {array} and now doing the operations on it.")
+
+freq = {}
+
+for value in array:
+    freq[value] = freq.get(value, 0) + 1
+
+highest_frequency = 0
+highest_element = float("inf")
+
+for key, value in freq.items():
+
+    if value > highest_frequency:
+        highest_frequency = value
+        highest_element = key
+
+    elif value == highest_frequency and key < highest_element:
+        highest_element = key
+
+print(f"The highest occurring element is : {highest_element}")  
+  

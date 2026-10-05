@@ -12,3 +12,20 @@
 # Example 3 (Edge Case - Uppercase Letters and Punctuation):
 # Input: s = 'The quick brown fox jumps over the lazy dog!'
 # Output: True
+
+s = input("Enter the string : ")
+
+print(f"Your string is : {s} and now doing the operations on it.")
+
+s = s.lower()
+
+seen = set()
+
+for char in s:
+    if 'a' <= char <= 'z':
+        seen.add(char)
+
+if len(seen) == 26:
+    print("True")
+else:
+    print("False")

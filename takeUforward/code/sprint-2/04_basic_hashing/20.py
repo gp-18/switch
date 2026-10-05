@@ -12,3 +12,18 @@
 # Example 3 (Edge Case - Consecutive Identical Characters):
 # Input: s = 'abbc'
 # Output: 'b'  # 'b' repeats at index 2
+
+s = input("Enter the string : ")
+
+print(f"Your string is : {s} and now doing the operations on it.")
+
+seen = set()
+
+for char in s:
+    if char in seen:
+        print(char)
+        break
+    seen.add(char)
+else:
+    print("-1")
+

@@ -12,3 +12,13 @@
 # Example 3 (Edge Case - String with Spaces and Punctuation):
 # Input: s = 'a b a!'
 # Output: {'a': 2, ' ': 2, 'b': 1, '!': 1}
+
+s = input("Enter the string : ")
+
+print(f"Your string is : {s} and now doing the operations on it.")
+
+freq = {}
+for char in s : 
+    freq[char] = freq.get(char, 0) + 1 
+
+print(f"Your frequency map has become : {freq}")

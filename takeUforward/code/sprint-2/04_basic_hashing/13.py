@@ -16,9 +16,26 @@
 length = int(input("Enter the length of the array : "))
 array = []
 
-for i in range(0 , length) :
-  value = int(input(f"Enter the value to insert at index {i} : "))
-  array.append(value)
+for i in range(0, length):
+    value = int(input(f"Enter the value to insert at index {i} : "))
+    array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+
+freq = {}
+
+for value in array:
+    freq[value] = freq.get(value, 0) + 1
+
+query_length = int(input("Enter the number of queries : "))
+queries = []
+
+for i in range(0, query_length):
+    value = int(input(f"Enter the query value at index {i} : "))
+    queries.append(value)
+
+print(f"Your queries are : {queries}")
+
+for query in queries:
+    print(f"The frequency of {query} is : {freq.get(query, 0)}")
 

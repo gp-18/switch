@@ -12,3 +12,24 @@
 # Example 3 (Edge Case - Insufficient Frequency in Magazine):
 # Input: ransomNote = 'aa', magazine = 'ab'
 # Output: False  # 'magazine' has only one 'a'
+
+ransomNote = input("Enter the ransom note string : ")
+magazine = input("Enter the magazine string : ")
+
+print(f"Your ransomNote is : '{ransomNote}' and magazine is : '{magazine}' and now doing the operations on it.")
+
+freq = {}
+
+for char in magazine:
+    freq[char] = freq.get(char, 0) + 1
+
+can_construct = True
+
+for char in ransomNote:
+    if char not in freq or freq[char] == 0:
+        can_construct = False
+        break
+
+    freq[char] -= 1
+
+print(can_construct)

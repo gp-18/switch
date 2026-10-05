@@ -22,3 +22,14 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq = {}
+
+for value in array:
+    freq[value] = freq.get(value, 0) + 1
+
+for value in array:
+    if freq[value] == 1:
+        print(f"The first repeating element is : {value}")
+        break
+else:
+    print("-1")

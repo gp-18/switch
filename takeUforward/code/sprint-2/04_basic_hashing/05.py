@@ -22,3 +22,20 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq = {} 
+
+for value in array : 
+  freq[value] = freq.get(value, 0) + 1
+
+
+lowest_frequency = float("inf")
+lowest_element = float("inf")
+
+for key , value in freq.items() : 
+  if value < lowest_frequency : 
+    lowest_frequency = value 
+    lowest_element = key 
+  elif value == lowest_frequency and key < lowest_element : 
+    lowest_element = key 
+
+print(f"The lowest occurring element is : {lowest_element}")

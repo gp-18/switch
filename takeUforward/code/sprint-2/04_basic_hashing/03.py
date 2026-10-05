@@ -16,9 +16,39 @@
 length = int(input("Enter the length of the array : "))
 array = []
 
-for i in range(0 , length) :
-  value = int(input(f"Enter the value to insert at index {i} : "))
-  array.append(value)
+for i in range(0, length):
+    value = int(input(f"Enter the value to insert at index {i} : "))
+    array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq = {}
+
+for value in array:
+    freq[value] = freq.get(value, 0) + 1
+
+second_highest = highest = float("-inf")
+second_element = float("inf")
+highest_element = float("inf")
+
+for key, value in freq.items():
+
+    if value > highest:
+        second_highest = highest
+        second_element = highest_element
+
+        highest = value
+        highest_element = key
+
+    elif value > second_highest and value != highest:
+        second_highest = value
+        second_element = key
+
+    elif value == second_highest and key < second_element:
+        second_element = key
+
+if second_highest == float("-inf"):
+    print("-1")
+else:
+    print(f"The second highest occurring element is : {second_element}")
+    

@@ -22,3 +22,15 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq = {}
+
+for value in array : 
+  freq[value] = freq.get(value,0) + 1 
+
+count = 0 
+
+for key , value in freq.items() :
+  if value > 1 :
+    count += 1
+
+print(f"The number of elements that appear more than once is : {count}")

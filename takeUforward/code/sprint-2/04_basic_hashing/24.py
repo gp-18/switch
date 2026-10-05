@@ -12,3 +12,19 @@
 # Example 3 (Edge Case - Single Character):
 # Input: s = 'a'
 # Output: True
+
+s = input("Enter the string : ")
+
+print(f"Your string is : {s} and now doing the operations on it.")
+
+seen = set()
+is_unique = True
+
+for char in s:
+    if char in seen:
+        is_unique = False
+        break
+    seen.add(char)
+
+print(is_unique)
+

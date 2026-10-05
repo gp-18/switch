@@ -12,3 +12,23 @@
 # Example 3 (Edge Case - No Vowels and Has Digits):
 # Input: s = 'rhythm 123'
 # Output: {'vowels': 0, 'consonants': 6}
+
+
+s = input("Enter the string : ").lower()
+
+print(f"Your string is : {s} and now doing the operations on it.")
+
+freq = {
+    'vowels': 0,
+    'consonants': 0
+}
+
+for char in s:
+    char = char.lower()
+
+    if char in "aeiou":
+        freq["vowels"] += 1
+    elif char in "bcdfghjklmnpqrstvwxyz":
+        freq["consonants"] += 1
+
+print(freq)

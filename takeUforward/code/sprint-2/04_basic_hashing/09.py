@@ -22,3 +22,20 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+freq = {} 
+
+for value in array : 
+  freq[value] = freq.get(value, 0) + 1 
+
+for key , value in freq.items() :
+  if value == 1 :
+    print(f"The single number is : {key}")
+
+#  optimize code 
+
+single_number = 0
+
+for value in array:
+    single_number = single_number ^ value
+
+print(f"The single number is : {single_number}")

@@ -21,4 +21,13 @@ for i in range(0 , length) :
   array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+num_set = set(array)
+n = len(array)
+missing_number = -1
 
+for i in range(n + 1):
+    if i not in num_set:
+        missing_number = i
+        break
+
+print(f"The missing number is : {missing_number}")
