@@ -13,6 +13,7 @@
 # Input: nums = [1, 2, 3]
 # Output: 0  # n = 3, range [0, 3], missing is 0
 
+
 length = int(input("Enter the length of the array : "))
 array = []
 
@@ -22,3 +23,12 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+sum = 0 
+
+for value in array : 
+  sum += value 
+
+missing_number = (len(array) * (len(array) + 1)) // 2 - sum 
+
+print(missing_number)

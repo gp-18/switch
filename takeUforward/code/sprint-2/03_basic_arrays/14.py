@@ -22,3 +22,9 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+sum_at_odd_index = 0 
+
+for i in range(1 , len(array) , 2) : 
+  sum_at_odd_index += array[i] 
+
+print(f"Sum of elements at odd indices : {sum_at_odd_index}")

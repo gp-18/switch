@@ -22,3 +22,11 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+contains_only_positive = True
+
+for value in array : 
+  if value <= 0 : 
+    contains_only_positive = False 
+    break 
+
+print(f"Does the array contain only positive numbers : {contains_only_positive}")

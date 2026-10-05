@@ -22,3 +22,10 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+reverse_array = list(reversed(array))
+
+if array == reverse_array : 
+  print("The array is a palindrome")
+else :
+  print("The array is not a palindrome")

@@ -22,3 +22,13 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+contains_duplicate = False 
+array_set = set()
+
+for value in array : 
+  if value in array_set : 
+    contains_duplicate = True 
+    break
+  array_set.add(value)
+
+print(f"Contains duplicate : {contains_duplicate}")

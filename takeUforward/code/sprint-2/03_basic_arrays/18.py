@@ -22,3 +22,17 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+second_largest = largest = float("-inf")
+
+
+for value in array : 
+  if value > largest : 
+    second_largest = largest 
+    largest = value 
+  elif value > second_largest and value != largest : 
+    second_largest = value 
+
+if second_largest == float("-inf") : 
+  print("No second largest element exists")
+else : 
+  print(f"The second largest element is : {second_largest}")

@@ -22,3 +22,16 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+if len(array) == 0 : 
+  print("Array is empty")
+else : 
+  max_element = float("-inf")
+  min_element = float("inf")
+
+  for value in array : 
+    if value > max_element : 
+      max_element = value 
+    if value < min_element : 
+      min_element = value 
+
+  print(f"The sum of largest and smallest element is : {max_element + min_element}")

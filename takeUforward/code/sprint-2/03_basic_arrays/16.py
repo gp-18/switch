@@ -22,3 +22,12 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+is_sorted = True 
+
+for i in range(len(array) - 1) : 
+  if array[i] > array[i + 1] :
+    is_sorted = False 
+    break
+
+print(f"Is the array sorted : {is_sorted}")
+

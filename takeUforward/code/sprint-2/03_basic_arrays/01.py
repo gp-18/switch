@@ -28,5 +28,5 @@ sum = 0
 for value in array : 
   sum += value 
 
-print("Sum = {sum}")
+print(f"Sum = {sum}")
 

@@ -22,3 +22,23 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+third_largest = second_largest = largest = float("-inf") 
+
+for value in array : 
+  if value > largest : 
+    third_largest = second_largest 
+    second_largest = largest 
+    largest = value 
+  
+  elif value > second_largest and value != largest : 
+    third_largest = second_largest 
+    second_largest = value  
+
+  elif value > third_largest and value < second_largest and value < largest: 
+    third_largest = value 
+
+if third_largest == float("-inf") : 
+  print("No third largest element exists") 
+else : 
+  print(f"The third largest element is : {third_largest}") 
+

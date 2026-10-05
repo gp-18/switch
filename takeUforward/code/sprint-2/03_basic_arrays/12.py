@@ -22,3 +22,10 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+product = 1 
+
+for value in array : 
+  product = product * value 
+
+print(f"The product of the elements of the array is : {product}")
+

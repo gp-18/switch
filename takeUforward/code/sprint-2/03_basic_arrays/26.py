@@ -22,3 +22,12 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+target = int(input("Enter the target value : "))
+
+ 
+freq = {} 
+for value in array : 
+  freq[value] = freq.get(value, 0) + 1 
+ 
+
+print(f"The frequency of the target value {target} is : {freq.get(target, 0)}")

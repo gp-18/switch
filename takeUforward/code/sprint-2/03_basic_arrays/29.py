@@ -13,6 +13,7 @@
 # Input: nums = [-1, -2, -1, 0, 0]
 # Output: 3  # Distinct: -1, -2, 0
 
+
 length = int(input("Enter the length of the array : "))
 array = []
 
@@ -22,3 +23,10 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+unique_array = set()
+
+for value in array : 
+  unique_array.add(value)
+
+print(f"The number of unique elements in the array is : {len(unique_array)}")

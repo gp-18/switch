@@ -22,3 +22,12 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+k = int(input("Enter the value for the k : "))
+
+count = 0 
+for value in array : 
+  if value > k : 
+    count += 1 
+
+print(f"The count of the elements greater than {k} is : {count}")
+

@@ -13,12 +13,51 @@
 # Input: a = [-1, -2, -2], b = [-1, -1, -2]
 # Output: False
 
-length = int(input("Enter the length of the array : "))
-array = []
+def are_arrays_equal(a: list[int], b: list[int]) -> bool:
+  # Arrays of different lengths can never contain the exact same elements
+  if len(a) != len(b):
+    return False
 
-for i in range(0 , length) :
-  value = int(input(f"Enter the value to insert at index {i} : "))
-  array.append(value)
+  freq = {}
 
-print(f"Your array has become : {array} and now doing the operations on it.")
+  # Count element frequencies in the first array
+  for val in a:
+    freq[val] = freq.get(val, 0) + 1
 
+  # Decrement frequencies using the second array
+  for val in b:
+    # If element was not in array 'a' or its count is already 0
+    if val not in freq or freq[val] == 0:
+      return False
+    freq[val] -= 1
+
+  # If all elements matched perfectly, the arrays are equal
+  return True
+
+
+# ==================== INPUT HANDLING ====================
+
+# Input for Array 1
+len1 = int(input("Enter the length of the first array : "))
+array1 = []
+for i in range(len1):
+  val = int(input(f"Enter element at index {i} for Array 1: "))
+  array1.append(val)
+
+print(f"\nArray 1: {array1}\n")
+
+# Input for Array 2
+len2 = int(input("Enter the length of the second array: "))
+array2 = []
+for i in range(len2):
+  val = int(input(f"Enter element at index {i} for Array 2: "))
+  array2.append(val)
+
+print(f"\nArray 2: {array2}\n")
+
+# ==================== RESULT CHECK ====================
+
+if are_arrays_equal(array1, array2):
+  print("Result: The two arrays are EQUAL.")
+else:
+  print("Result: The two arrays are NOT EQUAL.")

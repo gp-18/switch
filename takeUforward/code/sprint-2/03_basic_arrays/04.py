@@ -32,4 +32,4 @@ while low < high :
   high = high - 1 
 
 
-print("The reverse order of the array is : {array}")
+print(f"The reverse order of the array is : {array}")

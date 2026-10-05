@@ -13,6 +13,7 @@
 # Input: nums = [-10, 4, 2, -2]
 # Output: 14  # 4 - (-10) = 14
 
+
 length = int(input("Enter the length of the array : "))
 array = []
 
@@ -22,3 +23,16 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+max_element = float("-inf")
+min_element = float("inf")
+
+for value in array : 
+
+  if value > max_element :
+    max_element = value 
+  
+  if value < min_element :
+    min_element = value
+    
+
+print(max_element - min_element)

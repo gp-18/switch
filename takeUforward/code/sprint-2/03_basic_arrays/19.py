@@ -22,3 +22,18 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+second_smallest = smallest = float("inf")
+
+
+for value in array : 
+  if value < smallest : 
+    second_smallest = smallest 
+    smallest = value 
+  elif value < second_smallest and value != smallest : 
+    second_smallest = value 
+
+if second_smallest == float("inf") : 
+  print("No second smallest element exists")
+else : 
+  print(f"The second smallest element is : {second_smallest}")
+    

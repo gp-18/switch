@@ -22,3 +22,8 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+sum_at_even_location = 0 
+for i in range(0 , len(array) , 2) :
+  sum_at_even_location += array[i] 
+
+print(f"Sum of elements at even indices : {sum_at_even_location}")
