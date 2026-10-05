@@ -22,3 +22,17 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+target = int(input("Enter the element to search : "))
+
+found = False 
+
+for i in range(0 , len(array)) :
+  if array[i] == target : 
+    print(f"Element found at index {i}")
+    found = True 
+    break
+
+if not found : 
+  print("-1")
+

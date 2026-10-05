@@ -22,3 +22,11 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+odd_element = []
+
+for value in array : 
+  if value % 2 != 0 : 
+    odd_element.append(value)
+
+print(f"The count of odd elements is : {len(odd_element)}")

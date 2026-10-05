@@ -16,9 +16,25 @@
 length = int(input("Enter the length of the array : "))
 array = []
 
-for i in range(0 , length) :
-  value = int(input(f"Enter the value to insert at index {i} : "))
-  array.append(value)
+for i in range(0, length):
+    value = int(input(f"Enter the value to insert at index {i} : "))
+    array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+positive = 0
+negative = 0
+zero = 0
+
+for value in array:
+
+    if value > 0:
+        positive += 1
+
+    elif value < 0:
+        negative += 1
+
+    else:
+        zero += 1
+
+print(positive, negative, zero)

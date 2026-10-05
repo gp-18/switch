@@ -22,3 +22,12 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+sum = 0 
+
+for value in array : 
+  sum += value 
+
+average = sum / len(array)
+
+print(average)

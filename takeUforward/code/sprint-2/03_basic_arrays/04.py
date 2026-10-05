@@ -22,3 +22,14 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+low = 0 
+high = len(array) - 1 
+
+while low < high : 
+  array[low] , array[high] = array[high] , array[low]
+  low = low + 1 
+  high = high - 1 
+
+
+print("The reverse order of the array is : {array}")

@@ -22,3 +22,12 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+largest = float("-inf")
+
+for value in array : 
+  if value > largest : 
+    largest = value
+
+print(largest) 
+    
+

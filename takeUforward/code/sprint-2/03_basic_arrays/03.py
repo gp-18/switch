@@ -22,3 +22,11 @@ for i in range(0 , length) :
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
+
+count = 0 
+
+for value in array : 
+  if value % 2 == 0 : 
+    count += 1 
+
+print(f"The count of even elements is : {count}")
