@@ -12,3 +12,12 @@
 # Example 3 (Edge Case - Single String in List):
 # Input: strs = ['apple']
 # Output: 'apple'
+
+length = int(input("Enter the number of strings : "))
+strs = []
+
+for i in range(length):
+    value = input(f"Enter string at index {i} : ")
+    strs.append(value)
+
+print(f"Your array of strings is : {strs} and now doing the operations on it.")

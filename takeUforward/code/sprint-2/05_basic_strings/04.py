@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - String of Only Digits):
 # Input: s = '9876543210'
 # Output: 10
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

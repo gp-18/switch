@@ -12,3 +12,8 @@
 # Example 3 (Edge Case - Different Lengths):
 # Input: s = 'aa', goal = 'a'
 # Output: False
+
+s = input("Enter the first string : ")
+goal = input("Enter the goal string : ")
+
+print(f"Your string is : '{s}', goal is : '{goal}' and now doing the operations on it.")

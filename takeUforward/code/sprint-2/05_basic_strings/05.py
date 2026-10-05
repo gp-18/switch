@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - String with Only Spaces):
 # Input: s = '    '
 # Output: 0
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

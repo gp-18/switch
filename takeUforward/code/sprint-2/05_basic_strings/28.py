@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - String of Only Non-Alphanumeric Characters):
 # Input: s = ' '
 # Output: True  # Empty string after filtering is a palindrome
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

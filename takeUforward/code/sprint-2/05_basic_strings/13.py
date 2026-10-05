@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Odd Digit at the End):
 # Input: num = '35427'
 # Output: '35427'
+
+num = input("Enter the number string : ")
+
+print(f"Your number string is : '{num}' and now doing the operations on it.")

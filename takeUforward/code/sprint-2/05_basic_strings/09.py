@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Single Word with Trailing Spaces):
 # Input: s = 'a '
 # Output: 1
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

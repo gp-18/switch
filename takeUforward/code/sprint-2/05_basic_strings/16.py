@@ -12,3 +12,8 @@
 # Example 3 (Edge Case - Fewer than k Characters Left):
 # Input: s = 'abcdef', k = 4
 # Output: 'dcbaef'  # Reverse first 4, remaining 2 intact
+
+s = input("Enter the string : ")
+k = int(input("Enter the value of k : "))
+
+print(f"Your string is : '{s}', k = {k} and now doing the operations on it.")

@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Only Digits and Special Characters):
 # Input: s = '12345 @#$'
 # Output: {'uppercase': 0, 'lowercase': 0}
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - No Alphabetic Characters):
 # Input: s = '123 #$%'
 # Output: '123 #$%'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

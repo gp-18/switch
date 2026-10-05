@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Single Character):
 # Input: s = 'x'
 # Output: ['x']
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

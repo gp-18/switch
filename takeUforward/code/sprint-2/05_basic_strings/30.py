@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - No Vowels in String):
 # Input: s = 'xyz'
 # Output: 'xyz'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Tie in Word Length):
 # Input: s = 'cat dog fox'
 # Output: 'cat'  # First longest word
+
+s = input("Enter the sentence : ")
+
+print(f"Your sentence is : '{s}' and now doing the operations on it.")

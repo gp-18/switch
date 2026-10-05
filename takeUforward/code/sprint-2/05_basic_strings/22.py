@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Mixed Case with Punctuation & Spaces):
 # Input: s = 'The quick brown fox jumps over the lazy dog!'
 # Output: True
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

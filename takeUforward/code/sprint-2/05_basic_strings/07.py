@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Case Sensitivity):
 # Input: s = 'Racecar'
 # Output: False  # 'R' != 'r'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

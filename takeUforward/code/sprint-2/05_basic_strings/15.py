@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Negative Sign or Spaces):
 # Input: s = '-123'
 # Output: False  # '-' is not a digit
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Multiple Consecutive Spaces):
 # Input: s = '  a b  c   '
 # Output: 'abc'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

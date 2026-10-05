@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Multiple Spaces Between Words):
 # Input: s = 'a good   example'
 # Output: 'example good a'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

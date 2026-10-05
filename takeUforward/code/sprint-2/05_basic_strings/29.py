@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - No Parentheses):
 # Input: s = '1+2+3'
 # Output: 0
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

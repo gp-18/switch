@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - No Vowels and Has Digits/Symbols):
 # Input: s = 'rhythm 123!'
 # Output: {'vowels': 0, 'consonants': 6}
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")

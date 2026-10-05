@@ -12,3 +12,7 @@
 # Example 3 (Edge Case - Single Character / Palindrome):
 # Input: s = 'a'
 # Output: 'a'
+
+s = input("Enter the string : ")
+
+print(f"Your string is : '{s}' and now doing the operations on it.")
