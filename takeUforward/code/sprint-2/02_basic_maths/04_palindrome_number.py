@@ -12,3 +12,11 @@
 # Example 3 (Edge Case - Negative Number):
 # Input: n = -121
 # Output: False  # Reads -121 forward, 121- backward
+
+# number = input("Enter the number : ")
+
+# reverse_number = number[::-1]
+
+# print("yes") if number == reverse_number else print("no")
+
+

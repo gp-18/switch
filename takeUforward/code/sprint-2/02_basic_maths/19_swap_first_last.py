@@ -12,3 +12,12 @@
 # Example 3 (Edge Case - Single Digit):
 # Input: n = 5
 # Output: 5  # First and last digits are the same
+
+number = input("Enter the number: ")
+
+if len(number) > 1:
+    number = list(number)
+    number[0], number[-1] = number[-1], number[0]
+    number = "".join(number)
+
+print(number)

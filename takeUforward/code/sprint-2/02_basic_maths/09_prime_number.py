@@ -12,3 +12,18 @@
 # Example 3 (Edge Case - Non-Prime Boundary):
 # Input: n = 1
 # Output: False  # 1 is neither prime nor composite
+
+
+number = int(input("Enter the number: "))
+
+if number < 2:
+    print(False)
+else:
+    is_prime = True
+
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            is_prime = False
+            break
+
+    print(is_prime)

@@ -12,3 +12,10 @@
 # Example 3 (Edge Case - Zero or Negative Number):
 # Input: n = 0
 # Output: False  # 0 and negative integers are not powers of two
+
+number = int(input("Enter the number: "))
+
+if number <= 0:
+    print(False)
+else:
+    print((number & (number - 1)) == 0)

@@ -12,3 +12,14 @@
 # Example 3 (Edge Case - Zero):
 # Input: n = 0
 # Output: 1  # 0! is mathematically defined as 1
+
+number = int(input("Enter the number : "))
+
+if number == 0 : print("1")
+
+ans = 1 
+
+for i in range(2, number+1) :
+  ans *= i 
+
+print(ans)

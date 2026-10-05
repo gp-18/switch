@@ -12,3 +12,14 @@
 # Example 3 (Edge Case - Negative Number):
 # Input: n = -456
 # Output: 15  # Digits: 4 + 5 + 6
+
+number = abs(int(input("Enter the number : ")))
+
+digit_sum = 0
+
+while number > 0:
+    last_digit = number % 10
+    digit_sum += last_digit
+    number = number // 10
+
+print(digit_sum)

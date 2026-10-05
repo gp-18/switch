@@ -12,3 +12,14 @@
 # Example 3 (Edge Case - Coprime with 1):
 # Input: a = 1, b = 25
 # Output: True  # 1 is coprime with every positive integer
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+x = abs(a)
+y = abs(b)
+
+while y != 0:
+    x, y = y, x % y
+
+print(x == 1)

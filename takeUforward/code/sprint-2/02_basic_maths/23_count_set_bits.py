@@ -12,3 +12,15 @@
 # Example 3 (Edge Case - Zero):
 # Input: n = 0
 # Output: 0  # Binary representation: 0
+
+number = int(input("Enter the number: "))
+
+number = abs(number)
+
+count = 0
+
+while number > 0:
+    number &= (number - 1)
+    count += 1
+
+print(count)

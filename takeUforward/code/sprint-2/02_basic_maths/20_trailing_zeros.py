@@ -12,3 +12,15 @@
 # Example 3 (Edge Case - No Trailing Zeros / Negative):
 # Input: n = -500
 # Output: 2  # Trailing zeros count is 2
+
+number = int(input("Enter the number: "))
+
+number = abs(number)
+
+count = 0
+
+while number > 0 and number % 10 == 0:
+    count += 1
+    number = number // 10
+
+print(count)

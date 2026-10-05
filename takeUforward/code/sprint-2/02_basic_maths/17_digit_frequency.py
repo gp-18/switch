@@ -12,3 +12,15 @@
 # Example 3 (Edge Case - Negative Number with Target Digit):
 # Input: n = -12234, d = 2
 # Output: 2
+
+
+number = input("Enter the number : ")
+
+freq = {}
+
+for i in number : 
+    freq[i] = freq.get(i,0) + 1
+
+digit = input("Enter the digit : ")
+
+print(freq[digit])

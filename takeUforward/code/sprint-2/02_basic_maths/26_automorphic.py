@@ -12,3 +12,23 @@
 # Example 3 (Edge Case - Single Digit Non-Automorphic):
 # Input: n = 7
 # Output: False  # 7^2 = 49 does not end with 7
+
+number = int(input("Enter the number: "))
+
+if number < 0:
+    print(False)
+elif number == 0:
+    print(True)
+else:
+    square = number * number
+    temp = number
+    is_automorphic = True
+
+    while temp > 0:
+        if temp % 10 != square % 10:
+            is_automorphic = False
+            break
+        temp //= 10
+        square //= 10
+
+    print(is_automorphic)

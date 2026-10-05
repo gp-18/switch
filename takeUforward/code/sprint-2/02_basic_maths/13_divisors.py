@@ -12,3 +12,20 @@
 # Example 3 (Edge Case - Single Divisor):
 # Input: n = 1
 # Output: [1]
+
+
+number = int(input("Enter the number : "))
+
+ans = []
+
+
+for i in range(1 , int(number ** 0.5) + 1) :
+  if number % i == 0 :
+    ans.append(i)
+
+    if i != number // i : 
+      ans.append(number//i)  
+
+
+
+print(ans)

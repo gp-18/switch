@@ -12,3 +12,10 @@
 # Example 3 (Edge Case - Smallest Value N = 1):
 # Input: n = 1
 # Output: 1
+
+number = int(input("Enter the number : "))
+
+if number > 1 : 
+  ans = number * (number + 1 ) // 2 
+
+print(ans)

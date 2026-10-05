@@ -12,3 +12,17 @@
 # Example 3 (Edge Case - Smallest Positive Integer):
 # Input: n = 1
 # Output: False  # Proper divisors sum is 0 != 1
+
+
+number = int(input("Enter the number : "))
+
+ans = 0 
+
+for i in range(1,number) :
+  
+  if  number % i == 0 :
+    ans += i
+   
+print("yes") if ans == number else print("no")
+
+

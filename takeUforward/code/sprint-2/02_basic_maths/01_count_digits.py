@@ -12,3 +12,14 @@
 # Example 3 (Edge Case - Negative Number):
 # Input: n = -456
 # Output: 3 (ignoring the negative sign)
+
+number = abs(int(input("Enter the number : ")))
+
+
+count = 0 
+
+while number > 0 : 
+  count += 1 
+  number = number // 10 
+
+print(count)

@@ -12,3 +12,18 @@
 # Example 3 (Edge Case - Single Digit):
 # Input: n = 7
 # Output: True  # 7^1 = 7
+
+number = input("Enter the number : ")
+
+length_of_number = len(number)
+copy_of_number = int(number)
+number = int(number)
+
+ans = 0
+
+while number > 0:
+    last_digit = number % 10
+    ans = ans + pow(last_digit, length_of_number)
+    number = number // 10
+
+print("yes") if ans == copy_of_number else print("no")
