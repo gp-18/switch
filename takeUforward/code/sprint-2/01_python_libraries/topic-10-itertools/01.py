@@ -8,3 +8,8 @@
 # Input: lst = ['a', 'b', 'c', 'd']
 # Output: [('a', 'b'), ('a', 'c'), ('a', 'd'), ('b', 'c'), ('b', 'd'), ('c', 'd')]
 
+import itertools
+
+lst = [1, 2, 3]
+combs = list(itertools.combinations(lst, 2))
+print(combs)

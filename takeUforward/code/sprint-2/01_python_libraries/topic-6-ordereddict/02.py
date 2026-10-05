@@ -8,3 +8,8 @@
 # Input: od = OrderedDict([('p', 1), ('q', 2)]); od.move_to_end('q', last=False)
 # Output: OrderedDict([('q', 2), ('p', 1)])
 
+from collections import OrderedDict
+
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+od.move_to_end('c', last=False)
+print(od)

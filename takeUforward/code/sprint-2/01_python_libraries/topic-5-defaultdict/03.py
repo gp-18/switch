@@ -8,3 +8,10 @@
 # Input: edges = [('A', 'B'), ('B', 'C')]
 # Output: {'A': ['B'], 'B': ['C']}
 
+from collections import defaultdict
+
+edges = [(1, 2), (1, 3), (2, 4)]
+adj = defaultdict(list)
+for u, v in edges:
+    adj[u].append(v)
+print(dict(adj))

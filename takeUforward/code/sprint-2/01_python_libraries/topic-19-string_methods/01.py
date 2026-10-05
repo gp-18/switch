@@ -8,3 +8,6 @@
 # Input: name = "  ALICE  "
 # Output: "Alice"
 
+name = "   jOhN dOE   "
+clean_name = name.strip().title()
+print(f'"{clean_name}"')

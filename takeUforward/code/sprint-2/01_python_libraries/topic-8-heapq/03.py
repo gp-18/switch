@@ -8,3 +8,8 @@
 # Input: nums = [20, 10, 30]; heapq.heapify(nums)
 # Output: nums[0] == 10
 
+import heapq
+
+nums = [9, 5, 2, 7, 1]
+heapq.heapify(nums)
+print(f"Heapified list: {nums}, min element: {nums[0]}")

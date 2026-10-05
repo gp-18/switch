@@ -8,3 +8,7 @@
 # Input: for k, v in d.items(): print(f'{k}: {v}')
 # Output: 'x: 10', 'y: 20'
 
+d = {'x': 10, 'y': 20}
+print(f"keys: {list(d.keys())}")
+print(f"values: {list(d.values())}")
+print(f"items: {list(d.items())}")

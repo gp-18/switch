@@ -8,3 +8,6 @@
 # Input: len(string.ascii_lowercase)
 # Output: 26
 
+import string
+
+print(string.ascii_lowercase)

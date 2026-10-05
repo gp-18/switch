@@ -8,3 +8,8 @@
 # Input: od = OrderedDict([('first', 100), ('second', 200)]); od.popitem(last=False)
 # Output: Popped: ('first', 100), Remaining: OrderedDict([('second', 200)])
 
+from collections import OrderedDict
+
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+oldest = od.popitem(last=False)
+print(f"Popped: {oldest}, Remaining: {od}")

@@ -8,3 +8,8 @@
 # Input: data = ['a', 'a', 'b']
 # Output: [('a', ['a', 'a']), ('b', ['b'])]
 
+import itertools
+
+data = [1, 1, 2, 2, 3]
+grouped = [(k, list(g)) for k, g in itertools.groupby(data)]
+print(grouped)

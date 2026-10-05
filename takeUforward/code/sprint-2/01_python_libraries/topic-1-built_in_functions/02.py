@@ -8,3 +8,6 @@
 # Input: words = ["programming", "code", "python"]
 # Output: ['code', 'python', 'programming']
 
+words = ["apple", "pie", "banana", "kiwi"]
+sorted_words = sorted(words, key=len)
+print(sorted_words)

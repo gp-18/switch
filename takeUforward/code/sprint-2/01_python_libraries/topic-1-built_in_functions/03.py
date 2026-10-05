@@ -8,3 +8,5 @@
 # Input: nums = [10, 20, 30]
 # Output: Min: 10, Max: 30, Total: 60
 
+nums = [4, 1, 9, 7, 2]
+print(f"Min: {min(nums)}, Max: {max(nums)}, Total: {sum(nums)}")

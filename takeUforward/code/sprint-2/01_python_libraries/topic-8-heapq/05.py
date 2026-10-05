@@ -8,3 +8,14 @@
 # Input: Push 3, 9, 2 as -3, -9, -2
 # Output: Pops: 9, 3, 2
 
+import heapq
+
+max_heap = []
+for val in [5, 1, 10]:
+    heapq.heappush(max_heap, -val)
+
+popped_max = []
+while max_heap:
+    popped_max.append(-heapq.heappop(max_heap))
+
+print(f"Max-heap order: {popped_max}")

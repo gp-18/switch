@@ -8,3 +8,10 @@
 # Input: pairs = [(1, 'one'), (1, 'uno'), (2, 'two')]
 # Output: {1: ['one', 'uno'], 2: ['two']}
 
+from collections import defaultdict
+
+pairs = [('fruit', 'apple'), ('fruit', 'banana'), ('vegetable', 'carrot')]
+grouped = defaultdict(list)
+for category, item in pairs:
+    grouped[category].append(item)
+print(dict(grouped))

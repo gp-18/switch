@@ -8,3 +8,8 @@
 # Input: lists = [['a'], ['b', 'c']]
 # Output: ['a', 'b', 'c']
 
+import itertools
+
+lists = [[1, 2], [3, 4], [5]]
+flattened = list(itertools.chain(*lists))
+print(flattened)

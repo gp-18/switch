@@ -8,3 +8,5 @@
 # Input: range(0, 7, 2)
 # Output: [0, 2, 4, 6]
 
+even_numbers = list(range(0, 21, 2))
+print(even_numbers)

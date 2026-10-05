@@ -8,3 +8,10 @@
 # Input: sorted_list = [10, 20, 30], target = 25
 # Output: bisect.bisect_left(sorted_list, 25) -> index 2
 
+import bisect
+
+# Answer: bisect (bisect_left or bisect_right)
+# Binary search insertion position in O(log n) time.
+sorted_list = [10, 20, 30]
+target = 25
+print(f"Insertion index: {bisect.bisect_left(sorted_list, target)}")

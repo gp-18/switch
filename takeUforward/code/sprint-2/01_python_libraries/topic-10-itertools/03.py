@@ -8,3 +8,9 @@
 # Input: list1 = ['H', 'T'], list2 = [1, 2]
 # Output: [('H', 1), ('H', 2), ('T', 1), ('T', 2)]
 
+import itertools
+
+list1 = [1, 2]
+list2 = ['a', 'b']
+prod = list(itertools.product(list1, list2))
+print(prod)

@@ -8,3 +8,8 @@
 # Input: items = ['a', 'b', 'c', 'd']; random.sample(items, 2)
 # Output: List of 2 unique elements
 
+import random
+
+items = [1, 2, 3, 4, 5, 6, 7]
+sample = random.sample(items, 3)
+print(f"Random sample: {sample}")

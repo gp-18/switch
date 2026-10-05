@@ -8,3 +8,6 @@
 # Input: math.sqrt(2), math.factorial(0)
 # Output: sqrt: 1.414..., factorial: 1
 
+import math
+
+print(f"sqrt: {math.isqrt(25)}, factorial: {math.factorial(5)}")

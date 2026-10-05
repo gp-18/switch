@@ -8,3 +8,10 @@
 # Input: words = ["dog", "cat", "deer"]
 # Output: {'d': ['dog', 'deer'], 'c': ['cat']}
 
+from collections import defaultdict
+
+words = ["apple", "banana", "apricot", "cherry", "blueberry"]
+grouped = defaultdict(list)
+for w in words:
+    grouped[w[0]].append(w)
+print(dict(grouped))

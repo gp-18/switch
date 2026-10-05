@@ -8,3 +8,6 @@
 # Input: s = "mississippi", char = "s"
 # Output: 4
 
+s = "banana"
+char = "a"
+print(s.count(char))

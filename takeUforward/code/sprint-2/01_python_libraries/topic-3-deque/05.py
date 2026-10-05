@@ -8,3 +8,13 @@
 # Input: d = deque([10, 20]); d.appendleft(5); d.append(30)
 # Output: deque([5, 10, 20, 30])
 
+from collections import deque
+
+d = deque([10, 20])
+d.appendleft(5)
+d.append(30)
+print(f"After appendleft(5) and append(30): {d}")
+
+popped_left = d.popleft()
+popped_right = d.pop()
+print(f"popleft(): {popped_left}, pop(): {popped_right}, remaining: {d}")

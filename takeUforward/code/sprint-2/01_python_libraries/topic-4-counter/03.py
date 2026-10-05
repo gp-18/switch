@@ -8,3 +8,9 @@
 # Input: nums = [4, 4, 4, 6, 6, 7, 8], k = 1
 # Output: [4]
 
+from collections import Counter
+
+nums = [1, 1, 1, 2, 2, 3]
+k = 2
+top_k = [item for item, _ in Counter(nums).most_common(k)]
+print(top_k)

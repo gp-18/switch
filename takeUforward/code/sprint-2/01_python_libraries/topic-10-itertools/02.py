@@ -8,3 +8,8 @@
 # Input: lst = ['A', 'B']
 # Output: [('A', 'B'), ('B', 'A')]
 
+import itertools
+
+lst = [1, 2, 3]
+perms = list(itertools.permutations(lst, 2))
+print(f"Permutations: {perms}")

@@ -8,3 +8,13 @@
 # Input: triple = partial(multiply, 3); triple(4)
 # Output: 12
 
+from functools import partial
+
+def multiply(x, y):
+    return x * y
+
+double = partial(multiply, 2)
+triple = partial(multiply, 3)
+
+print(f"double(5) = {double(5)}")
+print(f"triple(4) = {triple(4)}")

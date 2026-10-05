@@ -8,3 +8,7 @@
 # Input: names = ["Raj", "Simran"], scores = [90, 95]
 # Output: [('Raj', 90), ('Simran', 95)]
 
+names = ["Alice", "Bob"]
+scores = [85, 92]
+pairs = list(zip(names, scores))
+print(pairs)

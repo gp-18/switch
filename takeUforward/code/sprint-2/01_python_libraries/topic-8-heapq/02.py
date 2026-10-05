@@ -8,3 +8,13 @@
 # Input: heap = [10, 20, 15] (heapified)
 # Output: Pops: 10, 15, 20
 
+import heapq
+
+heap = [1, 2, 8, 5, 3]
+heapq.heapify(heap)
+
+popped = []
+while heap:
+    popped.append(heapq.heappop(heap))
+
+print(f"Pops: {popped}")

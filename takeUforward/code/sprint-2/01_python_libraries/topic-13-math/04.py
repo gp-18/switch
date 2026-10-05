@@ -8,3 +8,7 @@
 # Input: val = -3.2
 # Output: floor: -4, ceil: -3
 
+import math
+
+val = 4.7
+print(f"floor: {math.floor(val)}, ceil: {math.ceil(val)}")

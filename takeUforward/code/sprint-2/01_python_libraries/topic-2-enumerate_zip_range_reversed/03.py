@@ -8,3 +8,7 @@
 # Input: list1 = ['x'], list2 = [10, 20, 30]
 # Output: [('x', 10)]
 
+list1 = [1, 2, 3, 4]
+list2 = ['a', 'b']
+result = list(zip(list1, list2))
+print(result)

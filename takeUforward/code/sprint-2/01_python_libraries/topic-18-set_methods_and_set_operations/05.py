@@ -8,3 +8,7 @@
 # Input: l1 = ['a', 'b'], l2 = ['c', 'd']
 # Output: set() (no common elements)
 
+l1 = [1, 2, 2, 3]
+l2 = [2, 3, 4]
+common = set(l1) & set(l2)
+print(common)

@@ -8,3 +8,5 @@
 # Input: nums = ['a', 'b', 'c']
 # Output: reversed() -> ['c', 'b', 'a'], slicing -> ['c', 'b', 'a']
 
+nums = [1, 2, 3, 4]
+print(f"reversed() -> {list(reversed(nums))}, slicing -> {nums[::-1]}")

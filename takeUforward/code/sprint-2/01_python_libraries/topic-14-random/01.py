@@ -8,3 +8,7 @@
 # Input: random.randint(1, 10)
 # Output: Random integer in [1, 10]
 
+import random
+
+val = random.randint(1, 100)
+print(f"Random int: {val}")

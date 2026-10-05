@@ -8,3 +8,7 @@
 # Input: s = "python"
 # Output: reversed: "nohtyp", is_palindrome: False
 
+s = "radar"
+rev = s[::-1]
+is_palindrome = s == rev
+print(f'reversed: "{rev}", is_palindrome: {is_palindrome}')

@@ -8,3 +8,9 @@
 # Input: Pair = namedtuple('Pair', ['first', 'second']); p = Pair(1, 2)
 # Output: p.first == p[0] == 1
 
+from collections import namedtuple
+
+Item = namedtuple('Item', ['name', 'price'])
+it = Item('Book', 500)
+print(f"By name: {it.name}, {it.price}")
+print(f"By index: {it[0]}, {it[1]}")

@@ -8,3 +8,10 @@
 # Input: data = ['b', 'a', 'b']; sorted_data = ['a', 'b', 'b']
 # Output: Groups: 'a' -> ['a'], 'b' -> ['b', 'b']
 
+import itertools
+
+data = [1, 2, 1, 1]
+sorted_data = sorted(data)
+grouped = [(k, list(g)) for k, g in itertools.groupby(sorted_data)]
+print(f"Sorted: {sorted_data}")
+print(f"Grouped: {grouped}")

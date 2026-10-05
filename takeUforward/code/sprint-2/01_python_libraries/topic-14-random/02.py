@@ -8,3 +8,8 @@
 # Input: items = [10, 20, 30]
 # Output: One randomly selected number from items
 
+import random
+
+items = ['apple', 'banana', 'cherry']
+chosen = random.choice(items)
+print(f"Random choice: {chosen}")

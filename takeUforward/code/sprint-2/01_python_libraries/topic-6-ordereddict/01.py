@@ -8,3 +8,8 @@
 # Input: od = OrderedDict([('x', 10), ('y', 20)]); od.move_to_end('x')
 # Output: OrderedDict([('y', 20), ('x', 10)])
 
+from collections import OrderedDict
+
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+od.move_to_end('a')
+print(od)

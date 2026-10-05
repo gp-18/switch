@@ -8,3 +8,6 @@
 # Input: nums = [5, 15]
 # Output: 0: 5, 1: 15
 
+nums = [10, 20, 30]
+for idx, val in enumerate(nums):
+    print(f"{idx}: {val}")

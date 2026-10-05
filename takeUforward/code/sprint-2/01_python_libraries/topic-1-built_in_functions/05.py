@@ -8,3 +8,6 @@
 # Input: names = ["Raj", "Rahul"]
 # Output: 1: Raj\n2: Rahul
 
+names = ["Alice", "Bob", "Charlie"]
+for idx, name in enumerate(names, start=1):
+    print(f"{idx}: {name}")

@@ -8,3 +8,9 @@
 # Input: arr = [10, 20], queries = [5, 15, 25]
 # Output: [0, 1, 2]
 
+import bisect
+
+arr = [1, 3, 5, 7]
+queries = [2, 5, 8]
+positions = [bisect.bisect_left(arr, q) for q in queries]
+print(positions)

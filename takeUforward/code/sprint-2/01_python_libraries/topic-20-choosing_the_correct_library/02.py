@@ -8,3 +8,9 @@
 # Input: nums = [1, 1, 2, 2, 2, 3, 4, 4, 4, 4]
 # Output: Counter(nums).most_common(2) -> [(4, 4), (2, 3)]
 
+from collections import Counter
+
+# Answer: collections.Counter using Counter.most_common(k)
+nums = [1, 1, 2, 2, 2, 3, 4, 4, 4, 4]
+top_2 = Counter(nums).most_common(2)
+print(f"Top frequent: {top_2}")

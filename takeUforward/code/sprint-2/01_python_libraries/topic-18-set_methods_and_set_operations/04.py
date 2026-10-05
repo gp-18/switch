@@ -8,3 +8,6 @@
 # Input: s1 = {1, 4}, s2 = {1, 2, 3}
 # Output: s1.issubset(s2) -> False
 
+s1 = {1, 2}
+s2 = {1, 2, 3}
+print(s1.issubset(s2))

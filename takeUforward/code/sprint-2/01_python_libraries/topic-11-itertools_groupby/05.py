@@ -8,3 +8,8 @@
 # Input: data = [1, 1, 2, 3, 3]
 # Output: [(1, 2), (2, 1), (3, 2)]
 
+import itertools
+
+data = "aaabbcccc"
+counts = [(k, len(list(g))) for k, g in itertools.groupby(data)]
+print(counts)

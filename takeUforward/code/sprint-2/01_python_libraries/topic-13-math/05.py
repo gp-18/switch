@@ -8,3 +8,8 @@
 # Input: x = 1
 # Output: log(1) = 0.0, log2(1) = 0.0, log10(1) = 0.0
 
+import math
+
+print(f"log2(8) = {math.log2(8)}")
+print(f"log10(100) = {math.log10(100)}")
+print(f"log(e) = {math.log(math.e)}")

@@ -8,3 +8,7 @@
 # Input: '5' in set(string.digits)
 # Output: True
 
+import string
+
+digit_set = set(string.digits)
+print(digit_set)

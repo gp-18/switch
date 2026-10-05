@@ -8,3 +8,8 @@
 # Input: items = [1, 2, 1]
 # Output: {1: 2, 2: 1}
 
+items = ['a', 'b', 'a', 'c', 'b', 'a']
+counts = {}
+for x in items:
+    counts[x] = counts.get(x, 0) + 1
+print(counts)

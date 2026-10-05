@@ -8,3 +8,9 @@
 # Input: arr = [10, 20, 30], target = 25
 # Output: Count = 0
 
+import bisect
+
+arr = [1, 2, 4, 4, 4, 5, 6]
+target = 4
+count = bisect.bisect_right(arr, target) - bisect.bisect_left(arr, target)
+print(f"Count of {target}: {count}")

@@ -8,3 +8,8 @@
 # Input: s = "mississippi"
 # Output: Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})
 
+from collections import Counter
+
+s = "banana"
+char_counts = Counter(s)
+print(char_counts)

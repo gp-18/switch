@@ -8,3 +8,18 @@
 # Input: greet.__doc__
 # Output: 'Says hi'
 
+from functools import wraps
+
+def my_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs)
+    return wrapper
+
+@my_decorator
+def greet():
+    """Says hi"""
+    return "Hello!"
+
+print(f"greet.__name__ = '{greet.__name__}'")
+print(f"greet.__doc__ = '{greet.__doc__}'")

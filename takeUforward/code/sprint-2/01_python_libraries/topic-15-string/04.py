@@ -8,3 +8,8 @@
 # Input: s = "abc-123", allowed = string.ascii_lowercase + string.digits
 # Output: False (contains '-')
 
+import string
+
+allowed = set(string.ascii_lowercase + string.digits)
+s = "abc123"
+print(all(c in allowed for c in s))

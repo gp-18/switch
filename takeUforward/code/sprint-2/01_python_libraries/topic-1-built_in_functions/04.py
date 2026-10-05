@@ -8,3 +8,5 @@
 # Input: flags = [True, True, True]
 # Output: Any True: True, All True: True
 
+flags = [True, False, True]
+print(f"Any True: {any(flags)}, All True: {all(flags)}")

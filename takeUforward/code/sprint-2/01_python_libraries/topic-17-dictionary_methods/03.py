@@ -8,3 +8,7 @@
 # Input: keys = ['id', 'status'], values = [101, 'active']
 # Output: {'id': 101, 'status': 'active'}
 
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+d = dict(zip(keys, values))
+print(d)

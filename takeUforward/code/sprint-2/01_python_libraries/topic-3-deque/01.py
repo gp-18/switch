@@ -8,3 +8,17 @@
 # Input: enqueue('A'), dequeue()
 # Output: Dequeued: 'A', Remaining: deque([])
 
+from collections import deque
+
+queue = deque()
+
+def enqueue(val):
+    queue.append(val)
+
+def dequeue():
+    return queue.popleft() if queue else None
+
+enqueue(10)
+enqueue(20)
+val = dequeue()
+print(f"Dequeued: {val}, Remaining: {queue}")

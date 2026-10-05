@@ -8,3 +8,6 @@
 # Input: d.get('name', 'Unknown')
 # Output: 'Alice'
 
+d = {'name': 'Alice'}
+print(d.get('age', 25))
+print(d.get('name', 'Unknown'))

@@ -8,3 +8,7 @@
 # Input: a = 101, b = 10
 # Output: 1
 
+import math
+
+a, b = 48, 18
+print(f"math.gcd({a}, {b}) -> {math.gcd(a, b)}")

@@ -8,3 +8,6 @@
 # Input: words = ['apple', 'banana', 'apple']
 # Output: {'apple', 'banana'}
 
+nums = [1, 2, 2, 3, 4, 4, 5]
+unique = sorted(list(set(nums)))
+print(unique)

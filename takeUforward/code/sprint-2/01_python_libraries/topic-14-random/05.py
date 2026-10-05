@@ -8,3 +8,10 @@
 # Input: Property-based and stress testing with randomized input
 # Output: Detects unexpected edge cases and boundary failures
 
+import random
+
+def generate_random_array(size=10, min_val=1, max_val=100):
+    return [random.randint(min_val, max_val) for _ in range(size)]
+
+data = generate_random_array(10, 1, 100)
+print(f"Random test data: {data}")

@@ -8,3 +8,7 @@
 # Input: a = 4, b = 6
 # Output: 12
 
+import math
+
+a, b = 12, 15
+print(f"math.lcm({a}, {b}) -> {math.lcm(a, b)}")

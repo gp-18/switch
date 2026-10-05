@@ -8,3 +8,7 @@
 # Input: Compare with deque.popleft()
 # Output: deque.popleft() takes O(1) time
 
+a = list(range(5))
+val = a.pop(0)
+print(f"Popped from front: {val}, remaining: {a}")
+print("pop(0) takes O(n) time because all following elements must shift left.")

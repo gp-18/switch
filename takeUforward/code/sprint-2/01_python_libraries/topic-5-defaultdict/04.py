@@ -8,3 +8,10 @@
 # Input: enrollments = [("Raj", "CS"), ("Raj", "CS")]
 # Output: {'Raj': {'CS'}}
 
+from collections import defaultdict
+
+enrollments = [("Alice", "Math"), ("Alice", "Physics"), ("Bob", "Math")]
+subs = defaultdict(set)
+for student, sub in enrollments:
+    subs[student].add(sub)
+print(dict(subs))

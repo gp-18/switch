@@ -8,3 +8,8 @@
 # Input: items = ['x', 'y', 'z']
 # Output: items shuffled in-place
 
+import random
+
+items = [1, 2, 3, 4, 5]
+random.shuffle(items)
+print(f"Shuffled list: {items}")

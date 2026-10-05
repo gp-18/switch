@@ -8,3 +8,8 @@
 # Input: d.pop('z', 'Not Found')
 # Output: 'Not Found' (no KeyError raised)
 
+d = {'a': 1, 'b': 2}
+val = d.pop('a', None)
+print(f"Popped: {val}, remaining: {d}")
+missing = d.pop('z', 'Not Found')
+print(f"Missing key popped: {missing}")

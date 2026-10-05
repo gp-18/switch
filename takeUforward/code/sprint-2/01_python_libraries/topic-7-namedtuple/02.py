@@ -8,3 +8,12 @@
 # Input: s = Student('Raj', 22, 88)
 # Output: s.name = 'Raj', s.age = 22, s.score = 88
 
+from collections import namedtuple
+
+Student = namedtuple('Student', ['name', 'age', 'score'])
+students = [
+    Student('Alice', 20, 90),
+    Student('Bob', 21, 85),
+    Student('Charlie', 19, 95)
+]
+print(students)

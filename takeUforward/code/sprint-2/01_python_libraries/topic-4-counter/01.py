@@ -8,3 +8,8 @@
 # Input: nums = [5, 5, 5, 5]
 # Output: Counter({5: 4})
 
+from collections import Counter
+
+nums = [1, 2, 2, 3, 3, 3, 4]
+counts = Counter(nums)
+print(counts)

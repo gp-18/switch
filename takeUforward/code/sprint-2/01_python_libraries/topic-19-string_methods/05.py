@@ -8,3 +8,8 @@
 # Input: "hello".index("z")
 # Output: Raises ValueError: substring not found
 
+print("hello".find("z"))
+try:
+    "hello".index("z")
+except ValueError as e:
+    print(f"Raises ValueError: {e}")
