@@ -1,0 +1,39 @@
+# Q9. Replace getters and setters with @property
+#
+# Task:
+# Rewrite the class the Pythonic way using `@property`:
+# - `name`: Has a getter `@property` and a validating setter `@name.setter`.
+# - `balance`: Has a getter `@property` only (read-only, no setter).
+#
+# Explanation:
+# - Why `@property`?
+#   * In languages like Java, `getName()` and `setName()` are standard.
+#   * In Python, `@property` allows accessing methods using attribute syntax (`acc.name`, `acc.balance`) while
+#     still retaining the power to validate on assignment or compute values dynamically.
+#   * If you don't define a setter for `balance`, attempting `acc.balance = 5000` automatically raises an `AttributeError`.
+#
+# Example / Test Case:
+# acc = BankAccount("Parth", 1000)
+# acc.name = "Rahul"            # uses the setter
+# assert acc.name == "Rahul"
+# assert acc.balance == 1000
+# # acc.balance = 5000          -> AttributeError (no setter)
+
+# Write your BankAccount class here:
+
+
+
+# ==================== TEST CASES ====================
+# if __name__ == "__main__":
+#     acc = BankAccount("Parth", 1000)
+#     acc.name = "Rahul"
+#     assert acc.name == "Rahul"
+#     assert acc.balance == 1000
+#
+#     try:
+#         acc.balance = 5000
+#         assert False, "Direct assignment to balance should raise AttributeError"
+#     except AttributeError:
+#         pass
+#
+#     print("Q9 passed successfully!")
