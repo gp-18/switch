@@ -22,6 +22,28 @@
 
 # Write your BankAccount class here:
 
+class BankAccount:
+    def __init__(self , name , balance) :
+        self.__name = name 
+        self.__balance = balance 
+
+    def getName(self) :
+        return self.__name
+
+    def getBalance(self) :
+        return self.__balance
+
+    def setName(self , name) :
+        if not isinstance(name, str) :
+            raise TypeError("Name must be a string.")
+        
+        name = name.strip()
+        
+        if not name :
+            raise ValueError("Name cannot be empty.")
+        
+        self.__name = name
+
 
 
 # ==================== TEST CASES ====================

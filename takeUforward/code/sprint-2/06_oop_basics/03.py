@@ -19,6 +19,22 @@
 
 # Write your BankAccount class here:
 
+class BankAccount : 
+    def __init__(self , name , balance) :
+        self.__balance = balance 
+        self.__name = name 
+
+    def deposit(self , amount) :
+
+        if amount <= 0 :
+            raise ValueError("Amount must be greater than 0.")
+        
+        self.__balance += amount 
+        
+        return self.__balance
+
+
+
 
 
 # ==================== TEST CASES ====================

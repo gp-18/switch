@@ -21,6 +21,51 @@
 
 # Write your BankAccount class here:
 
+class BankAccount:
+    def __init__(self, name, balance=0):
+        self.setName(name)
+        self.setBalance(balance)
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        if not isinstance(value, str):
+            raise TypeError("Name must be a string.")
+        value = value.strip()
+        if not value:
+            raise ValueError("Name cannot be empty.")
+        self.__name = value
+
+    @property
+    def balance(self):
+        return self.__balance
+    
+    @balance.setter
+    def balance(self , value) : 
+        if value < 0 :
+            raise ValueError("Amount cannot be negative.")
+        self.__balance = value
+    
+    @property
+    def withdraw(self , amount) : 
+        if amount < 0 :
+            raise ValueError("Amount cannot be negative.")
+        if amount > self.__balance :
+            return False
+        self.__balance -= amount
+        return True
+
+    @property
+    def deposit(self , amount) : 
+        if amount < 0 :
+            raise ValueError("Amount cannot be negative.")
+        self.__balance += amount
+        return self.__balance
+    
+
 
 
 # ==================== TEST CASES ====================

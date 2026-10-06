@@ -20,6 +20,17 @@
 
 # Write your BankAccount class here:
 
+class BankAccount : 
+    def __init__(self , name , balance) : 
+        self.__name = name 
+        self.__balance = balance 
+
+    def __str__(self) : 
+        return f"Account holder : {self.__name} | Balance : {self.__balance}" 
+    
+    def __repr__(self) : 
+        return f"BankAccount(name : {self.__name} , balance : {self.__balance})"
+
 
 
 # ==================== TEST CASES ====================

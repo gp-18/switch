@@ -20,7 +20,37 @@
 # print(acc._BankAccount__balance)  # works
 
 # Write your BankAccount class and observation comments here:
+class BankAccount:
+    def __init__(self, name, balance):
+        self.__name = name
+        self.__balance = balance
 
+    def getName(self):
+        return self.__name
+
+    def getBalance(self):
+        return self.__balance
+
+
+# ==================== OBSERVATION ====================
+
+acc = BankAccount("Parth", 1000)
+
+# Direct access does not work because Python changed __balance
+# into _BankAccount__balance internally.
+# print(acc.__balance)   # AttributeError
+
+# __dict__ shows the actual names Python stored.
+print(acc.__dict__)
+
+# We can access the "private" attribute using its mangled name.
+print(acc._BankAccount__balance)
+
+
+# Q5 Observation:
+# 1. __balance cannot be accessed directly using acc.__balance.
+# 2. Python changes __balance to _BankAccount__balance using name mangling.
+# 3. Name mangling is not true security; the attribute can still be accessed using the mangled name.
 
 
 # ==================== TEST CASES ====================

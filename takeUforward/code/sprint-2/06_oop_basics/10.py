@@ -24,7 +24,50 @@
 # assert (a.balance, b.balance) == (700, 800)
 
 # Write your BankAccount class here:
+class BankAccount : 
+    bank_name = "PyBank" 
+    total_accounts = 0 
 
+    def __init__(self , name , balance) : 
+        self.setName(name) 
+        self.setBalance(balance) 
+        BankAccount.total_accounts += 1 
+
+    def setName(self, name):
+        if not isinstance(name, str):
+            raise TypeError("Name must be a string.")
+
+        name = name.strip()
+
+        if not name:
+            raise ValueError("Name cannot be empty.")
+
+        self.__name = name
+
+    def getName(self):
+        return self.__name
+
+    def setBalance(self, amount):
+        if amount < 0:
+            raise ValueError("Amount cannot be negative.")
+
+        self.__balance = amount
+
+    def getBalance(self):
+        return self.__balance
+    
+    def transfer(self , other , amount) : 
+        if amount < 0 :
+            raise ValueError("Amount cannot be negative.")
+        
+        if amount > self.__balance :
+            return False
+        
+        self.__balance -= amount
+        other.setBalance(other.getBalance() + amount)
+        
+        return True
+    
 
 
 # ==================== TEST CASES ====================

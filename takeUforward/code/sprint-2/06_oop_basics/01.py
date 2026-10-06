@@ -23,6 +23,17 @@
 # Write your BankAccount class here:
 
 
+class BankAccount:
+    def __init__(self , name , balance) :
+        self.__name = name 
+        self.__balance = balance 
+
+    def getName(self) :
+        return self.__name
+
+    def getBalance(self) :
+        return self.__balance
+
 
 # ==================== TEST CASES ====================
 # if __name__ == "__main__":

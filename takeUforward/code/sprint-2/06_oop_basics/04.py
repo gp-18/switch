@@ -20,7 +20,23 @@
 # assert acc.getBalance() == 700   # unchanged
 
 # Write your BankAccount class here:
+class BankAccount : 
+    def __init__(self , name , balance) :
+        self.__balance = balance 
+        self.__name = name 
 
+    def withdraw(self , amount) :
+
+        if amount <= 0 :
+            raise ValueError("Amount must be greater than 0.")
+        
+        if amount > self.__balance :
+            print("Insufficient amount")
+            return False
+        
+        self.__balance -= amount 
+        
+        return True
 
 
 # ==================== TEST CASES ====================
