@@ -131,6 +131,8 @@ I want:
 - Both HLD and LLD perspectives
 - Production-readiness thinking
 - Architecture evolution — how systems grow from simple to complex
+- Handwritten-style interview notes I can revise later without re-reading the full lesson
+- Practice applying the topic to a real problem
 
 ---
 
@@ -153,6 +155,18 @@ STRICT TEACHING RULES
 16. Do NOT blindly recommend microservices, Kafka, or NoSQL — justify every choice
 17. Highlight common anti-patterns and mistakes beginners make
 18. Include cost implications for production decisions
+19. HANDWRITTEN NOTES STYLE — the notes section must read like my own handwritten
+    interview-prep notes, not a textbook:
+    - Short, crisp lines in simple English, written as if I wrote them for myself
+    - Self-contained: define every term the first time it appears; never say
+      "as discussed above" — I will read this weeks later with zero context
+    - Use memory hooks: mnemonics, one-line analogies, "if X then Y" rules,
+      arrows (→), and small ASCII diagrams
+    - Mark the exam-critical points with ⭐ and common traps with ⚠️
+    - Include a 30-second spoken answer I can say in an interview
+20. PROBLEM-SOLVING — after the lesson, apply the topic to a problem the way I would
+    in a real interview: think out loud, state assumptions, justify each decision,
+    and name what I'm deliberately NOT doing and why
 
 ---
 
@@ -176,11 +190,41 @@ OUTPUT FORMAT — use this structure every time, no exceptions:
 ### 16. Design Challenge / Exercise
 ### 17. Quick Revision Summary (bullet points, max 10 lines)
 ### 18. Most Important Takeaway
+### 19. ✍️ My Handwritten Interview Notes (one-page revision sheet)
+Use this layout:
+   - 📌 Topic in one line
+   - 🧠 Core idea (2–3 lines, plain English)
+   - 🔑 Key points to remember (⭐ for must-know, ⚠️ for traps)
+   - 🖼️ Mini diagram (small ASCII)
+   - ⚖️ Use when / Don't use when (2 lines each)
+   - 🔁 Trade-offs in one line each
+   - 💥 What breaks + the fix
+   - 🏭 Real-world example (one line)
+   - 🎤 30-second interview answer (word-for-word)
+   - ❓ 3 likely follow-up questions + one-line answers
+   - 🧩 Memory hook (mnemonic or analogy)
+### 20. 🛠️ Now Solve This Problem (Apply the Topic)
+Based on the topic above, understand it and solve the problem I give below.
+   - Restate the problem in one line and list assumptions
+   - Clarify requirements (functional + non-functional) and do capacity math
+   - Solve step by step, tying each decision back to this topic
+   - Draw the final architecture (text diagram)
+   - Explain trade-offs, failure scenarios, and what I'd improve at 10x scale
+   - Add 2 interviewer "twist" follow-ups and how I'd handle them
+   - If I included "My attempt", review it first: what I got right, what I missed,
+     and the exact gaps to fix
 
 ---
 
 Topic to teach:
 👉 {PASTE TOPIC HERE}
+
+Problem to solve (optional — if empty, pick a realistic interview problem for this topic):
+👉 {PASTE PROBLEM HERE}
+
+My attempt (optional — paste your own answer if you tried first):
+👉 {PASTE MY ATTEMPT HERE}
+
 ```
 
 ---
