@@ -16,3 +16,12 @@
 num = input("Enter the number string : ")
 
 print(f"Your number string is : '{num}' and now doing the operations on it.")
+
+largest = ""
+
+for i in range(len(num) - 1, -1, -1):
+    if int(num[i]) % 2 != 0:
+        largest = num[:i + 1]
+        break
+
+print(f"The largest odd number in the string is : {largest}")

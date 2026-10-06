@@ -16,3 +16,8 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+if s.isdigit() and len(s) > 0 : 
+    print("True")
+else : 
+    print("False")

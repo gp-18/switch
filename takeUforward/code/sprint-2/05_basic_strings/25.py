@@ -16,3 +16,22 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+result = ""
+opened = 0
+
+for char in s:
+    if char == '(':
+        if opened > 0:
+            result += char
+        opened += 1
+    elif char == ')':
+        opened -= 1
+        if opened > 0:
+            result += char
+
+print(f"String after removing outermost parentheses : '{result}'")
+
+
+
+

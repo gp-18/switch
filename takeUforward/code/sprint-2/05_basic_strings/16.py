@@ -17,3 +17,12 @@ s = input("Enter the string : ")
 k = int(input("Enter the value of k : "))
 
 print(f"Your string is : '{s}', k = {k} and now doing the operations on it.")
+
+chars = list(s)
+
+for i in range(0, len(chars), 2 * k):
+    chars[i:i + k] = reversed(chars[i:i + k])
+
+result = "".join(chars)
+print(f"Resulting string : '{result}'")
+

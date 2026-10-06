@@ -16,3 +16,10 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+without_space = ""
+for char in s : 
+    if char != " " : 
+        without_space += char 
+
+print(f"String without spaces : {without_space}")

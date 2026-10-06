@@ -16,3 +16,10 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+if len(s) <= 1:
+    new_string = s
+else:
+    new_string = s[-1] + s[1:len(s)-1] + s[0]
+
+print(f"New string : {new_string}")

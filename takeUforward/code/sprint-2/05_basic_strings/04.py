@@ -16,3 +16,12 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+
+digit = 0 
+
+for char in s : 
+    if char.isdigit() :
+        digit += 1 
+
+print(f"Number of digits : {digit}")

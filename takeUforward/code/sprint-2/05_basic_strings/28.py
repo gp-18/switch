@@ -16,3 +16,14 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+cleaned = ""
+for char in s:
+    if char.isalnum():
+        cleaned += char.lower()
+
+if cleaned == cleaned[::-1]:
+    print("True")
+else:
+    print("False")
+

@@ -17,3 +17,11 @@ s = input("Enter the string : ")
 ch = input("Enter the character to search : ")
 
 print(f"Your string is : '{s}', character is : '{ch}' and now doing the operations on it.")
+
+
+freq = { }
+
+for char in s : 
+    freq[char] = freq.get(char, 0) + 1 
+
+print(freq.get(ch, 0))

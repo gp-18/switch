@@ -16,3 +16,17 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+current_depth = 0
+max_depth = 0
+
+for char in s:
+    if char == '(':
+        current_depth += 1
+        if current_depth > max_depth:
+            max_depth = current_depth
+    elif char == ')':
+        current_depth -= 1
+
+print(f"Maximum nesting depth : {max_depth}")
+

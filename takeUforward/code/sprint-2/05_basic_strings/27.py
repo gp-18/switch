@@ -17,3 +17,7 @@ haystack = input("Enter the haystack string : ")
 needle = input("Enter the needle string : ")
 
 print(f"Haystack : '{haystack}', Needle : '{needle}' and now doing the operations on it.")
+
+index = haystack.find(needle)
+print(index)
+

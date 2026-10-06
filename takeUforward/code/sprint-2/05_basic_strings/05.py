@@ -16,3 +16,16 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+word_count = 0
+in_word = False
+
+for char in s:
+    if char != " ":
+        if not in_word:
+            word_count += 1
+            in_word = True
+    else:
+        in_word = False
+
+print(f"Number of words : {word_count}")

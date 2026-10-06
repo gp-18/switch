@@ -16,3 +16,21 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+result = ""
+word = ""
+
+for char in s:
+    if char != " ":
+        word += char
+    else:
+        if word:
+            result += word[::-1] + " "
+            word = ""
+
+if word:
+    result += word[::-1]
+
+result = result[::-1]
+
+print(f"String after reversing the words : {result}")

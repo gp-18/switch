@@ -16,3 +16,13 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+vowels = "aeiouAEIOU"
+result = ""
+
+for char in s:
+    if char not in vowels:
+        result += char
+
+print(f"String without vowels : {result}")
+

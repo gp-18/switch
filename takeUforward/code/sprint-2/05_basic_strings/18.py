@@ -21,3 +21,19 @@ for i in range(length):
     strs.append(value)
 
 print(f"Your array of strings is : {strs} and now doing the operations on it.")
+
+
+prefix = strs[0] if strs else ""
+
+for string in strs[1:]:
+    j = 0
+
+    while j < len(prefix) and j < len(string) and prefix[j] == string[j]:
+        j += 1
+
+    prefix = prefix[:j]
+
+    if prefix == "":
+        break
+
+print(f"The longest common prefix is : '{prefix}'")

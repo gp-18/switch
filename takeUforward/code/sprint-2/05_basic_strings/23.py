@@ -16,3 +16,16 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+freq = {}
+
+for char in s:
+    freq[char] = freq.get(char, 0) + 1
+
+for i in range(len(s)):
+    if freq[s[i]] == 1:
+        print(i)
+        break
+else:
+    print(-1)
+

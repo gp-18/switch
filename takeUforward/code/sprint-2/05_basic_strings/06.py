@@ -16,3 +16,14 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+toggled_string = ""
+for char in s : 
+    if char.isupper() : 
+        toggled_string += char.lower()
+    elif char.islower() : 
+        toggled_string += char.upper()
+    else : 
+        toggled_string += char
+
+print(f"Toggled string : {toggled_string}")

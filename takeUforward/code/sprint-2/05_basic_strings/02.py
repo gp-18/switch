@@ -16,3 +16,15 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+vowels_count = 0
+consonants_count = 0
+
+for char in s : 
+    if char in "aeiouAEIOU" : 
+        vowels_count += 1 
+    elif char in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" : 
+        consonants_count += 1 
+
+print(f"Number of vowels : {vowels_count}")
+print(f"Number of consonants : {consonants_count}")

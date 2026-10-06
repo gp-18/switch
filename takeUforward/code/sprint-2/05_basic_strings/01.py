@@ -16,3 +16,7 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+reverse_string = s[::-1]
+
+print(reverse_string)

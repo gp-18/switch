@@ -16,3 +16,17 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+
+upper_case = 0 
+lower_case = 0 
+
+for char in s : 
+    if char.isupper() : 
+        upper_case += 1 
+    elif char.islower() : 
+        lower_case += 1 
+
+print(f"Number of uppercase characters : {upper_case}")
+print(f"Number of lowercase characters : {lower_case}")
+    

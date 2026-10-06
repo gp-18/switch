@@ -16,3 +16,18 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+length_of_last_word = 0
+current_word_length = 0
+
+for char in s:
+    if char != " ":
+        current_word_length += 1
+    elif current_word_length > 0:
+        length_of_last_word = current_word_length
+        current_word_length = 0
+
+if current_word_length > 0:
+    length_of_last_word = current_word_length
+
+print(f"Length of last word : {length_of_last_word}")

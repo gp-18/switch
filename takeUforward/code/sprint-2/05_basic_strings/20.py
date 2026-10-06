@@ -17,3 +17,10 @@ s = input("Enter the first string : ")
 goal = input("Enter the goal string : ")
 
 print(f"Your string is : '{s}', goal is : '{goal}' and now doing the operations on it.")
+
+if len(s) != len(goal):
+    print("False")
+elif goal in s + s:
+    print("True")
+else:
+    print("False")

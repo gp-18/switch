@@ -16,3 +16,21 @@
 s = input("Enter the sentence : ")
 
 print(f"Your sentence is : '{s}' and now doing the operations on it.")
+
+current_word = ""
+longest_word = ""
+
+for char in s:
+    if char != " ":
+        current_word += char
+    else:
+        if len(current_word) > len(longest_word):
+            longest_word = current_word
+
+        current_word = ""
+
+if len(current_word) > len(longest_word):
+    longest_word = current_word
+
+print(f"Longest word : '{longest_word}'")
+print(f"Length of longest word : {len(longest_word)}")

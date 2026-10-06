@@ -16,3 +16,11 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+substrings = []
+
+for i in range(len(s)):
+    for j in range(i + 1, len(s) + 1):
+        substrings.append(s[i:j])
+
+print(f"All substrings are : {substrings}")

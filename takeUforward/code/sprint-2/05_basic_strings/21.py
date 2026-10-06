@@ -16,3 +16,26 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+
+freq = {}
+
+# Count frequency
+for char in s:
+    freq[char] = freq.get(char, 0) + 1
+
+result = ""
+
+# Sort characters by frequency
+while freq:
+    highest_frequency = 0
+    highest_character = ""
+
+    for char in freq:
+        if freq[char] > highest_frequency:
+            highest_frequency = freq[char]
+            highest_character = char
+
+    result += highest_character * highest_frequency
+    del freq[highest_character]
+
+print(f"String sorted by frequency : '{result}'")
