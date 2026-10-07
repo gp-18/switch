@@ -18,3 +18,10 @@ name = input("Enter your name : ")
 n = int(input("Enter the number of times (n) : "))
 
 print(f"Name is : '{name}', n is : {n} and now doing the operations on it.")
+def print_name_n_times(name, n):
+    if n <= 0:
+        return
+    print(name)
+    print_name_n_times(name, n - 1)
+
+print_name_n_times(name, n)

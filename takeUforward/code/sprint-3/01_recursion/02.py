@@ -17,3 +17,11 @@
 n = int(input("Enter the value of n : "))
 
 print(f"n is : {n} and now doing the operations on it.")
+def print_first_n_even(n):
+    if n <= 0:
+        return
+    print_first_n_even(n - 1)
+    print(2 * n, end=" ")
+
+print_first_n_even(n)
+print()

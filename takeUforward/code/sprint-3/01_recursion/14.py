@@ -22,3 +22,9 @@ for i in range(length):
     array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+def sum_of_array(arr, index):
+    if index >= len(arr):
+        return 0
+    return arr[index] + sum_of_array(arr, index + 1)
+
+print(sum_of_array(array, 0))

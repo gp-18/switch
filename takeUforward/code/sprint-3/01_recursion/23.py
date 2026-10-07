@@ -17,3 +17,9 @@
 n = int(input("Enter the value of n : "))
 
 print(f"n is : {n} and now doing the operations on it.")
+def factorial_n(n, acc=1):
+    if n <= 1:
+        return acc
+    return factorial_n(n - 1, acc * n)
+
+print(factorial_n(n, 1))

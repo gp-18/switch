@@ -17,3 +17,11 @@
 n = int(input("Enter the value of n : "))
 
 print(f"n is : {n} and now doing the operations on it.")
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(n))

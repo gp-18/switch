@@ -17,3 +17,9 @@
 n = int(input("Enter the value of n : "))
 
 print(f"n is : {n} and now doing the operations on it.")
+def sum_1_to_n(n):
+    if n <= 0:
+        return 0
+    return n + sum_1_to_n(n - 1)
+
+print(sum_1_to_n(n))

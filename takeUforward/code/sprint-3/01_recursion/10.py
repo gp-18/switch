@@ -18,3 +18,11 @@ x = int(input("Enter the base (x) : "))
 n = int(input("Enter the power (n) : "))
 
 print(f"Base is : {x}, power is : {n} and now doing the operations on them.")
+def power(base, exponent):
+    if exponent == 0:
+        return 1
+    if base == 0:
+        return 0
+    return base * power(base, exponent - 1)
+
+print(power(x, n))

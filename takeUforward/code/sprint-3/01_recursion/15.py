@@ -17,3 +17,9 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+def string_length(s):
+    if s == "":
+        return 0
+    return 1 + string_length(s[1:])
+
+print(string_length(s))

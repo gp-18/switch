@@ -22,3 +22,11 @@ for i in range(length):
     array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+def is_sorted(arr, index=0):
+    if index >= len(arr) - 1:
+        return True
+    if arr[index] > arr[index + 1]:
+        return False
+    return is_sorted(arr, index + 1)
+
+print(is_sorted(array, 0))

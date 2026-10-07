@@ -22,3 +22,11 @@ for i in range(length):
     array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+def max_element(arr, index=0, current_max=float("-inf")):
+    if not arr:
+        return None
+    if index >= len(arr):
+        return current_max
+    return max_element(arr, index + 1, max(current_max, arr[index]))
+
+print(max_element(array, 0, float("-inf")))

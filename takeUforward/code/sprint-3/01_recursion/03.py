@@ -17,3 +17,12 @@
 n = int(input("Enter the number : "))
 
 print(f"n is : {n} and now doing the operations on it.")
+def print_digits_left_to_right(n):
+    if n < 10:
+        print(n, end=" ")
+        return
+    print_digits_left_to_right(n // 10)
+    print(n % 10, end=" ")
+
+print_digits_left_to_right(n)
+print()

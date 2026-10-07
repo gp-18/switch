@@ -18,3 +18,9 @@ a = int(input("Enter first number (a) : "))
 b = int(input("Enter second number (b) : "))
 
 print(f"Numbers are a = {a}, b = {b} and now doing the operations on them.")
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+print(gcd(a, b))

@@ -22,3 +22,11 @@ for i in range(length):
     array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+def print_reverse(arr, index):
+    if index >= len(arr):
+        return
+    print_reverse(arr, index + 1)
+    print(arr[index], end=" ")
+
+print_reverse(array, 0)
+print()

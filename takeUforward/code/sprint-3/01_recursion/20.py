@@ -22,3 +22,11 @@ for i in range(length):
     array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+def print_array_forward(arr, index):
+    if index >= len(arr):
+        return
+    print(arr[index], end=" ")
+    print_array_forward(arr, index + 1)
+
+print_array_forward(array, 0)
+print()

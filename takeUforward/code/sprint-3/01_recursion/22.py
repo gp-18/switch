@@ -17,3 +17,9 @@
 n = int(input("Enter the value of n : "))
 
 print(f"n is : {n} and now doing the operations on it.")
+def sum_first_n(n, acc=0):
+    if n <= 0:
+        return acc
+    return sum_first_n(n - 1, acc + n)
+
+print(sum_first_n(n, 0))

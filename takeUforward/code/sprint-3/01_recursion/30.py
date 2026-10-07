@@ -24,3 +24,9 @@ for i in range(length):
 target = int(input("Enter the target element to count : "))
 
 print(f"Your array has become : {array}, target is : {target} and now doing the operations on it.")
+def count_occurrences(arr, target, index=0, acc=0):
+    if index >= len(arr):
+        return acc
+    return count_occurrences(arr, target, index + 1, acc + (1 if arr[index] == target else 0))
+
+print(count_occurrences(array, target, 0, 0))

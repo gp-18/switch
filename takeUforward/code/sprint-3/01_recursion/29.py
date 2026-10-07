@@ -22,3 +22,11 @@ for i in range(length):
     array.append(value)
 
 print(f"Your array has become : {array} and now doing the operations on it.")
+def reverse_array(arr, left, right):
+    if left >= right:
+        return
+    arr[left], arr[right] = arr[right], arr[left]
+    reverse_array(arr, left + 1, right - 1)
+
+reverse_array(array, 0, len(array) - 1)
+print(array)

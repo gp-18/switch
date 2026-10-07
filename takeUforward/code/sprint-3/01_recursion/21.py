@@ -17,3 +17,11 @@
 s = input("Enter the string : ")
 
 print(f"Your string is : '{s}' and now doing the operations on it.")
+def print_string_forward(s, index=0):
+    if index >= len(s):
+        return
+    print(s[index], end=" ")
+    print_string_forward(s, index + 1)
+
+print_string_forward(s, 0)
+print()
