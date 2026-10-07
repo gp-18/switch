@@ -1,0 +1,19 @@
+# Nth Fibonacci number
+# Given an integer `n`, return the nth Fibonacci number using recursion (F(0)=0, F(1)=1).
+#
+# Example 1:
+# Input: n = 4
+# Output: 3
+#
+# Example 2:
+# Input: n = 0
+# Output: 0
+#
+# Example 3 (Edge Case):
+# Input: n = 6
+# Output: 8
+#
+
+n = int(input("Enter the value of n : "))
+
+print(f"n is : {n} and now doing the operations on it.")

@@ -1,0 +1,19 @@
+# Print N to 1 using recursion
+# Given an integer `n`, print numbers from `n` down to `1` using tail recursion.
+#
+# Example 1:
+# Input: n = 5
+# Output: 5 4 3 2 1
+#
+# Example 2:
+# Input: n = 1
+# Output: 1
+#
+# Example 3 (Edge Case):
+# Input: n = 3
+# Output: 3 2 1
+#
+
+n = int(input("Enter the value of n : "))
+
+print(f"n is : {n} and now doing the operations on it.")
