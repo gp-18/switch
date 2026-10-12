@@ -152,7 +152,7 @@ Output: [9, 3, 7, 8]
 * **Optimal Reversal Algorithm ($\mathcal{O}(1)$ extra space):**
   1. Reverse the first `k` elements: `reverse(0, k - 1)`
   2. Reverse the remaining `N - k` elements: `reverse(k, N - 1)`
-  3.  
+  3. Reverse the all array: `reverse(0, N - 1)`
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space.
 
