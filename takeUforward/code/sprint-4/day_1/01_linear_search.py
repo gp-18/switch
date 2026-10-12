@@ -28,5 +28,33 @@ k = int(input("Enter the target element k to search : "))
 
 print(f"Your array has become : {array}, target is : {k} and now doing the operations on it.")
 
-# Write your solution below
+def linear_search(nums, target):
+    """
+    Search for target in nums using the Linear Search algorithm.
+    Iterates sequentially through each element until target is found.
+    
+    Time Complexity:
+    - Best Case: O(1) (target is at the first index)
+    - Average/Worst Case: O(N) (target is at the end or absent)
+    Space Complexity: O(1) (no extra memory used)
+    """
+    # Traverse through all elements from index 0 to len(nums) - 1
+    for i in range(len(nums)):
+        # Check if the current element matches the target
+        if nums[i] == target:
+            # Match found! Return the 0-based index immediately
+            return i
+            
+    # If the loop finishes without finding the target, it does not exist
+    return -1
+
+
+# Call the function and display the result
+index = linear_search(array, k)
+
+if index != -1:
+    print(f"Result: Element {k} found at index {index}.")
+else:
+    print(f"Result: Element {k} not found in the array (returned {index}).")
+
 

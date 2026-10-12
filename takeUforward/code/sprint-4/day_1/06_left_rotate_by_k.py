@@ -30,5 +30,56 @@ k = int(input("Enter the number of places k to rotate left : "))
 
 print(f"Your array has become : {array}, k is : {k} and now doing the operations on it.")
 
-# Write your solution below
+def reverse_subarray(nums, start, end):
+    """
+    Helper function to reverse elements of nums from index `start` to `end` in-place
+    using two opposite-end pointers.
+    """
+    while start < end:
+        nums[start], nums[end] = nums[end], nums[start]
+        start += 1
+        end -= 1
+
+
+def left_rotate_by_k(nums, k):
+    """
+    Rotates array nums to the left by k positions in-place using the Optimal Reversal Algorithm.
+    
+    How it works:
+    Let nums = [1, 2, 3, 4, 5, 6, 7] and k = 2:
+    - Step 1: Reverse first k elements (index 0 to k-1):
+              [1, 2] -> [2, 1], array becomes [2, 1, 3, 4, 5, 6, 7]
+    - Step 2: Reverse remaining n-k elements (index k to n-1):
+              [3, 4, 5, 6, 7] -> [7, 6, 5, 4, 3], array becomes [2, 1, 7, 6, 5, 4, 3]
+    - Step 3: Reverse the entire array (index 0 to n-1):
+              [2, 1, 7, 6, 5, 4, 3] -> [3, 4, 5, 6, 7, 1, 2]
+              
+    Time Complexity: O(N) (k/2 + (n-k)/2 + n/2 = N swaps total)
+    Space Complexity: O(1) auxiliary space (in-place)
+    """
+    n = len(nums)
+    if n <= 1:
+        return nums
+
+    # Rotating by n brings the array back to itself, so reduce k
+    k = k % n
+    if k == 0:
+        return nums
+
+    # 1. Reverse the first k elements: [0 .. k-1]
+    reverse_subarray(nums, 0, k - 1)
+
+    # 2. Reverse the remaining elements: [k .. n-1]
+    reverse_subarray(nums, k, n - 1)
+
+    # 3. Reverse the whole array: [0 .. n-1]
+    reverse_subarray(nums, 0, n - 1)
+
+    return nums
+
+
+# Call the function (modifies the array in-place) and display the result
+rotated = left_rotate_by_k(array, k)
+print(f"Result: Array after left rotation by {k} places: {rotated}")
+
 

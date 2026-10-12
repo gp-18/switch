@@ -26,5 +26,35 @@ for i in range(length):
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
-# Write your solution below
+def find_largest_element(nums):
+    """
+    Find and return the largest element in the array using a single linear scan.
+    
+    Why not sort first?
+    Sorting takes O(N log N) time, whereas a single pass takes only O(N) time.
+    
+    Time Complexity: O(N) (we inspect each element once)
+    Space Complexity: O(1) (only one variable max_val is stored)
+    """
+    # Edge case: If array is empty
+    if not nums:
+        return None
+
+    # Step 1: Assume the first element is the largest so far
+    max_val = nums[0]
+
+    # Step 2: Iterate through the rest of the array starting from index 1
+    for i in range(1, len(nums)):
+        # If the current element is greater than our current max_val, update it
+        if nums[i] > max_val:
+            max_val = nums[i]
+
+    # Step 3: Return the largest element found
+    return max_val
+
+
+# Call the function and display the result
+largest = find_largest_element(array)
+print(f"Result: Largest element in the array is: {largest}")
+
 

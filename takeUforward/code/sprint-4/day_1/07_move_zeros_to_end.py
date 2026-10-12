@@ -27,5 +27,48 @@ for i in range(length):
 
 print(f"Your array has become : {array} and now doing the operations on it.")
 
-# Write your solution below
+def move_zeros_to_end(nums):
+    """
+    Move all 0s to the end of nums in-place while keeping non-zeros in relative order.
+    
+    Two-Pointer Logic:
+    1. Find the index `j` of the first 0.
+       If there is no 0 in the entire array, nothing needs to move!
+    2. Iterate `i` from `j + 1` to `N - 1`:
+       - If nums[i] is non-zero, swap nums[i] with nums[j].
+       - Increment `j` by 1. Now nums[j] is once again pointing to a 0 ready for the next non-zero.
+       
+    Time Complexity: O(N) (at most one full traversal to find first zero + one traversal to swap)
+    Space Complexity: O(1) in-place auxiliary space
+    """
+    n = len(nums)
+    if n <= 1:
+        return nums
+
+    # Step 1: Locate the index of the first zero
+    j = -1
+    for idx in range(n):
+        if nums[idx] == 0:
+            j = idx
+            break
+
+    # If no zeros are present, array is already in required order
+    if j == -1:
+        return nums
+
+    # Step 2: Swap subsequent non-zero elements with the zero at index j
+    for i in range(j + 1, n):
+        if nums[i] != 0:
+            # Swap non-zero element with the zero at index j
+            nums[i], nums[j] = nums[j], nums[i]
+            # Advance j to the next zero
+            j += 1
+
+    return nums
+
+
+# Call the function (modifies the array in-place) and display the result
+result = move_zeros_to_end(array)
+print(f"Result: Array after moving zeros to end: {result}")
+
 
