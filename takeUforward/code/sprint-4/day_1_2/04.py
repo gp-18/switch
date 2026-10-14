@@ -36,3 +36,18 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+low = 0 
+high = len(array) - 1
+result_list = []
+
+while low < high :
+    
+    result_list.append(array[low] + array[high])
+    
+    low += 1
+    high -= 1
+
+if low == high:
+    result_list.append(array[low])
+
+print(f"Resultant list : {result_list}")

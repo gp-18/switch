@@ -35,3 +35,9 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+reverse_array = list(reversed(array))
+
+if array == reverse_array:
+    print("True")
+else:
+    print("False")

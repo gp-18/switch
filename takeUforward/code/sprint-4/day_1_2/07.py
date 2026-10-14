@@ -39,3 +39,18 @@ print(f"Your array has become : {array}, target is : {target} and now doing the 
 
 # Write your solution below
 
+
+low_index = 0
+high_index = len(array) - 1
+count = 0
+
+while low_index < high_index:
+    current_sum = array[low_index] + array[high_index]
+
+    if current_sum < target:
+        count += high_index - low_index
+        low_index += 1
+    else:
+        high_index -= 1
+
+print(f"Count of pairs: {count}")

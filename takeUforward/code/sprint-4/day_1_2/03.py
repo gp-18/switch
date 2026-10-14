@@ -37,3 +37,12 @@ print(f"Your array has become : {array}, L = {L}, R = {R} and now doing the oper
 
 # Write your solution below
 
+left = L 
+right = R 
+
+while left < right : 
+    array[left] , array[right] = array[right] , array[left]
+    left += 1
+    right -= 1
+
+print(f"Array after reversal of sub-array : {array}")

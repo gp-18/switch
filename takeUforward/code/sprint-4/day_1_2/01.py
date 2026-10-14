@@ -33,4 +33,12 @@ for i in range(length):
 print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
+low = 0 
+high = len(array) -1
 
+while low < high:
+    array[low] , array[high] = array[high] , array[low]
+    low += 1
+    high -= 1
+
+print(f"Resultant array after reversal : {array}")
