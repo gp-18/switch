@@ -34,3 +34,12 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+slow = 0 
+
+for i in range(len(array)) : 
+
+    if array[i] != 0 :
+        array[slow], array[i] = array[i], array[slow]
+        slow += 1 
+
+print("Array after moving zeros to the end : ", array) 

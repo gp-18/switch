@@ -39,3 +39,21 @@ print(f"Your array has become : {array}, diff is : {diff} and now doing the oper
 
 # Write your solution below
 
+i = 0
+j = 1
+found = False
+
+while i < len(array) and j < len(array):
+    if i == j:
+        j += 1
+        continue
+    current_diff = array[j] - array[i]
+    if current_diff == diff:
+        found = True
+        break
+    elif current_diff < diff:
+        j += 1
+    else:
+        i += 1
+
+print(found)

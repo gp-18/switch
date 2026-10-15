@@ -37,3 +37,15 @@ print(f"Your array has become : {array}, val to remove is : {val} and now doing 
 
 # Write your solution below
 
+
+start = 0 
+
+for value in array : 
+    if value != val :
+        array[start] = value 
+        start += 1
+
+new_array = array[:start]
+
+print("Number of elements remaining:", start)
+print("Array after removing the element:", new_array)

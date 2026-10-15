@@ -42,3 +42,28 @@ print(f"Array 2 : {array2} and now doing the operations on them.")
 
 # Write your solution below
 
+i = 0
+j = 0
+union = []
+
+while i < len(array1) and j < len(array2):
+    if array1[i] <= array2[j]:
+        if len(union) == 0 or union[-1] != array1[i]:
+            union.append(array1[i])
+        i += 1
+    else:
+        if len(union) == 0 or union[-1] != array2[j]:
+            union.append(array2[j])
+        j += 1
+
+while i < len(array1):
+    if len(union) == 0 or union[-1] != array1[i]:
+        union.append(array1[i])
+    i += 1
+
+while j < len(array2):
+    if len(union) == 0 or union[-1] != array2[j]:
+        union.append(array2[j])
+    j += 1
+
+print("Union of the two arrays :", union)

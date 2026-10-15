@@ -41,3 +41,24 @@ print(f"Array 2 : {array2} and now doing the operations on them.")
 
 # Write your solution below
 
+i = 0
+j = 0
+merged = []
+
+while i < len(array1) and j < len(array2):
+    if array1[i] <= array2[j]:
+        merged.append(array1[i])
+        i += 1
+    else:
+        merged.append(array2[j])
+        j += 1
+
+while i < len(array1):
+    merged.append(array1[i])
+    i += 1
+
+while j < len(array2):
+    merged.append(array2[j])
+    j += 1
+
+print("Merged array :", merged)

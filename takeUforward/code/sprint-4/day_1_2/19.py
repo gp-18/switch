@@ -42,3 +42,15 @@ print(f"Array b : {array_b} and now doing the operations on them.")
 
 # Write your solution below
 
+i = 0
+j = 0
+
+while i < len(array_a) and j < len(array_b):
+    if array_a[i] == array_b[j]:
+        i += 1
+    j += 1
+
+if i == len(array_a):
+    print(True)
+else:
+    print(False)

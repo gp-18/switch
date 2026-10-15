@@ -24,14 +24,37 @@
 # - Space Complexity: O(N) for result array, O(1) auxiliary space
 #
 
-length = int(input("Enter the length of the sorted array : "))
+
+length = int(input("Enter the length of the sorted array: "))
 array = []
 
 for i in range(length):
-    value = int(input(f"Enter the value to insert at index {i} : "))
+    value = int(input(f"Enter the value to insert at index {i}: "))
     array.append(value)
 
-print(f"Your array has become : {array} and now doing the operations on it.")
+print(f"Your array has become: {array}")
 
 # Write your solution below
+
+low = 0
+high = len(array) - 1
+
+result = [0] * length
+pos = length - 1
+
+while low <= high:
+    left_square = array[low] ** 2
+    right_square = array[high] ** 2
+
+    if left_square > right_square:
+        result[pos] = left_square
+        low += 1
+    else:
+        result[pos] = right_square
+        high -= 1
+
+    pos -= 1
+
+print("Sorted squares:", result)
+
 

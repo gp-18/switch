@@ -37,3 +37,11 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+start = 1 
+for i in range(1,len(array)) : 
+    if array[i] != array[i-1] : 
+        array[start] = array[i] 
+        start += 1 
+
+print("Array after removing duplicates : ", array[:start]) 
+    

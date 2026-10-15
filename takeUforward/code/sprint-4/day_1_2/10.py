@@ -34,3 +34,13 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+
+start = 0 
+
+for i in range(len(array)) :
+
+    if array[i] == 0 : 
+        array[start], array[i] = array[i], array[start]
+        start += 1 
+
+print("Array after segregation : ", array)

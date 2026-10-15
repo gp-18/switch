@@ -35,3 +35,15 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+left = 0
+for value in range(len(array)):
+    
+    if array[left] % 2 == 0:
+        left += 1
+
+    if left <= value and array[value] % 2 == 0:
+        array[left], array[value] = array[value], array[left]
+        left += 1
+    
+
+print("Array after sorting by parity:", array)

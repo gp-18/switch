@@ -35,3 +35,20 @@ print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below
 
+if len(array) < 3:
+    print(False)
+
+else:
+    left = 0
+    right = len(array) - 1
+    
+    while left + 1 < len(array) and array[left] < array[left + 1]:
+        left += 1
+
+    while right - 1 >= 0 and array[right] < array[right - 1]:
+        right -= 1
+
+    if left == right and left != 0 and right != len(array) - 1:
+        print(True)
+    else:
+        print(False)
