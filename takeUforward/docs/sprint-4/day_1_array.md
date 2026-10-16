@@ -21,7 +21,7 @@ Output: -1
 * **Time Complexity:** $\mathcal{O}(N)$ worst/average case, $\mathcal{O}(1)$ best case.
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space.
 
-**File:** `01_linear_search.py`
+**File:** [01_linear_search.py](../../code/sprint-4/day_1/01_linear_search.py)
 
 ---
 
@@ -47,7 +47,7 @@ Output: 10
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$
 
-**File:** `02_largest_element.py`
+**File:** [02_largest_element.py](../../code/sprint-4/day_1/02_largest_element.py)
 
 ---
 
@@ -75,7 +75,7 @@ Output: -1
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$
 
-**File:** `03_second_largest.py`
+**File:** [03_second_largest.py](../../code/sprint-4/day_1/03_second_largest.py)
 
 ---
 
@@ -102,7 +102,7 @@ Output: 2
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$
 
-**File:** `04_max_consecutive_ones.py`
+**File:** [04_max_consecutive_ones.py](../../code/sprint-4/day_1/04_max_consecutive_ones.py)
 
 ---
 
@@ -128,7 +128,7 @@ Output: [3]
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ extra space.
 
-**File:** `05_left_rotate_by_one.py`
+**File:** [05_left_rotate_by_one.py](../../code/sprint-4/day_1/05_left_rotate_by_one.py)
 
 ---
 
@@ -156,7 +156,7 @@ Output: [9, 3, 7, 8]
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space.
 
-**File:** `06_left_rotate_by_k.py`
+**File:** [06_left_rotate_by_k.py](../../code/sprint-4/day_1/06_left_rotate_by_k.py)
 
 ---
 
@@ -183,7 +183,7 @@ Output: [1, 0, 0]
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ in-place.
 
-**File:** `07_move_zeros_to_end.py`
+**File:** [07_move_zeros_to_end.py](../../code/sprint-4/day_1/07_move_zeros_to_end.py)
 
 ---
 
@@ -210,7 +210,7 @@ Output: k = 5, nums = [0, 1, 2, 3, 4, _, _, _, _, _]
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space.
 
-**File:** `08_remove_duplicates.py`
+**File:** [08_remove_duplicates.py](../../code/sprint-4/day_1/08_remove_duplicates.py)
 
 ---
 
@@ -239,7 +239,7 @@ Output: 3  # Range [1, 5], missing number is 3
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$
 
-**File:** `09_missing_number.py`
+**File:** [09_missing_number.py](../../code/sprint-4/day_1/09_missing_number.py)
 
 ---
 
@@ -268,7 +268,7 @@ Output: [1, 2, 3, 4, 5]
 * **Time Complexity:** $\mathcal{O}(N + M)$
 * **Space Complexity:** $\mathcal{O}(N + M)$ for the output array.
 
-**File:** `10_union_sorted_arrays.py`
+**File:** [10_union_sorted_arrays.py](../../code/sprint-4/day_1/10_union_sorted_arrays.py)
 
 ---
 
@@ -296,4 +296,4 @@ Output: []
 * **Time Complexity:** $\mathcal{O}(N + M)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space (excluding output array).
 
-**File:** `11_intersection_sorted_arrays.py`
+**File:** [11_intersection_sorted_arrays.py](../../code/sprint-4/day_1/11_intersection_sorted_arrays.py)

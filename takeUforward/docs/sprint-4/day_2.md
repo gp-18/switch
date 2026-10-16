@@ -30,7 +30,7 @@ Output: -1
 * **Time Complexity:** $\mathcal{O}(N)$ using Boyer-Moore, $\mathcal{O}(N \log N)$ using sorting.
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space.
 
-**File:** `01.py`
+**File:** [01.py](../../code/sprint-4/day_2/01.py)
 
 ---
 
@@ -62,7 +62,7 @@ Output: [10]
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space (excluding the output list).
 
-**File:** `02.py`
+**File:** [02.py](../../code/sprint-4/day_2/02.py)
 
 ---
 
@@ -98,7 +98,7 @@ Output: [3, -2]
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(N)$ for output array, $\mathcal{O}(1)$ auxiliary space.
 
-**File:** `03.py`
+**File:** [03.py](../../code/sprint-4/day_2/03.py)
 
 ---
 
@@ -139,4 +139,4 @@ Output: [0, 1]
   * **Time Complexity:** $\mathcal{O}(N)$
   * **Space Complexity:** $\mathcal{O}(N)$ auxiliary space for the hash map.
 
-**File:** `04.py`
+**File:** [04.py](../../code/sprint-4/day_2/04.py)

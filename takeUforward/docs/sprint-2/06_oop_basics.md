@@ -1,6 +1,8 @@
 # 10 Practice Questions: Attributes and Methods (BankAccount in Python)
 
 ## Q1. Create the class and getters
+
+**File:** [01.py](../../code/sprint-2/06_oop_basics/01.py)
 **Task:** Create `BankAccount` with private attributes `__name` and `__balance`, set in `__init__`. Add `getName()` and `getBalance()`.
 
 ```python
@@ -10,6 +12,8 @@ assert acc.getBalance() == 1000
 ```
 
 ## Q2. Setter with validation
+
+**File:** [02.py](../../code/sprint-2/06_oop_basics/02.py)
 **Task:** Add `setName(name)`. Reject empty or whitespace-only names with `ValueError`, and non-strings with `TypeError`. Strip extra spaces before saving.
 
 ```python
@@ -20,6 +24,8 @@ assert acc.getName() == "Rahul"
 ```
 
 ## Q3. Deposit
+
+**File:** [03.py](../../code/sprint-2/06_oop_basics/03.py)
 **Task:** Add `deposit(amount)`. Amount must be a positive number. Otherwise raise `ValueError`. Return the new balance.
 
 ```python
@@ -30,6 +36,8 @@ assert acc.deposit(500) == 1500
 ```
 
 ## Q4. Withdraw
+
+**File:** [04.py](../../code/sprint-2/06_oop_basics/04.py)
 **Task:** Add `withdraw(amount)`. If the amount is more than the balance, print `"Insufficient amount"` and return `False`. Otherwise subtract and return `True`. Reject zero or negative amounts with `ValueError`.
 
 ```python
@@ -41,6 +49,8 @@ assert acc.getBalance() == 700   # unchanged
 ```
 
 ## Q5. Is private really private?
+
+**File:** [05.py](../../code/sprint-2/06_oop_basics/05.py)
 **Task:** Try `print(acc.__balance)` and observe the error. Then find the real attribute name Python created (hint: run `print(acc.__dict__)`) and read the balance through it. Write 3 lines in a comment explaining what you learned.
 
 ```python
@@ -53,6 +63,8 @@ print(acc._BankAccount__balance)  # works
 **Goal:** Understand name mangling. `__balance` becomes `_BankAccount__balance`. It stops accidents, not determined access, so Python privacy is by convention.
 
 ## Q6. Default values and safe initialisation
+
+**File:** [06.py](../../code/sprint-2/06_oop_basics/06.py)
 **Task:** Make `balance` default to `0` in `__init__`. Reject a negative starting balance with `ValueError`. Reuse your `setName` validation inside `__init__` so the rules live in one place.
 
 ```python
@@ -63,6 +75,8 @@ assert acc.getBalance() == 0
 ```
 
 ## Q7. String representation
+
+**File:** [07.py](../../code/sprint-2/06_oop_basics/07.py)
 **Task:** Add `__str__` (friendly text for users) and `__repr__` (unambiguous text for developers). Never expose more than name and balance.
 
 ```python
@@ -72,6 +86,8 @@ assert repr(acc) == "BankAccount(name='Parth', balance=1000)"
 ```
 
 ## Q8. Transaction history
+
+**File:** [08.py](../../code/sprint-2/06_oop_basics/08.py)
 **Task:** Add a private list `__history`. Every successful deposit or withdrawal appends a tuple like `("deposit", 500)`. Add `getHistory()` that returns a **copy** of the list so outside code cannot change it.
 
 ```python
@@ -85,6 +101,8 @@ assert len(acc.getHistory()) == 2   # original not affected
 ```
 
 ## Q9. Replace getters and setters with `@property`
+
+**File:** [09.py](../../code/sprint-2/06_oop_basics/09.py)
 **Task:** Rewrite the class the Pythonic way. `name` gets a getter and a validating setter. `balance` gets a getter only (read-only).
 
 ```python
@@ -98,6 +116,8 @@ assert acc.balance == 1000
 **Goal:** Know why Python prefers `@property` over `getX()` / `setX()`.
 
 ## Q10. Class attribute, instance attribute and transfer
+
+**File:** [10.py](../../code/sprint-2/06_oop_basics/10.py)
 **Task:**
 - Add a class attribute `bank_name = "PyBank"` and a class attribute `total_accounts = 0` that increases every time an account is created.
 - Add `transfer(self, other, amount)` that withdraws from `self` and deposits into `other`. If the withdrawal fails, nothing changes anywhere and it returns `False`.

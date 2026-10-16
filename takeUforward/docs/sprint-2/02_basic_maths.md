@@ -16,7 +16,7 @@ Output: 5
 * How can you remove the last digit?
 * What happens when you repeatedly divide by 10?
 
-**File:** `01_count_digits.py`
+**File:** [01_count_digits.py](../../code/sprint-2/02_basic_maths/01_count_digits.py)
 
 ---
 
@@ -36,7 +36,7 @@ Output: 3
 * How do you extract the last digit?
 * How do you check whether a digit is odd?
 
-**File:** `02_count_odd_digits.py`
+**File:** [02_count_odd_digits.py](../../code/sprint-2/02_basic_maths/02_count_odd_digits.py)
 
 ---
 
@@ -55,7 +55,7 @@ Output: 54321
 
 How can you construct the reversed number one digit at a time?
 
-**File:** `03_reverse_number.py`
+**File:** [03_reverse_number.py](../../code/sprint-2/02_basic_maths/03_reverse_number.py)
 
 ---
 
@@ -75,7 +75,7 @@ Input:  123
 Output: False
 ```
 
-**File:** `04_palindrome_number.py`
+**File:** [04_palindrome_number.py](../../code/sprint-2/02_basic_maths/04_palindrome_number.py)
 
 ---
 
@@ -94,7 +94,7 @@ Output: 8
 
 Keep track of the largest digit seen so far.
 
-**File:** `05_largest_digit.py`
+**File:** [05_largest_digit.py](../../code/sprint-2/02_basic_maths/05_largest_digit.py)
 
 ---
 
@@ -115,7 +115,7 @@ Input: 5
 Output: 120
 ```
 
-**File:** `06_factorial.py`
+**File:** [06_factorial.py](../../code/sprint-2/02_basic_maths/06_factorial.py)
 
 ---
 
@@ -135,7 +135,7 @@ Because:
 1³ + 5³ + 3³ = 153
 ```
 
-**File:** `07_armstrong_number.py`
+**File:** [07_armstrong_number.py](../../code/sprint-2/02_basic_maths/07_armstrong_number.py)
 
 ---
 
@@ -161,7 +161,7 @@ Therefore:
 6 → Perfect Number
 ```
 
-**File:** `08_perfect_number.py`
+**File:** [08_perfect_number.py](../../code/sprint-2/02_basic_maths/08_perfect_number.py)
 
 ---
 
@@ -182,7 +182,7 @@ A prime number has exactly two factors:
 1 and itself
 ```
 
-**File:** `09_prime_number.py`
+**File:** [09_prime_number.py](../../code/sprint-2/02_basic_maths/09_prime_number.py)
 
 ---
 
@@ -215,7 +215,7 @@ Then think:
 
 > Can I determine all primes together instead of repeatedly checking each number?
 
-**File:** `10_count_primes.py`
+**File:** [10_count_primes.py](../../code/sprint-2/02_basic_maths/10_count_primes.py)
 
 ---
 
@@ -233,7 +233,7 @@ Output:
 6
 ```
 
-**File:** `11_gcd.py`
+**File:** [11_gcd.py](../../code/sprint-2/02_basic_maths/11_gcd.py)
 
 ---
 
@@ -260,7 +260,7 @@ GCD
 LCM
 ```
 
-**File:** `12_lcm.py`
+**File:** [12_lcm.py](../../code/sprint-2/02_basic_maths/12_lcm.py)
 
 ---
 
@@ -285,7 +285,7 @@ Ask:
 
 > If `i` divides `n`, what other divisor can I immediately find?
 
-**File:** `13_divisors.py`
+**File:** [13_divisors.py](../../code/sprint-2/02_basic_maths/13_divisors.py)
 
 ---
 
@@ -300,7 +300,7 @@ Input: 12345
 Output: 15
 ```
 
-**File:** `14_sum_digits.py`
+**File:** [14_sum_digits.py](../../code/sprint-2/02_basic_maths/14_sum_digits.py)
 
 ---
 
@@ -313,7 +313,7 @@ Input: 1234
 Output: 24
 ```
 
-**File:** `15_product_digits.py`
+**File:** [15_product_digits.py](../../code/sprint-2/02_basic_maths/15_product_digits.py)
 
 ---
 
@@ -326,7 +326,7 @@ Input: 123456
 Output: 3
 ```
 
-**File:** `16_count_even_digits.py`
+**File:** [16_count_even_digits.py](../../code/sprint-2/02_basic_maths/16_count_even_digits.py)
 
 ---
 
@@ -341,7 +341,7 @@ Digit: 3
 Output: 3
 ```
 
-**File:** `17_digit_frequency.py`
+**File:** [17_digit_frequency.py](../../code/sprint-2/02_basic_maths/17_digit_frequency.py)
 
 ---
 
@@ -356,7 +356,7 @@ Remove: 2
 Output: 134
 ```
 
-**File:** `18_remove_digit.py`
+**File:** [18_remove_digit.py](../../code/sprint-2/02_basic_maths/18_remove_digit.py)
 
 ---
 
@@ -369,7 +369,7 @@ Input: 12345
 Output: 52341
 ```
 
-**File:** `19_swap_first_last.py`
+**File:** [19_swap_first_last.py](../../code/sprint-2/02_basic_maths/19_swap_first_last.py)
 
 ---
 
@@ -384,7 +384,7 @@ Input: 12000
 Output: 3
 ```
 
-**File:** `20_trailing_zeros.py`
+**File:** [20_trailing_zeros.py](../../code/sprint-2/02_basic_maths/20_trailing_zeros.py)
 
 ---
 
@@ -406,7 +406,7 @@ First think about a simple repeated multiplication solution.
 
 Then think about whether you can reduce the number of multiplications.
 
-**File:** `21_power.py`
+**File:** [21_power.py](../../code/sprint-2/02_basic_maths/21_power.py)
 
 ---
 
@@ -425,7 +425,7 @@ Examples:
 10  → False
 ```
 
-**File:** `22_power_of_two.py`
+**File:** [22_power_of_two.py](../../code/sprint-2/02_basic_maths/22_power_of_two.py)
 
 ---
 
@@ -441,7 +441,7 @@ Example:
 Number of set bits = 2
 ```
 
-**File:** `23_count_set_bits.py`
+**File:** [23_count_set_bits.py](../../code/sprint-2/02_basic_maths/23_count_set_bits.py)
 
 ---
 
@@ -457,7 +457,7 @@ Sequence:
 0, 1, 1, 2, 3, 5, 8, 13...
 ```
 
-**File:** `24_fibonacci.py`
+**File:** [24_fibonacci.py](../../code/sprint-2/02_basic_maths/24_fibonacci.py)
 
 ---
 
@@ -485,7 +485,7 @@ Then ask:
 
 > Is there a mathematical formula?
 
-**File:** `25_sum_1_to_n.py`
+**File:** [25_sum_1_to_n.py](../../code/sprint-2/02_basic_maths/25_sum_1_to_n.py)
 
 ---
 
@@ -509,7 +509,7 @@ Therefore:
 5 → Automorphic
 ```
 
-**File:** `26_automorphic.py`
+**File:** [26_automorphic.py](../../code/sprint-2/02_basic_maths/26_automorphic.py)
 
 ---
 
@@ -528,7 +528,7 @@ Proper divisors:
 16 > 12
 ```
 
-**File:** `27_abundant.py`
+**File:** [27_abundant.py](../../code/sprint-2/02_basic_maths/27_abundant.py)
 
 ---
 
@@ -550,7 +550,7 @@ GCD = 1
 Therefore → Coprime
 ```
 
-**File:** `28_coprime.py`
+**File:** [28_coprime.py](../../code/sprint-2/02_basic_maths/28_coprime.py)
 
 ---
 
@@ -576,7 +576,7 @@ Output:
 
 Instead of testing every possible factor repeatedly, use the fact that factors can be processed from the smallest upward.
 
-**File:** `29_prime_factorization.py`
+**File:** [29_prime_factorization.py](../../code/sprint-2/02_basic_maths/29_prime_factorization.py)
 
 ---
 
@@ -606,5 +606,7 @@ Use the Sieve of Eratosthenes.
 ```
 
 This problem is important because it introduces a classic optimization pattern.
+
+**File:** [30_primes_up_to_n.py](../../code/sprint-2/02_basic_maths/30_primes_up_to_n.py)
 
 

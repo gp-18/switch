@@ -376,7 +376,7 @@ Output: [7]  # A single element remains unchanged
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `01_reverse_array.py`
+**File:** [01.py](../../code/sprint-4/day_1_2/01.py)
 
 ---
 
@@ -407,7 +407,7 @@ Output: True  # Single element is always a palindrome
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `02_is_array_palindrome.py`
+**File:** [02.py](../../code/sprint-4/day_1_2/02.py)
 
 ---
 
@@ -436,7 +436,7 @@ Output: [4, 5, 6]  # Subarray of length 1 stays unchanged
 * **Time Complexity:** $\mathcal{O}(R - L + 1) \subseteq \mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `03_reverse_subarray.py`
+**File:** [03.py](../../code/sprint-4/day_1_2/03.py)
 
 ---
 
@@ -467,7 +467,7 @@ Output: [9]  # Single element middle
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(N)$ for the output list
 
-**File:** `04_sum_mirror_pairs.py`
+**File:** [04.py](../../code/sprint-4/day_1_2/04.py)
 
 ---
 
@@ -498,7 +498,7 @@ Output: [1, 2]  # -5 + -2 = -7
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `05_two_sum_sorted.py`
+**File:** [05.py](../../code/sprint-4/day_1_2/05.py)
 
 ---
 
@@ -529,7 +529,7 @@ Output: 0  # No pair sums to 15
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `06_count_pairs_sorted.py`
+**File:** [06.py](../../code/sprint-4/day_1_2/06.py)
 
 ---
 
@@ -561,7 +561,7 @@ Output: 0  # Smallest sum is 4 + 5 = 9, none < 5
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `07_count_pairs_less_than_target.py`
+**File:** [07.py](../../code/sprint-4/day_1_2/07.py)
 
 ---
 
@@ -592,7 +592,7 @@ Output: [1, 4, 9, 16, 25]  # All negatives reversed when squared
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(N)$ for result array, $\mathcal{O}(1)$ auxiliary space
 
-**File:** `08_squares_sorted_array.py`
+**File:** [08.py](../../code/sprint-4/day_1_2/08.py)
 
 ---
 
@@ -622,7 +622,7 @@ Output: [2, 4, 6]  # Already all even
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `09_sort_array_by_parity.py`
+**File:** [09.py](../../code/sprint-4/day_1_2/09.py)
 
 ---
 
@@ -652,7 +652,7 @@ Output: [1, 1, 1]  # No zeros present
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `10_segregate_0s_and_1s.py`
+**File:** [10.py](../../code/sprint-4/day_1_2/10.py)
 
 ---
 
@@ -682,7 +682,7 @@ Output: [4, 5, 6]  # No zeros to move
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `11_move_zeros_to_end.py`
+**File:** [11.py](../../code/sprint-4/day_1_2/11.py)
 
 ---
 
@@ -712,7 +712,7 @@ Output: k = 0, nums is empty of valid elements
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `12_remove_element.py`
+**File:** [12.py](../../code/sprint-4/day_1_2/12.py)
 
 ---
 
@@ -744,7 +744,7 @@ Output: k = 1, nums = [5]  # Single element has no duplicates
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `13_remove_duplicates_sorted.py`
+**File:** [13.py](../../code/sprint-4/day_1_2/13.py)
 
 ---
 
@@ -774,7 +774,7 @@ Output: [-4, -2, -1]  # Already all negative
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `14_move_negatives_front.py`
+**File:** [14.py](../../code/sprint-4/day_1_2/14.py)
 
 ---
 
@@ -806,7 +806,7 @@ Output: True  # (5 - 5 = 0 using indices 1 and 2)
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `15_pair_with_difference.py`
+**File:** [15.py](../../code/sprint-4/day_1_2/15.py)
 
 ---
 
@@ -837,7 +837,7 @@ Output: [1, 5, 9]  # One array is empty
 * **Time Complexity:** $\mathcal{O}(N + M)$
 * **Space Complexity:** $\mathcal{O}(N + M)$ for the new output list
 
-**File:** `16_merge_two_sorted_arrays.py`
+**File:** [16.py](../../code/sprint-4/day_1_2/16.py)
 
 ---
 
@@ -868,7 +868,7 @@ Output: [3, 3]  # Min frequency of common element is preserved
 * **Time Complexity:** $\mathcal{O}(N + M)$
 * **Space Complexity:** $\mathcal{O}(\min(N, M))$ for output
 
-**File:** `17_intersection_sorted_arrays.py`
+**File:** [17.py](../../code/sprint-4/day_1_2/17.py)
 
 ---
 
@@ -900,7 +900,7 @@ Output: [1]  # Duplicates collapsed into one
 * **Time Complexity:** $\mathcal{O}(N + M)$
 * **Space Complexity:** $\mathcal{O}(N + M)$ for output
 
-**File:** `18_union_sorted_arrays.py`
+**File:** [18.py](../../code/sprint-4/day_1_2/18.py)
 
 ---
 
@@ -931,7 +931,7 @@ Output: True  # Empty array is always a valid subsequence
 * **Time Complexity:** $\mathcal{O}(\text{len}(b))$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `19_is_subsequence_array.py`
+**File:** [19.py](../../code/sprint-4/day_1_2/19.py)
 
 ---
 
@@ -961,5 +961,5 @@ Output: False  # Length must be at least 3
 * **Time Complexity:** $\mathcal{O}(N)$
 * **Space Complexity:** $\mathcal{O}(1)$ auxiliary space
 
-**File:** `20_valid_mountain_array.py`
+**File:** [20.py](../../code/sprint-4/day_1_2/20.py)
 

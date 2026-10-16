@@ -138,6 +138,8 @@ Only one comparison left between the first two elements:
 
 ## 3. Python Code Implementation
 
+**File:** [02_bubble_sort.py](../../code/sprint-3/02_sorting/02_bubble_sort.py)
+
 ### Standard Bubble Sort
 
 ```python

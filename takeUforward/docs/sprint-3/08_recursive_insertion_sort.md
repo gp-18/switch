@@ -103,6 +103,8 @@ We begin at index $i = 1$:
 
 ## 3. Python Code Implementation
 
+**File:** [07_recursive_insertion_sort.py](../../code/sprint-3/02_sorting/07_recursive_insertion_sort.py)
+
 ```python
 def recursive_insertion_sort(nums, i, n):
     """

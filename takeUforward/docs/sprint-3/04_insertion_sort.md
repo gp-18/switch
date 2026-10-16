@@ -154,6 +154,8 @@ $$\mathbf{[9, 13, 20, 24, 46, 52]}$$
 
 ## 3. Python Code Implementation
 
+**File:** [03_insertion_sort.py](../../code/sprint-3/02_sorting/03_insertion_sort.py)
+
 ```python
 def insertion_sort(nums):
     n = len(nums)

@@ -16,7 +16,7 @@ Output: 15
 * How can you initialize an accumulator variable?
 * How do you iterate through every element in the array?
 
-**File:** `01.py`
+**File:** [01.py](../../code/sprint-2/03_basic_arrays/01.py)
 
 ---
 
@@ -36,7 +36,7 @@ Output: 3  # Odd elements: 1, 3, 5
 * How do you test if an integer is odd using the modulo `%` operator?
 * Keep a running count that increments whenever an odd element is encountered.
 
-**File:** `02.py`
+**File:** [02.py](../../code/sprint-2/03_basic_arrays/02.py)
 
 ---
 
@@ -56,7 +56,7 @@ Output: 3  # Even elements: 2, 4, 6
 * An integer is even if `num % 2 == 0`.
 * Consider how zero and negative numbers behave under `% 2` in Python.
 
-**File:** `03.py`
+**File:** [03.py](../../code/sprint-2/03_basic_arrays/03.py)
 
 ---
 
@@ -76,7 +76,7 @@ Output: [5, 4, 3, 2, 1]
 * Can you reverse the array in-place using two pointers (left and right)?
 * What condition signals that the two pointers have met or crossed?
 
-**File:** `04.py`
+**File:** [04.py](../../code/sprint-2/03_basic_arrays/04.py)
 
 ---
 
@@ -96,7 +96,7 @@ Output: 9
 * What should you initialize your `max_val` to? (Hint: avoid initializing to 0 if negatives exist).
 * Update `max_val` whenever you encounter an element greater than it.
 
-**File:** `05.py`
+**File:** [05.py](../../code/sprint-2/03_basic_arrays/05.py)
 
 ---
 
@@ -116,7 +116,7 @@ Output: 1
 * Initialize your `min_val` to the first element `nums[0]` or infinity.
 * Compare every element against `min_val` and update when smaller.
 
-**File:** `06.py`
+**File:** [06.py](../../code/sprint-2/03_basic_arrays/06.py)
 
 ---
 
@@ -136,7 +136,7 @@ Output: 3.0
 * Average is defined as total sum divided by the number of elements: `sum(nums) / len(nums)`.
 * Watch out for floating point division and division by zero if empty.
 
-**File:** `07.py`
+**File:** [07.py](../../code/sprint-2/03_basic_arrays/07.py)
 
 ---
 
@@ -158,7 +158,7 @@ Output: 2
 * Iterate through the array with index `i` from 0 to `len(nums) - 1`.
 * As soon as `nums[i] == target`, return `i`. If loop finishes without match, return `-1`.
 
-**File:** `08.py`
+**File:** [08.py](../../code/sprint-2/03_basic_arrays/08.py)
 
 ---
 
@@ -178,7 +178,7 @@ Output: {'positive': 3, 'negative': 2, 'zero': 2}
 * Use three separate counters for positive, negative, and zero.
 * Check conditions: `num > 0`, `num < 0`, and `num == 0`.
 
-**File:** `09.py`
+**File:** [09.py](../../code/sprint-2/03_basic_arrays/09.py)
 
 ---
 
@@ -198,7 +198,7 @@ Output: 12  # 2 + 4 + 6 = 12
 * Filter or check each element with `num % 2 == 0`.
 * Add only even numbers to the total sum.
 
-**File:** `10.py`
+**File:** [10.py](../../code/sprint-2/03_basic_arrays/10.py)
 
 ---
 
@@ -218,7 +218,7 @@ Output: 9  # 1 + 3 + 5 = 9
 * An element is odd if `num % 2 != 0`.
 * Add each odd element to an accumulator.
 
-**File:** `11.py`
+**File:** [11.py](../../code/sprint-2/03_basic_arrays/11.py)
 
 ---
 
@@ -238,7 +238,7 @@ Output: 24  # 1 * 2 * 3 * 4 = 24
 * Initialize product accumulator to 1 (not 0).
 * What happens immediately if any element in the array is 0?
 
-**File:** `12.py`
+**File:** [12.py](../../code/sprint-2/03_basic_arrays/12.py)
 
 ---
 
@@ -260,7 +260,7 @@ Output: 90  # nums[0] + nums[2] + nums[4] = 10 + 30 + 50 = 90
 * Iterate by step of 2: `range(0, len(nums), 2)`.
 * Sum elements `nums[i]` for each even index `i`.
 
-**File:** `13.py`
+**File:** [13.py](../../code/sprint-2/03_basic_arrays/13.py)
 
 ---
 
@@ -280,7 +280,7 @@ Output: 60  # nums[1] + nums[3] = 20 + 40 = 60
 * Iterate by step of 2 starting at index 1: `range(1, len(nums), 2)`.
 * What should be returned if the array has only 1 element?
 
-**File:** `14.py`
+**File:** [14.py](../../code/sprint-2/03_basic_arrays/14.py)
 
 ---
 
@@ -300,7 +300,7 @@ Output: 3  # Elements greater than 4: 5, 8, 10
 * Iterate through `nums` and compare `x > k`.
 * Count matches.
 
-**File:** `15.py`
+**File:** [15.py](../../code/sprint-2/03_basic_arrays/15.py)
 
 ---
 
@@ -320,7 +320,7 @@ Output: True
 * Compare adjacent elements: check if `nums[i] <= nums[i+1]` for all `i`.
 * If any `nums[i] > nums[i+1]` is found, return False immediately.
 
-**File:** `16.py`
+**File:** [16.py](../../code/sprint-2/03_basic_arrays/16.py)
 
 ---
 
@@ -340,7 +340,7 @@ Output: True
 * Compare `nums[i]` with `nums[len(nums) - 1 - i]` from both ends inward.
 * Can you do this using two pointers until `left >= right`?
 
-**File:** `17.py`
+**File:** [17.py](../../code/sprint-2/03_basic_arrays/17.py)
 
 ---
 
@@ -362,7 +362,7 @@ Output: 34
 * Can you track both `largest` and `second_largest` in a single pass?
 * Make sure duplicates of the largest element do not count as second largest.
 
-**File:** `18.py`
+**File:** [18.py](../../code/sprint-2/03_basic_arrays/18.py)
 
 ---
 
@@ -382,7 +382,7 @@ Output: 10
 * Maintain `smallest` and `second_smallest` initialized appropriately.
 * Update when an element is between `smallest` and `second_smallest`.
 
-**File:** `19.py`
+**File:** [19.py](../../code/sprint-2/03_basic_arrays/19.py)
 
 ---
 
@@ -402,7 +402,7 @@ Output: True
 * Can you use a hash set to track seen elements in O(N) time?
 * Compare `len(nums) != len(set(nums))`.
 
-**File:** `20.py`
+**File:** [20.py](../../code/sprint-2/03_basic_arrays/20.py)
 
 ---
 
@@ -422,7 +422,7 @@ Output: {1: 1, 2: 2, 3: 3}
 * Use a dictionary or Counter to store element -> count.
 * Iterate through the array and increment counts.
 
-**File:** `21.py`
+**File:** [21.py](../../code/sprint-2/03_basic_arrays/21.py)
 
 ---
 
@@ -442,7 +442,7 @@ Output: 3
 * Maintain a current streak counter and a maximum streak counter.
 * When encountering 1, increment current streak. When 0, reset current streak to 0.
 
-**File:** `22.py`
+**File:** [22.py](../../code/sprint-2/03_basic_arrays/22.py)
 
 ---
 
@@ -464,7 +464,7 @@ Output: 2  # n = 3, range [0, 3], missing is 2
 * The expected sum of numbers from 0 to n is `n * (n + 1) // 2`.
 * Subtract the actual array sum from the expected sum to find the missing number.
 
-**File:** `23.py`
+**File:** [23.py](../../code/sprint-2/03_basic_arrays/23.py)
 
 ---
 
@@ -484,7 +484,7 @@ Output: True
 * Iterate through the array and check if any element is `<= 0`.
 * Remember that 0 is neither positive nor negative.
 
-**File:** `24.py`
+**File:** [24.py](../../code/sprint-2/03_basic_arrays/24.py)
 
 ---
 
@@ -504,7 +504,7 @@ Output: 9  # 10 - 1 = 9
 * Find the maximum element and minimum element in the array.
 * Return `max_val - min_val`.
 
-**File:** `25.py`
+**File:** [25.py](../../code/sprint-2/03_basic_arrays/25.py)
 
 ---
 
@@ -524,7 +524,7 @@ Output: 4
 * Iterate through each element and increment a counter whenever `x == target`.
 * Can also be solved with built-in list count, but implement the traversal logic.
 
-**File:** `26.py`
+**File:** [26.py](../../code/sprint-2/03_basic_arrays/26.py)
 
 ---
 
@@ -546,7 +546,7 @@ Output: True
 * First check if lengths are equal (`len(a) == len(b)`).
 * Compare frequency maps of both arrays or compare sorted versions.
 
-**File:** `27.py`
+**File:** [27.py](../../code/sprint-2/03_basic_arrays/27.py)
 
 ---
 
@@ -566,7 +566,7 @@ Output: 3
 * Track `first`, `second`, and `third` largest distinct values in a single traversal.
 * Ignore duplicates of already seen largest values.
 
-**File:** `28.py`
+**File:** [28.py](../../code/sprint-2/03_basic_arrays/28.py)
 
 ---
 
@@ -586,7 +586,7 @@ Output: 5  # Distinct: 1, 2, 3, 4, 5
 * Can you use a set to collect distinct elements?
 * The size of the set gives the count of distinct elements.
 
-**File:** `29.py`
+**File:** [29.py](../../code/sprint-2/03_basic_arrays/29.py)
 
 ---
 
@@ -606,4 +606,4 @@ Output: 6  # min = 1, max = 5 -> 1 + 5 = 6
 * Find the maximum element and the minimum element.
 * Return `max_element + min_element`.
 
-**File:** `30.py`
+**File:** [30.py](../../code/sprint-2/03_basic_arrays/30.py)

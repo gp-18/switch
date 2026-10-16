@@ -16,7 +16,7 @@ Output: {1: 1, 2: 2, 3: 3}
 * How do you initialize a hash map (dictionary) in Python?
 * For each element `x` in `nums`, update its count with `freq[x] = freq.get(x, 0) + 1`.
 
-**File:** `01.py`
+**File:** [01.py](../../code/sprint-2/04_basic_hashing/01.py)
 
 ---
 
@@ -36,7 +36,7 @@ Output: 1  # Frequency is 3
 * Count frequencies using a dictionary or Counter.
 * Iterate through the frequency map to find the key with maximum count, breaking ties by choosing the minimum key.
 
-**File:** `02.py`
+**File:** [02.py](../../code/sprint-2/04_basic_hashing/02.py)
 
 ---
 
@@ -56,7 +56,7 @@ Output: 2  # Frequencies: 3 -> 3, 2 -> 2, 1 -> 1
 * Find all distinct frequencies and identify the second highest frequency value.
 * Find elements matching this second highest frequency and return the smallest one.
 
-**File:** `03.py`
+**File:** [03.py](../../code/sprint-2/04_basic_hashing/03.py)
 
 ---
 
@@ -76,7 +76,7 @@ Output: 4  # Highest freq = 3 (for 3), Lowest freq = 1 (for 1); Sum = 3 + 1 = 4
 * Build the frequency map of the array.
 * Find `max(freq.values())` and `min(freq.values())`, then compute their sum.
 
-**File:** `04.py`
+**File:** [04.py](../../code/sprint-2/04_basic_hashing/04.py)
 
 ---
 
@@ -96,7 +96,7 @@ Output: 1  # Frequency is 1
 * Build a frequency dictionary.
 * Find the minimum frequency and among all elements with that minimum frequency, return the minimum element.
 
-**File:** `05.py`
+**File:** [05.py](../../code/sprint-2/04_basic_hashing/05.py)
 
 ---
 
@@ -118,7 +118,7 @@ Output: 5  # Distinct: 1, 2, 3, 4, 5
 * How does a hash set handle duplicate insertions?
 * What is the time complexity of converting a list to a set?
 
-**File:** `06.py`
+**File:** [06.py](../../code/sprint-2/04_basic_hashing/06.py)
 
 ---
 
@@ -138,7 +138,7 @@ Output: 3  # Elements appearing once: 1, 3, 5
 * Count frequencies of all elements using a hash map.
 * Count how many keys have `count == 1`.
 
-**File:** `07.py`
+**File:** [07.py](../../code/sprint-2/04_basic_hashing/07.py)
 
 ---
 
@@ -158,7 +158,7 @@ Output: 2  # Elements appearing >1 time: 2, 4
 * Count occurrences of each element.
 * Filter and count keys where `count > 1`.
 
-**File:** `08.py`
+**File:** [08.py](../../code/sprint-2/04_basic_hashing/08.py)
 
 ---
 
@@ -178,7 +178,7 @@ Output: 1
 * How can you use a hash map to find the element with frequency 1?
 * What mathematical or bitwise property (XOR) can also solve this in O(1) space?
 
-**File:** `09.py`
+**File:** [09.py](../../code/sprint-2/04_basic_hashing/09.py)
 
 ---
 
@@ -198,7 +198,7 @@ Output: True
 * Use a hash set to track seen elements while traversing `nums`.
 * If an element is already in the set, return True early.
 
-**File:** `10.py`
+**File:** [10.py](../../code/sprint-2/04_basic_hashing/10.py)
 
 ---
 
@@ -220,7 +220,7 @@ Output: 5  # 5 repeats and appears before 3 repeats
 * Precompute the frequency of each element using a hash map.
 * Iterate through the original array in order: the first element with `freq[x] > 1` is the answer.
 
-**File:** `11.py`
+**File:** [11.py](../../code/sprint-2/04_basic_hashing/11.py)
 
 ---
 
@@ -240,7 +240,7 @@ Output: 5  # 5 is the first element with frequency 1
 * Count frequencies of all elements in the first pass.
 * In a second pass through `nums`, return the first element where `freq[x] == 1`.
 
-**File:** `12.py`
+**File:** [12.py](../../code/sprint-2/04_basic_hashing/12.py)
 
 ---
 
@@ -260,7 +260,7 @@ Output: [3, 2, 0]
 * Build a frequency hash map from `nums` in O(N) time.
 * Answer each query in O(1) time using `freq.get(q, 0)`.
 
-**File:** `13.py`
+**File:** [13.py](../../code/sprint-2/04_basic_hashing/13.py)
 
 ---
 
@@ -280,7 +280,7 @@ Output: 4  # Pairs: (0,3), (0,4), (3,4) for 1s; (2,5) for 3s -> 3 + 1 = 4
 * If an element appears `k` times, the number of pairs formed by this element is `k * (k - 1) // 2`.
 * Alternatively, update the pair count while building the frequency map in a single pass.
 
-**File:** `14.py`
+**File:** [14.py](../../code/sprint-2/04_basic_hashing/14.py)
 
 ---
 
@@ -300,7 +300,7 @@ Output: 2  # n = 3, range [0, 3], missing is 2
 * Store all elements of `nums` in a hash set.
 * Iterate `i` from `0` to `n`: the number not in the set is the missing number.
 
-**File:** `15.py`
+**File:** [15.py](../../code/sprint-2/04_basic_hashing/15.py)
 
 ---
 
@@ -322,7 +322,7 @@ Output: {'b': 1, 'a': 3, 'n': 2}
 * Use a dictionary or an array of size 26 / 256 for character hashing.
 * Convert each character to an index using `ord(c) - ord('a')` if characters are lowercase English letters.
 
-**File:** `16.py`
+**File:** [16.py](../../code/sprint-2/04_basic_hashing/16.py)
 
 ---
 
@@ -342,7 +342,7 @@ Output: 'a'  # Frequency is 2 (ties with 'r', 'a' is lexicographically smaller)
 * Build a character frequency dictionary.
 * Find the maximum frequency and break ties by choosing the character with the smallest ASCII value.
 
-**File:** `17.py`
+**File:** [17.py](../../code/sprint-2/04_basic_hashing/17.py)
 
 ---
 
@@ -362,7 +362,7 @@ Output: 'b'  # 'b' has frequency 1
 * Count character frequencies.
 * Find the minimum frequency and return the lexicographically smallest character having that frequency.
 
-**File:** `18.py`
+**File:** [18.py](../../code/sprint-2/04_basic_hashing/18.py)
 
 ---
 
@@ -382,7 +382,7 @@ Output: 'l'  # Index 0 ('l' appears only once)
 * First pass: build frequency map of characters.
 * Second pass: check characters of `s` in original order to find the first one with `count == 1`.
 
-**File:** `19.py`
+**File:** [19.py](../../code/sprint-2/04_basic_hashing/19.py)
 
 ---
 
@@ -402,7 +402,7 @@ Output: 'e'  # 'e' repeats earliest at index 2
 * Use a hash set of seen characters while scanning `s` from left to right.
 * As soon as `c in seen`, return `c` immediately.
 
-**File:** `20.py`
+**File:** [20.py](../../code/sprint-2/04_basic_hashing/20.py)
 
 ---
 
@@ -424,7 +424,7 @@ Output: True
 * If `len(s) != len(t)`, they cannot be anagrams.
 * Compare character count maps of both strings, or increment with `s` and decrement with `t`.
 
-**File:** `21.py`
+**File:** [21.py](../../code/sprint-2/04_basic_hashing/21.py)
 
 ---
 
@@ -444,7 +444,7 @@ Output: True
 * Convert string to lowercase and filter alphabetic characters into a hash set.
 * Check if the size of the set is equal to 26.
 
-**File:** `22.py`
+**File:** [22.py](../../code/sprint-2/04_basic_hashing/22.py)
 
 ---
 
@@ -464,7 +464,7 @@ Output: 4  # Distinct: 'h', 'e', 'l', 'o'
 * Add all characters of `s` to a hash set.
 * The length of the set gives the count of distinct characters.
 
-**File:** `23.py`
+**File:** [23.py](../../code/sprint-2/04_basic_hashing/23.py)
 
 ---
 
@@ -484,7 +484,7 @@ Output: True
 * Check if `len(s) == len(set(s))`.
 * Alternatively, use a boolean visited array/set and return False as soon as a duplicate is found.
 
-**File:** `24.py`
+**File:** [24.py](../../code/sprint-2/04_basic_hashing/24.py)
 
 ---
 
@@ -504,7 +504,7 @@ Output: 'eert'  # 'e' appears twice, 'r' and 't' appear once ('eetr' is also val
 * Count frequencies of each character.
 * Sort characters by their frequency in descending order, then reconstruct the string.
 
-**File:** `25.py`
+**File:** [25.py](../../code/sprint-2/04_basic_hashing/25.py)
 
 ---
 
@@ -526,7 +526,7 @@ Output: True  # Already a palindrome
 * A string can be rearranged into a palindrome if and only if at most one character has an odd frequency.
 * Count frequencies and check how many odd counts exist.
 
-**File:** `26.py`
+**File:** [26.py](../../code/sprint-2/04_basic_hashing/26.py)
 
 ---
 
@@ -546,7 +546,7 @@ Output: 'progami'
 * Maintain a hash set `seen` and a list for output characters.
 * Append character to output only if it is not yet in `seen`.
 
-**File:** `27.py`
+**File:** [27.py](../../code/sprint-2/04_basic_hashing/27.py)
 
 ---
 
@@ -566,7 +566,7 @@ Output: {'vowels': 5, 'consonants': 7}
 * Use a set of vowels `{'a', 'e', 'i', 'o', 'u'}` for O(1) lookup.
 * Check `c.isalpha()` before classifying each character.
 
-**File:** `28.py`
+**File:** [28.py](../../code/sprint-2/04_basic_hashing/28.py)
 
 ---
 
@@ -586,7 +586,7 @@ Output: True  # 'e' -> 'a', 'g' -> 'd'
 * Maintain two mapping dictionaries: `map_s_to_t` and `map_t_to_s`.
 * Verify consistency of mappings at every index.
 
-**File:** `29.py`
+**File:** [29.py](../../code/sprint-2/04_basic_hashing/29.py)
 
 ---
 
@@ -606,4 +606,4 @@ Output: False
 * Count frequencies of letters in `magazine` using a hash map or Counter.
 * For each letter in `ransomNote`, decrement its available count. If count drops below zero, return False.
 
-**File:** `30.py`
+**File:** [30.py](../../code/sprint-2/04_basic_hashing/30.py)

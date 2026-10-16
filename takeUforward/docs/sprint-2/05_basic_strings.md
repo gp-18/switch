@@ -16,7 +16,7 @@ Output: 'olleh'
 * Can you solve this using Python slicing `s[::-1]`?
 * How would you solve this iteratively using a two-pointer approach or building a list?
 
-**File:** `01.py`
+**File:** [01.py](../../code/sprint-2/05_basic_strings/01.py)
 
 ---
 
@@ -36,7 +36,7 @@ Output: {'vowels': 5, 'consonants': 7}
 * Use a set of vowels `{'a', 'e', 'i', 'o', 'u'}` for O(1) lookup.
 * Use `ch.isalpha()` before categorizing characters.
 
-**File:** `02.py`
+**File:** [02.py](../../code/sprint-2/05_basic_strings/02.py)
 
 ---
 
@@ -56,7 +56,7 @@ Output: {'uppercase': 2, 'lowercase': 8}
 * Use `ch.isupper()` and `ch.islower()` methods.
 * Ignore characters that are not alphabetic.
 
-**File:** `03.py`
+**File:** [03.py](../../code/sprint-2/05_basic_strings/03.py)
 
 ---
 
@@ -76,7 +76,7 @@ Output: 5  # Digits: 1, 2, 3, 4, 5
 * Use `ch.isdigit()` or check `'0' <= ch <= '9'`.
 * Increment a counter whenever a digit is found.
 
-**File:** `04.py`
+**File:** [04.py](../../code/sprint-2/05_basic_strings/04.py)
 
 ---
 
@@ -96,7 +96,7 @@ Output: 4
 * Use `s.split()` which automatically handles multiple consecutive spaces and leading/trailing spaces.
 * The length of the resulting list gives the word count.
 
-**File:** `05.py`
+**File:** [05.py](../../code/sprint-2/05_basic_strings/05.py)
 
 ---
 
@@ -118,7 +118,7 @@ Output: 'hELLO wORLD'
 * Use `ch.swapcase()` or check `ch.islower()` / `ch.isupper()` manually.
 * Construct the resulting string using `"".join(...)`.
 
-**File:** `06.py`
+**File:** [06.py](../../code/sprint-2/05_basic_strings/06.py)
 
 ---
 
@@ -138,7 +138,7 @@ Output: True
 * Compare `s` with `s[::-1]`.
 * Alternatively, use two pointers comparing characters from outside inward.
 
-**File:** `07.py`
+**File:** [07.py](../../code/sprint-2/05_basic_strings/07.py)
 
 ---
 
@@ -158,7 +158,7 @@ Output: 'takeuforward'
 * Use `s.replace(' ', '')` or `"".join(s.split(' '))`.
 * Or filter characters with a list comprehension: `[c for c in s if c != ' ']`.
 
-**File:** `08.py`
+**File:** [08.py](../../code/sprint-2/05_basic_strings/08.py)
 
 ---
 
@@ -178,7 +178,7 @@ Output: 5  # Last word is 'World'
 * Strip trailing whitespace with `s.rstrip()`.
 * Scan backward from the end until reaching a space or the beginning of the string.
 
-**File:** `09.py`
+**File:** [09.py](../../code/sprint-2/05_basic_strings/09.py)
 
 ---
 
@@ -198,7 +198,7 @@ Output: 2
 * Traverse through `s` and increment a counter when character matches `ch`.
 * Or use Python's built-in `s.count(ch)`.
 
-**File:** `10.py`
+**File:** [10.py](../../code/sprint-2/05_basic_strings/10.py)
 
 ---
 
@@ -220,7 +220,7 @@ Output: 'oellh'
 * If `len(s) <= 1`, the string remains unchanged.
 * Otherwise, slice as `s[-1] + s[1:-1] + s[0]`.
 
-**File:** `11.py`
+**File:** [11.py](../../code/sprint-2/05_basic_strings/11.py)
 
 ---
 
@@ -240,7 +240,7 @@ Output: 'blue is sky the'
 * Use `s.split()` to extract words without redundant spaces.
 * Reverse the list of words and join with `' '.join(...)`.
 
-**File:** `12.py`
+**File:** [12.py](../../code/sprint-2/05_basic_strings/12.py)
 
 ---
 
@@ -260,7 +260,7 @@ Output: '5'
 * Any prefix ending with an odd digit is an odd integer.
 * Traverse from the end toward the start: the first odd digit you see gives the longest prefix `num[:i+1]`.
 
-**File:** `13.py`
+**File:** [13.py](../../code/sprint-2/05_basic_strings/13.py)
 
 ---
 
@@ -280,7 +280,7 @@ Output: 'tkfrwrd'
 * Use a set of vowels `set('aeiouAEIOU')`.
 * Build a list of characters not in the vowels set and join.
 
-**File:** `14.py`
+**File:** [14.py](../../code/sprint-2/05_basic_strings/14.py)
 
 ---
 
@@ -300,7 +300,7 @@ Output: True
 * Check `s.isdigit()` and ensure `len(s) > 0`.
 * Remember signs like '-' or decimal points '.' are not digits.
 
-**File:** `15.py`
+**File:** [15.py](../../code/sprint-2/05_basic_strings/15.py)
 
 ---
 
@@ -322,7 +322,7 @@ Output: 'bacdfeg'
 * Convert the string to a list of characters.
 * Iterate `i` in steps of `2k`: reverse the slice from `i` to `i + k`.
 
-**File:** `16.py`
+**File:** [16.py](../../code/sprint-2/05_basic_strings/16.py)
 
 ---
 
@@ -342,7 +342,7 @@ Output: True
 * If `len(s) != len(t)`, return False immediately.
 * Compare frequency counters or sorted lists: `sorted(s) == sorted(t)`.
 
-**File:** `17.py`
+**File:** [17.py](../../code/sprint-2/05_basic_strings/17.py)
 
 ---
 
@@ -362,7 +362,7 @@ Output: 'fl'
 * Take the first string as the initial prefix.
 * Compare with each subsequent string, trimming the prefix from the end until it matches.
 
-**File:** `18.py`
+**File:** [18.py](../../code/sprint-2/05_basic_strings/18.py)
 
 ---
 
@@ -382,7 +382,7 @@ Output: True  # 'e' -> 'a', 'g' -> 'd'
 * Use two hash maps `map_s_to_t` and `map_t_to_s` to enforce bijection.
 * Check that mapping consistency holds at every index.
 
-**File:** `19.py`
+**File:** [19.py](../../code/sprint-2/05_basic_strings/19.py)
 
 ---
 
@@ -402,7 +402,7 @@ Output: True
 * If `len(s) != len(goal)`, return False.
 * `goal` must be a substring of `s + s`.
 
-**File:** `20.py`
+**File:** [20.py](../../code/sprint-2/05_basic_strings/20.py)
 
 ---
 
@@ -424,7 +424,7 @@ Output: 'eert'  # ('eetr' is also valid)
 * Count frequencies using `Counter(s)` or a dictionary.
 * Sort items by frequency descending, then construct each character repeated by its count: `char * count`.
 
-**File:** `21.py`
+**File:** [21.py](../../code/sprint-2/05_basic_strings/21.py)
 
 ---
 
@@ -444,7 +444,7 @@ Output: True
 * Convert string to lowercase and collect unique alphabetic characters in a set.
 * Check if the size of the set is 26.
 
-**File:** `22.py`
+**File:** [22.py](../../code/sprint-2/05_basic_strings/22.py)
 
 ---
 
@@ -464,7 +464,7 @@ Output: 0  # 'l' is at index 0
 * Build character frequency map in first pass.
 * In second pass, return the index of the first character with `freq[c] == 1`.
 
-**File:** `23.py`
+**File:** [23.py](../../code/sprint-2/05_basic_strings/23.py)
 
 ---
 
@@ -484,7 +484,7 @@ Output: ['a', 'ab', 'abc', 'b', 'bc', 'c']
 * Use two nested loops: outer loop for start index `i`, inner loop for end index `j`.
 * Extract substring using slicing `s[i:j]`.
 
-**File:** `24.py`
+**File:** [24.py](../../code/sprint-2/05_basic_strings/24.py)
 
 ---
 
@@ -505,7 +505,7 @@ Output: '()()()'
 * When encountering '(', include it in output only if `opened > 0`, then increment `opened`.
 * When encountering ')', decrement `opened`, and include it in output only if `opened > 0`.
 
-**File:** `25.py`
+**File:** [25.py](../../code/sprint-2/05_basic_strings/25.py)
 
 ---
 
@@ -527,7 +527,7 @@ Output: 'jumped'
 * Split `s` into words using `s.split()`.
 * Use `max(words, key=len)` to find the longest word (Python's `max` preserves first occurrence on ties).
 
-**File:** `26.py`
+**File:** [26.py](../../code/sprint-2/05_basic_strings/26.py)
 
 ---
 
@@ -547,7 +547,7 @@ Output: 0
 * Check slices of length `len(needle)` across `haystack` from index `0` to `len(haystack) - len(needle)`.
 * Alternatively, use `haystack.find(needle)`.
 
-**File:** `27.py`
+**File:** [27.py](../../code/sprint-2/05_basic_strings/27.py)
 
 ---
 
@@ -567,7 +567,7 @@ Output: True  # 'amanaplanacanalpanama'
 * Filter characters with `[c.lower() for c in s if c.isalnum()]`.
 * Compare the filtered list with its reverse.
 
-**File:** `28.py`
+**File:** [28.py](../../code/sprint-2/05_basic_strings/28.py)
 
 ---
 
@@ -587,7 +587,7 @@ Output: 3
 * Keep a running `current_depth` counter and `max_depth`.
 * Increment on '(', update `max_depth = max(max_depth, current_depth)`, and decrement on ')'.
 
-**File:** `29.py`
+**File:** [29.py](../../code/sprint-2/05_basic_strings/29.py)
 
 ---
 
@@ -607,4 +607,4 @@ Output: 'AceCreIm'
 * Convert `s` to a list of characters.
 * Use two pointers `left` and `right`. Move `left` forward until it points to a vowel, and move `right` backward until it points to a vowel, then swap.
 
-**File:** `30.py`
+**File:** [30.py](../../code/sprint-2/05_basic_strings/30.py)

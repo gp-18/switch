@@ -137,6 +137,8 @@ When $i = n - 1$, the last remaining element `64` is naturally in its correct pl
 
 ## 3. Python Code Implementation
 
+**File:** [01_selection_sort.py](../../code/sprint-3/02_sorting/01_selection_sort.py)
+
 ```python
 def selection_sort(nums):
     n = len(nums)

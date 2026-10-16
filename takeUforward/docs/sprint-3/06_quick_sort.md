@@ -116,6 +116,8 @@ Values: [ 1,  3,  2,  4,  7,  9,  5,  6 ]
 
 ## 3. Python Code Implementation
 
+**File:** [05_quick_sort.py](../../code/sprint-3/02_sorting/05_quick_sort.py)
+
 ```python
 def partition(arr, low, high):
     """

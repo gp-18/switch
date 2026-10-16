@@ -119,6 +119,8 @@ Source: Striver's A2Z DSA Sheet (takeuforward). This README has the **notes firs
 > Examples use N = 4 unless stated. Print exactly the shape shown for the given N.
 
 ## Pattern 1: Square of Stars
+
+**File:** [01.py](../../code/sprint-1/02_patterns/01.py)
 Print an N x N square of stars.
 ```
 ****
@@ -129,6 +131,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-1)
 
 ## Pattern 2: Right-Angled Triangle of Stars
+
+**File:** [02.py](../../code/sprint-1/02_patterns/02.py)
 ```
 *
 **
@@ -138,6 +142,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-2)
 
 ## Pattern 3: Right-Angled Triangle of Numbers
+
+**File:** [03.py](../../code/sprint-1/02_patterns/03.py)
 ```
 1
 12
@@ -147,6 +153,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-3)
 
 ## Pattern 4: Row Number Repeated
+
+**File:** [04.py](../../code/sprint-1/02_patterns/04.py)
 ```
 1
 22
@@ -156,6 +164,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-4)
 
 ## Pattern 5: Inverted Right-Angled Triangle of Stars
+
+**File:** [05.py](../../code/sprint-1/02_patterns/05.py)
 ```
 ****
 ***
@@ -165,6 +175,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-5)
 
 ## Pattern 6: Inverted Right-Angled Triangle of Numbers
+
+**File:** [06.py](../../code/sprint-1/02_patterns/06.py)
 ```
 1234
 123
@@ -174,6 +186,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-6)
 
 ## Pattern 7: Star Pyramid
+
+**File:** [07.py](../../code/sprint-1/02_patterns/07.py)
 ```
    *
   ***
@@ -183,6 +197,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-7)
 
 ## Pattern 8: Inverted Star Pyramid
+
+**File:** [08.py](../../code/sprint-1/02_patterns/08.py)
 ```
 *******
  *****
@@ -192,6 +208,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-8)
 
 ## Pattern 9: Diamond Star Pattern
+
+**File:** [09.py](../../code/sprint-1/02_patterns/09.py)
 ```
    *
   ***
@@ -205,6 +223,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-9)
 
 ## Pattern 10: Half Diamond Star Pattern
+
+**File:** [10.py](../../code/sprint-1/02_patterns/10.py)
 ```
 *
 **
@@ -217,6 +237,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-10)
 
 ## Pattern 11: Binary Number Triangle
+
+**File:** [11.py](../../code/sprint-1/02_patterns/11.py)
 ```
 1
 01
@@ -226,6 +248,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-11)
 
 ## Pattern 12: Number Crown
+
+**File:** [12.py](../../code/sprint-1/02_patterns/12.py)
 ```
 1      1
 12    21
@@ -235,6 +259,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-12)
 
 ## Pattern 13: Increasing Number Triangle
+
+**File:** [13.py](../../code/sprint-1/02_patterns/13.py)
 ```
 1
 2 3
@@ -244,6 +270,8 @@ Print an N x N square of stars.
 [Practice](https://takeuforward.org/practice/dsa/pattern-13)
 
 ## Pattern 14: Increasing Letter Triangle
+
+**File:** [14.py](../../code/sprint-1/02_patterns/14.py)
 ```
 A
 AB
@@ -253,6 +281,8 @@ ABCD
 [Practice](https://takeuforward.org/practice/dsa/pattern-14)
 
 ## Pattern 15: Reverse Letter Triangle
+
+**File:** [15.py](../../code/sprint-1/02_patterns/15.py)
 ```
 ABCD
 ABC
@@ -262,6 +292,8 @@ A
 [Practice](https://takeuforward.org/practice/dsa/pattern-15)
 
 ## Pattern 16: Alpha-Ramp Pattern
+
+**File:** [16.py](../../code/sprint-1/02_patterns/16.py)
 ```
 A
 BB
@@ -271,6 +303,8 @@ DDDD
 [Practice](https://takeuforward.org/practice/dsa/pattern-16)
 
 ## Pattern 17: Alpha-Hill Pattern
+
+**File:** [17.py](../../code/sprint-1/02_patterns/17.py)
 ```
    A
   ABA
@@ -280,6 +314,8 @@ ABCDCBA
 [Practice](https://takeuforward.org/practice/dsa/pattern-17)
 
 ## Pattern 18: Alpha-Triangle Pattern
+
+**File:** [18.py](../../code/sprint-1/02_patterns/18.py)
 ```
 D
 CD
@@ -289,6 +325,8 @@ ABCD
 [Practice](https://takeuforward.org/practice/dsa/pattern-18)
 
 ## Pattern 19: Symmetric-Void Pattern (N = 5)
+
+**File:** [19.py](../../code/sprint-1/02_patterns/19.py)
 ```
 **********
 ****  ****
@@ -304,6 +342,8 @@ ABCD
 [Practice](https://takeuforward.org/practice/dsa/pattern-19)
 
 ## Pattern 20: Symmetric-Butterfly Pattern (N = 5)
+
+**File:** [20.py](../../code/sprint-1/02_patterns/20.py)
 ```
 *        *
 **      **
@@ -318,6 +358,8 @@ ABCD
 [Practice](https://takeuforward.org/practice/dsa/pattern-20)
 
 ## Pattern 21: Hollow Rectangle Pattern
+
+**File:** [21.py](../../code/sprint-1/02_patterns/21.py)
 Print an N x N rectangle that is filled with stars only on the border.
 ```
 ****
@@ -328,6 +370,8 @@ Print an N x N rectangle that is filled with stars only on the border.
 [Practice](https://takeuforward.org/practice/dsa/pattern-21)
 
 ## Pattern 22: The Number Pattern (Concentric Squares)
+
+**File:** [22.py](../../code/sprint-1/02_patterns/22.py)
 Print a (2N-1) x (2N-1) grid where the outermost layer is N and the value decreases by 1 each layer inward, ending with 1 in the center.
 ```
 4444444

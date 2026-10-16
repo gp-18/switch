@@ -120,6 +120,8 @@ Combines two adjacent sorted subarrays:
 
 ## 3. Python Code Implementation
 
+**File:** [04_merge_sort.py](../../code/sprint-3/02_sorting/04_merge_sort.py)
+
 ```python
 class Solution:
 

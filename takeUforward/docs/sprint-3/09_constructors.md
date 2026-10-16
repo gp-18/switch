@@ -17,7 +17,7 @@ Output: e.id == 0, e.salary == 0.0, e.name == None
 * Instance attributes only exist after you explicitly assign them with `self.attribute = value` inside `__init__`.
 * A default constructor ensures every object starts in a known, valid state.
 
-**File:** `01.py`
+**File:** [01.py](../../code/sprint-3/03_constructors/01.py)
 
 ---
 
@@ -44,7 +44,7 @@ Output: ValueError
 * Use `if not name:` to check for empty strings and `if salary < 0:` for negative values.
 * `raise ValueError("message")` stops object creation immediately.
 
-**File:** `02.py`
+**File:** [02.py](../../code/sprint-3/03_constructors/02.py)
 
 ---
 
@@ -68,7 +68,7 @@ Output:
 * `__init__` must return `None`. Returning anything else raises `TypeError`.
 * `__new__` runs first, `__init__` runs second — only if `__new__` returns an instance of the class.
 
-**File:** `03.py`
+**File:** [03.py](../../code/sprint-3/03_constructors/03.py)
 
 ---
 
@@ -95,7 +95,7 @@ Output (after fix):  b.skills == []            # Independent
 * Instance variables are created per object inside `__init__` using `self.variable = value`.
 * To verify: check `id(a.skills) == id(b.skills)` before and after your fix.
 
-**File:** `04.py`
+**File:** [04.py](../../code/sprint-3/03_constructors/04.py)
 
 ---
 
@@ -120,7 +120,7 @@ Output (after fix):  b.skills == []           # Independent
 * A mutable default (like `[]` or `{}`) is shared across all calls that don't provide an explicit argument.
 * The idiomatic fix: use `None` as the default and create a fresh object inside the function body.
 
-**File:** `05.py`
+**File:** [05.py](../../code/sprint-3/03_constructors/05.py)
 
 ---
 
@@ -150,7 +150,7 @@ Output:
 * A `@classmethod` copy constructor gives you explicit control over how the new object is built.
 * Use `id()` to verify whether two objects share the same inner list.
 
-**File:** `06.py`
+**File:** [06.py](../../code/sprint-3/03_constructors/06.py)
 
 ---
 
@@ -180,7 +180,7 @@ Output:
 * Use `**kwargs` to capture keyword arguments like `department` and store them as attributes using `setattr(self, key, value)` or manual assignment.
 * This is the Pythonic way to handle "multiple constructors" without language-level overloading.
 
-**File:** `07.py`
+**File:** [07.py](../../code/sprint-3/03_constructors/07.py)
 
 ---
 
@@ -207,7 +207,7 @@ Output:
 * Using `cls(...)` instead of `Employee(...)` ensures subclasses that inherit these factory methods will create instances of the subclass, not the parent.
 * Parse strings with `split(",")` and `strip()`. Unpack dicts with `cls(**data)` or manual key access.
 
-**File:** `08.py`
+**File:** [08.py](../../code/sprint-3/03_constructors/08.py)
 
 ---
 
@@ -231,7 +231,7 @@ Output: g.name == "Rahul", g.age == 22, g.roll_no == 101, g.thesis == "AI Safety
 * `super()` returns a proxy object that delegates method calls to the next class in the MRO (Method Resolution Order).
 * Always pass the required arguments up the chain: `super().__init__(name, age)`.
 
-**File:** `09.py`
+**File:** [09.py](../../code/sprint-3/03_constructors/09.py)
 
 ---
 
@@ -260,7 +260,7 @@ Output: (<class 'D'>, <class 'B'>, <class 'C'>, <class 'A'>, <class 'object'>)
 * In a diamond, without `super()`, `A.__init__` could run twice (once from `B` and once from `C`). With `super()`, it runs exactly once.
 * Try swapping `D(B, C)` to `D(C, B)` and observe how the MRO and print order change.
 
-**File:** `10.py`
+**File:** [10.py](../../code/sprint-3/03_constructors/10.py)
 
 ---
 
@@ -286,7 +286,7 @@ Output: u.name == "Alice", u.created_at == "2026-01-01", u.role == "Admin"
 * The final base class before `object` terminates the kwargs forwarding to prevent `TypeError: object.__init__() takes exactly one argument`.
 * This is the standard pattern recommended by Python core developer Raymond Hettinger for cooperative multiple inheritance.
 
-**File:** `11.py`
+**File:** [11.py](../../code/sprint-3/03_constructors/11.py)
 
 ---
 
@@ -316,7 +316,7 @@ Output:
 * A mixin's `__init__` should always call `super().__init__(*args, **kwargs)` so the next class in the MRO is not bypassed.
 * Order in class definition matters: `class Document(AuditMixin, TagMixin)` places `AuditMixin` before `TagMixin` in `Document.__mro__`.
 
-**File:** `12.py`
+**File:** [12.py](../../code/sprint-3/03_constructors/12.py)
 
 ---
 
@@ -346,7 +346,7 @@ Output: TypeError: Can't instantiate abstract class PaymentProcessor with abstra
 * Subclasses **must** call `super().__init__(...)` to ensure the base state (`api_key`, `currency`) is properly initialized and validated.
 * If a subclass forgets to implement any `@abstractmethod`, Python refuses to instantiate it at runtime.
 
-**File:** `13.py`
+**File:** [13.py](../../code/sprint-3/03_constructors/13.py)
 
 ---
 
@@ -375,7 +375,7 @@ Output: ValueError: Balance cannot be negative
 * In child dataclasses, always call `super().__post_init__()` if the base dataclass defined `__post_init__`, otherwise base validation/computations are skipped!
 * Notice field ordering rules in dataclasses: fields with default values cannot precede fields without default values.
 
-**File:** `14.py`
+**File:** [14.py](../../code/sprint-3/03_constructors/14.py)
 
 ---
 
@@ -405,4 +405,4 @@ Output:
 * Without an `if not hasattr(self, "_initialized"):` or `self._is_initialized` guard inside `__init__`, every subsequent "instantiation" would wipe out the singleton's attributes!
 * Check identity with `is` keyword (`id(db1) == id(db2)`).
 
-**File:** `15.py`
+**File:** [15.py](../../code/sprint-3/03_constructors/15.py)

@@ -91,6 +91,8 @@ $$\text{arr} = [5, 3, 8, 4, 2], \quad n = 5$$
 
 ## 3. Python Code Implementation
 
+**File:** [06_recursive_bubble_sort.py](../../code/sprint-3/02_sorting/06_recursive_bubble_sort.py)
+
 ```python
 def recursive_bubble_sort(nums, n):
     """

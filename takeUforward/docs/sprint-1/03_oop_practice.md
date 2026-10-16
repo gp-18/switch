@@ -4,6 +4,8 @@ Solve these using Python. No solutions or hints are included.
 
 ## 🟢 Problem 1 — Easy
 
+**File:** [01.py](../../code/sprint-1/03_oop_practice/01.py)
+
 **Title:** Student Profile
 
 **Difficulty:** Easy
@@ -30,6 +32,8 @@ Asha: Pass
 ---
 
 ## 🟢 Problem 2 — Easy
+
+**File:** [02.py](../../code/sprint-1/03_oop_practice/02.py)
 
 **Title:** Bank Account Operations
 
@@ -60,6 +64,8 @@ Output:
 
 ## 🟢 Problem 3 — Easy
 
+**File:** [03.py](../../code/sprint-1/03_oop_practice/03.py)
+
 **Title:** Book Information
 
 **Difficulty:** Easy
@@ -88,6 +94,8 @@ Python Basics by Rahul: 499
 
 ## 🟢 Problem 4 — Easy
 
+**File:** [04.py](../../code/sprint-1/03_oop_practice/04.py)
+
 **Title:** Rectangle Calculator
 
 **Difficulty:** Easy
@@ -115,6 +123,8 @@ Perimeter: 30
 ---
 
 ## 🟢 Problem 5 — Easy
+
+**File:** [05.py](../../code/sprint-1/03_oop_practice/05.py)
 
 **Title:** Temperature Converter
 
@@ -147,6 +157,8 @@ Kelvin: 298.15
 
 ## 🟡 Problem 6 — Medium
 
+**File:** [06.py](../../code/sprint-1/03_oop_practice/06.py)
+
 **Title:** Employee Salary Management
 
 **Difficulty:** Medium
@@ -175,6 +187,8 @@ Raj: 80000
 
 ## 🟡 Problem 7 — Medium
 
+**File:** [07.py](../../code/sprint-1/03_oop_practice/07.py)
+
 **Title:** Shape Area Calculator
 
 **Difficulty:** Medium
@@ -202,6 +216,8 @@ Output:
 ---
 
 ## 🟡 Problem 8 — Medium
+
+**File:** [08.py](../../code/sprint-1/03_oop_practice/08.py)
 
 **Title:** Library Borrowing System
 
@@ -237,6 +253,8 @@ Python: returned
 
 ## 🔴 Problem 9 — Hard
 
+**File:** [09.py](../../code/sprint-1/03_oop_practice/09.py)
+
 **Title:** Payment Processing System
 
 **Difficulty:** Hard
@@ -266,6 +284,8 @@ wallet: success
 ---
 
 ## 🔴 Problem 10 — Hard
+
+**File:** [10.py](../../code/sprint-1/03_oop_practice/10.py)
 
 **Title:** Notification System
 

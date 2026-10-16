@@ -16,7 +16,7 @@ Output: 1 2 3 4 5
 * What is the base case when `n` drops below 1?
 * In head recursion, call `solve(n - 1)` before printing `n` so smaller numbers are printed on the return journey.
 
-**File:** `01.py`
+**File:** [01.py](../../code/sprint-3/01_recursion/01.py)
 
 ---
 
@@ -36,7 +36,7 @@ Output: 2 4 6 8
 * Base case: if `n == 0`, return immediately.
 * Recursively call for `n - 1` first, then print `2 * n`.
 
-**File:** `02.py`
+**File:** [02.py](../../code/sprint-3/01_recursion/02.py)
 
 ---
 
@@ -56,7 +56,7 @@ Output: 1 2 3 4
 * How do you isolate the last digit (`n % 10`) and the remaining prefix (`n // 10`)?
 * Recurse on `n // 10` first, then print `n % 10`. What is the base case when `n < 10`?
 
-**File:** `03.py`
+**File:** [03.py](../../code/sprint-3/01_recursion/03.py)
 
 ---
 
@@ -76,7 +76,7 @@ Output: 1010
 * Base case: if `n == 0`, how should zero be handled?
 * For `n > 0`, recurse on `n // 2` first, then append or print `n % 2`.
 
-**File:** `04.py`
+**File:** [04.py](../../code/sprint-3/01_recursion/04.py)
 
 ---
 
@@ -96,7 +96,7 @@ Output: 15
 * Base case: `n == 1` returns 1 (or `n == 0` returns 0).
 * Recursive relation: `sum(n) = n + sum(n - 1)`.
 
-**File:** `05.py`
+**File:** [05.py](../../code/sprint-3/01_recursion/05.py)
 
 ---
 
@@ -118,7 +118,7 @@ Output: 120
 * Base cases: `0! = 1` and `1! = 1`.
 * Recursive step: `factorial(n) = n * factorial(n - 1)`.
 
-**File:** `06.py`
+**File:** [06.py](../../code/sprint-3/01_recursion/06.py)
 
 ---
 
@@ -138,7 +138,7 @@ Output: 5 4 3 2 1
 * Pass an index pointer starting from the end, or recurse from index 0 to `len - 1` and print after the call returns.
 * Base case: when index goes out of bounds (`< 0` or `>= len(nums)`).
 
-**File:** `07.py`
+**File:** [07.py](../../code/sprint-3/01_recursion/07.py)
 
 ---
 
@@ -158,7 +158,7 @@ Output: olleh
 * Either print the last character first and recurse on `s[:-1]`, or recurse on `s[1:]` and print `s[0]` on the return unwinding.
 * Base case: empty string `len(s) == 0`.
 
-**File:** `08.py`
+**File:** [08.py](../../code/sprint-3/01_recursion/08.py)
 
 ---
 
@@ -178,7 +178,7 @@ Output: 'drawrofuwkat'
 * Base case: if `len(s) <= 1`, return `s`.
 * Recursive step: return `reverse(s[1:]) + s[0]`.
 
-**File:** `09.py`
+**File:** [09.py](../../code/sprint-3/01_recursion/09.py)
 
 ---
 
@@ -198,7 +198,7 @@ Output: 32
 * Base case: any number raised to power 0 is 1 (`x^0 = 1`).
 * Recursive step: `power(x, n) = x * power(x, n - 1)`.
 
-**File:** `10.py`
+**File:** [10.py](../../code/sprint-3/01_recursion/10.py)
 
 ---
 
@@ -220,7 +220,7 @@ Output: 3  # Sequence: 0, 1, 1, 2, 3
 * Base cases: `n == 0` returns 0, `n == 1` returns 1.
 * Recursive step: `fib(n) = fib(n - 1) + fib(n - 2)`.
 
-**File:** `11.py`
+**File:** [11.py](../../code/sprint-3/01_recursion/11.py)
 
 ---
 
@@ -240,7 +240,7 @@ Output: 10  # 1 + 2 + 3 + 4 = 10
 * Base case: if `n < 10`, return `n`.
 * Recursive step: `(n % 10) + sum_digits(n // 10)`.
 
-**File:** `12.py`
+**File:** [12.py](../../code/sprint-3/01_recursion/12.py)
 
 ---
 
@@ -260,7 +260,7 @@ Output: 5
 * Base case: if `n < 10`, return 1.
 * Recursive step: `1 + count_digits(n // 10)`.
 
-**File:** `13.py`
+**File:** [13.py](../../code/sprint-3/01_recursion/13.py)
 
 ---
 
@@ -280,7 +280,7 @@ Output: 15
 * Track current index `i`. Base case: if `i == len(nums)`, return 0.
 * Recursive step: `nums[i] + sum_array(nums, i + 1)`.
 
-**File:** `14.py`
+**File:** [14.py](../../code/sprint-3/01_recursion/14.py)
 
 ---
 
@@ -300,7 +300,7 @@ Output: 5
 * Base case: if `s == ""`, return 0.
 * Recursive step: `1 + string_length(s[1:])`.
 
-**File:** `15.py`
+**File:** [15.py](../../code/sprint-3/01_recursion/15.py)
 
 ---
 
@@ -322,7 +322,7 @@ Output: 5 4 3 2 1
 * Base case: if `n == 0`, stop recursing.
 * In tail recursion, do the work first: print `n`, then make the recursive call `print_n_to_1(n - 1)` as the final action.
 
-**File:** `16.py`
+**File:** [16.py](../../code/sprint-3/01_recursion/16.py)
 
 ---
 
@@ -344,7 +344,7 @@ Output: Parth
 * Base case: if `n <= 0`, return.
 * Print `name`, then recurse with `n - 1`.
 
-**File:** `17.py`
+**File:** [17.py](../../code/sprint-3/01_recursion/17.py)
 
 ---
 
@@ -364,7 +364,7 @@ Output: 4 3 2 1 0
 * Base case: if `n < 0`, terminate.
 * Print `n` first, then recursively call with `n - 1`.
 
-**File:** `18.py`
+**File:** [18.py](../../code/sprint-3/01_recursion/18.py)
 
 ---
 
@@ -384,7 +384,7 @@ Output: 6 4 2
 * Base case: if `n <= 1`, stop.
 * If `n % 2 == 0`, print `n` and recurse for `n - 2`. If `n` is odd, recurse for `n - 1`.
 
-**File:** `19.py`
+**File:** [19.py](../../code/sprint-3/01_recursion/19.py)
 
 ---
 
@@ -404,7 +404,7 @@ Output: 10 20 30 40
 * Maintain an index parameter `i = 0`. Base case: if `i == len(nums)`, return.
 * Print `nums[i]`, then call `print_elements(nums, i + 1)`.
 
-**File:** `20.py`
+**File:** [20.py](../../code/sprint-3/01_recursion/20.py)
 
 ---
 
@@ -426,7 +426,7 @@ Output: c o d e
 * Base case: if index `i == len(s)`, return.
 * Print character at `i`, then recurse for `i + 1`.
 
-**File:** `21.py`
+**File:** [21.py](../../code/sprint-3/01_recursion/21.py)
 
 ---
 
@@ -447,7 +447,7 @@ Output: 15
 * Base case: if `n == 0`, return `acc`.
 * Recursive step: pass `acc + n` into `solve(n - 1, acc + n)`. Notice that no addition is postponed on unwinding!
 
-**File:** `22.py`
+**File:** [22.py](../../code/sprint-3/01_recursion/22.py)
 
 ---
 
@@ -468,7 +468,7 @@ Output: 120
 * Base case: if `n <= 1`, return `acc`.
 * Tail call: `solve(n - 1, acc * n)`.
 
-**File:** `23.py`
+**File:** [23.py](../../code/sprint-3/01_recursion/23.py)
 
 ---
 
@@ -488,7 +488,7 @@ Output: 9
 * Base case: if single element remains (`i == len(nums) - 1`), return `nums[i]`.
 * Tail recursion option: pass running `current_max` through an accumulator `solve(nums, i + 1, max(current_max, nums[i]))`.
 
-**File:** `24.py`
+**File:** [24.py](../../code/sprint-3/01_recursion/24.py)
 
 ---
 
@@ -508,7 +508,7 @@ Output: 2
 * Base cases: if index `i == len(nums)`, target was not found, return -1. If `nums[i] == target`, return `i`.
 * Recursive step: return `linear_search(nums, target, i + 1)`.
 
-**File:** `25.py`
+**File:** [25.py](../../code/sprint-3/01_recursion/25.py)
 
 ---
 
@@ -530,7 +530,7 @@ Output: True
 * Base case: if `i >= len(nums) - 1`, array is sorted, return `True`.
 * If `nums[i] > nums[i + 1]`, return `False` immediately. Otherwise recurse for `i + 1`.
 
-**File:** `26.py`
+**File:** [26.py](../../code/sprint-3/01_recursion/26.py)
 
 ---
 
@@ -550,7 +550,7 @@ Output: True
 * Use pointers `left` and `right`. Base case: if `left >= right`, return `True`.
 * If `s[left] != s[right]`, return `False`. Otherwise recurse with `left + 1, right - 1`.
 
-**File:** `27.py`
+**File:** [27.py](../../code/sprint-3/01_recursion/27.py)
 
 ---
 
@@ -570,7 +570,7 @@ Output: 6
 * Base case: if `b == 0`, GCD is `a`.
 * Euclidean relation: `gcd(a, b) = gcd(b, a % b)`.
 
-**File:** `28.py`
+**File:** [28.py](../../code/sprint-3/01_recursion/28.py)
 
 ---
 
@@ -590,7 +590,7 @@ Output: [5, 4, 3, 2, 1]
 * Maintain `left` and `right` indices. Base case: if `left >= right`, return.
 * Swap `nums[left]` and `nums[right]`, then recurse on `left + 1, right - 1`.
 
-**File:** `29.py`
+**File:** [29.py](../../code/sprint-3/01_recursion/29.py)
 
 ---
 
@@ -610,4 +610,4 @@ Output: 3
 * Base case: if index `i == len(nums)`, return 0.
 * Recursive step: `(1 if nums[i] == target else 0) + count(nums, target, i + 1)`.
 
-**File:** `30.py`
+**File:** [30.py](../../code/sprint-3/01_recursion/30.py)
