@@ -44,3 +44,38 @@ target = int(input("Enter the target sum : "))
 print(f"Your array has become : {array}, target is : {target} and now doing the operations on it.")
 
 # Write your solution below
+
+# Optimal Approach: Sort + Two Pointers
+# Time Complexity: O(N^2) | Space Complexity: O(1) auxiliary space
+array.sort()
+n = len(array)
+
+# Initialize with the sum of the first three elements
+closest_sum = array[0] + array[1] + array[2]
+
+for i in range(n - 2):
+    low = i + 1
+    high = n - 1
+
+    while low < high:
+        current_sum = array[i] + array[low] + array[high]
+
+        # Check if current_sum is closer to target than our previous best
+        if abs(current_sum - target) < abs(closest_sum - target):
+            closest_sum = current_sum
+
+        if current_sum == target:
+            # Distance is 0, cannot get closer than exact match
+            break
+        elif current_sum < target:
+            # Sum is too small, advance low pointer
+            low += 1
+        else:
+            # Sum is too large, decrement high pointer
+            high -= 1
+
+    if closest_sum == target:
+        break
+
+print(f"Closest triplet sum to {target} : {closest_sum}")
+

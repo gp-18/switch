@@ -28,13 +28,36 @@
 # - Space Complexity: O(1) auxiliary space
 #
 
-length = int(input("Enter the length of the array : "))
+
+length = int(input("Enter the length of the array: "))
 array = []
 
 for i in range(length):
-    value = int(input(f"Enter the value to insert at index {i} : "))
+    value = int(input(f"Enter the value to insert at index {i}: "))
     array.append(value)
 
-print(f"Your array has become : {array} and now doing the operations on it.")
+print(f"Your array has become: {array} and now doing the operations on it.")
 
-# Write your solution below
+array.sort()
+n = len(array)
+found = False
+
+for i in range(n - 2):
+    low = i + 1
+    high = n - 1
+
+    while low < high:
+        current_sum = array[i] + array[low] + array[high]
+
+        if current_sum == 0:
+            found = True
+            break
+        elif current_sum < 0:
+            low += 1
+        else:
+            high -= 1
+
+    if found:
+        break
+
+print(found)

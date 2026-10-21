@@ -44,3 +44,31 @@ target = int(input("Enter the target sum : "))
 print(f"Your array has become : {array}, target is : {target} and now doing the operations on it.")
 
 # Write your solution below
+
+# Optimal Approach: Sort + Two Pointers
+# Time Complexity: O(N^2) | Space Complexity: O(1) auxiliary space
+array.sort()
+n = len(array)
+count = 0
+
+for i in range(n - 2):
+    low = i + 1
+    high = n - 1
+
+    while low < high:
+        current_sum = array[i] + array[low] + array[high]
+
+        if current_sum == target:
+            count += 1
+            # Move both pointers to look for other pairs
+            low += 1
+            high -= 1
+        elif current_sum < target:
+            # Need a larger sum, move low rightward
+            low += 1
+        else:
+            # Need a smaller sum, move high leftward
+            high -= 1
+
+print(f"Total triplets with sum {target} : {count}")
+

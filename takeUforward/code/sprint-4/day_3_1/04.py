@@ -43,3 +43,31 @@ target = int(input("Enter the target sum : "))
 print(f"Your array has become : {array}, target is : {target} and now doing the operations on it.")
 
 # Write your solution below
+
+# Optimal Approach: Sort + Two Pointers with (high - low) interval shortcut
+# Time Complexity: O(N^2) | Space Complexity: O(1) auxiliary space
+array.sort()
+n = len(array)
+count = 0
+
+for i in range(n - 2):
+    low = i + 1
+    high = n - 1
+
+    while low < high:
+        current_sum = array[i] + array[low] + array[high]
+
+        if current_sum < target:
+            # Key Insight:
+            # Since the array is sorted, pairing array[i] and array[low] with
+            # ANY element from low + 1 up to high will ALSO give sum < target!
+            # So add all (high - low) valid pairs at once.
+            count += (high - low)
+            # Advance low to try a larger middle number
+            low += 1
+        else:
+            # Sum is too large or equal, decrement high
+            high -= 1
+
+print(f"Total triplets with sum less than {target} : {count}")
+

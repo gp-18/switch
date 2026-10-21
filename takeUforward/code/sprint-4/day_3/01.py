@@ -31,14 +31,48 @@
 # - Space Complexity: O(1) auxiliary space (excluding result list)
 #
 
-length = int(input("Enter the length of the array : "))
+
+length = int(input("Enter the length of the array: "))
 array = []
 
 for i in range(length):
-    value = int(input(f"Enter the value to insert at index {i} : "))
+    value = int(input(f"Enter the value to insert at index {i}: "))
     array.append(value)
 
-print(f"Your array has become : {array} and now doing the operations on it.")
+print(f"Your array has become: {array}")
 
-# Write your solution below
+array.sort()
+res = []
 
+for i in range(len(array) - 2):
+
+    if i > 0 and array[i] == array[i - 1]:
+        continue
+
+    low = i + 1
+    high = len(array) - 1
+
+    while low < high:
+        current_sum = array[i] + array[low] + array[high]
+
+        if current_sum == 0:
+            res.append([array[i], array[low], array[high]])
+
+            low += 1
+            high -= 1
+
+            # Skip duplicate low values
+            while low < high and array[low] == array[low - 1]:
+                low += 1
+
+            # Skip duplicate high values
+            while low < high and array[high] == array[high + 1]:
+                high -= 1
+
+        elif current_sum < 0:
+            low += 1
+
+        else:
+            high -= 1
+
+print(res)
