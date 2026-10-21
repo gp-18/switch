@@ -39,3 +39,21 @@ pivot = int(input("Enter the pivot value: "))
 print(f"Your array has become: {array}, pivot is: {pivot} and now doing the operations on it.")
 
 # Write your solution below
+
+low , mid , high = 0 , 0 , len(array) - 1 
+
+
+while mid <= high : 
+    if array[mid] < pivot : 
+        array[low] , array[mid] = array[mid] , array[low] 
+        low += 1 
+        mid += 1 
+    elif array[mid] > pivot : 
+        array[mid] , array[high] = array[high] , array[mid] 
+        high -= 1 
+    else : 
+        mid += 1 
+
+print(array)
+    
+    

@@ -36,3 +36,14 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+
+low = 0 
+
+for i in range(len(array)) :
+
+    if array[i] < 0 : 
+        array[low] , array[i] = array[i] , array[low] 
+        low += 1 
+        
+print(array) 
+

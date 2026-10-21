@@ -35,3 +35,26 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+low , mid , high = 0 , 0 , len(array) - 1
+
+while mid <= high : 
+
+    if array[mid] == 0 : 
+        array[low] , array[mid] = array[mid] , array[low]
+        low += 1 
+        mid += 1
+    else : 
+        array[mid] , array[high] = array[high] , array[mid]
+        high -= 1 
+
+print(array)
+
+
+low = 0 
+for i in range(len(array)) : 
+
+    if array[i] == 0 : 
+        array[low] , array[i] = array[i] , array[low] 
+        low += 1 
+
+print(array)

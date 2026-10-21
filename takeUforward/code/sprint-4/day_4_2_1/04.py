@@ -39,4 +39,19 @@ highVal = int(input("Enter highVal: "))
 
 print(f"Your array has become: {array}, range is: [{lowVal}, {highVal}] and now doing the operations on it.")
 
-# Write your solution below
+low, mid, high = 0, 0, len(array) - 1
+
+while mid <= high:
+    if array[mid] < lowVal:
+        array[low], array[mid] = array[mid], array[low]
+        low += 1
+        mid += 1
+
+    elif array[mid] > highVal:
+        array[mid], array[high] = array[high], array[mid]
+        high -= 1
+
+    else:
+        mid += 1
+
+print(f"Partitioned array: {array}")
