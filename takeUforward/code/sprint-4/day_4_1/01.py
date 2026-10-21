@@ -30,15 +30,41 @@
 # - Space Complexity: O(1) auxiliary space
 #
 
-length = int(input("Enter the length of the array : "))
+length = int(input("Enter the length of the array: "))
 array = []
 
 for i in range(length):
-    value = int(input(f"Enter the value to insert at index {i} : "))
+    value = int(input(f"Enter the value to insert at index {i}: "))
     array.append(value)
 
-target = int(input("Enter the target sum : "))
+target = int(input("Enter the target sum: "))
 
-print(f"Your array has become : {array}, target is : {target} and now doing the operations on it.")
+print(f"Your array has become: {array}, target is: {target}")
 
-# Write your solution below
+array.sort()
+n = len(array)
+found = False
+
+for i in range(n - 3):
+    for j in range(i + 1, n - 2):
+        k = j + 1
+        l = n - 1
+
+        while k < l:
+            total = array[i] + array[j] + array[k] + array[l]
+
+            if total == target:
+                found = True
+                break
+            elif total < target:
+                k += 1
+            else:
+                l -= 1
+
+        if found:
+            break
+
+    if found:
+        break
+
+print(found)

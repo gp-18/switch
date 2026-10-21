@@ -36,15 +36,52 @@
 # - Space Complexity: O(1) auxiliary space
 #
 
-length = int(input("Enter the length of the array : "))
+length = int(input("Enter the length of the array: "))
 array = []
 
 for i in range(length):
-    value = int(input(f"Enter the value to insert at index {i} : "))
+    value = int(input(f"Enter the value to insert at index {i}: "))
     array.append(value)
 
-target = int(input("Enter the target sum : "))
+target = int(input("Enter the target sum: "))
 
-print(f"Your array has become : {array}, target is : {target} and now doing the operations on it.")
+print(f"Your array has become: {array}, target is: {target}")
 
-# Write your solution below
+array.sort()
+n = len(array)
+
+if n < 4:
+    print("At least 4 elements are required.")
+else:
+    closest_sum = array[0] + array[1] + array[2] + array[3]
+    is_found = False
+
+    for i in range(n - 3):
+        for j in range(i + 1, n - 2):
+            k = j + 1
+            l = n - 1
+
+            while k < l:
+                current_sum = (
+                    array[i] + array[j] + array[k] + array[l]
+                )
+
+                if abs(current_sum - target) < abs(closest_sum - target):
+                    closest_sum = current_sum
+
+                if current_sum == target:
+                    closest_sum = target
+                    is_found = True
+                    break
+                elif current_sum < target:
+                    k += 1
+                else:
+                    l -= 1
+
+            if is_found:
+                break
+
+        if is_found:
+            break
+
+    print(f"Closest sum to target {target} is {closest_sum}")
