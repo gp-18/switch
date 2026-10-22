@@ -47,3 +47,25 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+
+maximum = float("-inf")
+current = 0 
+start = 0 
+ans_start , ans_end = 0 , 0 
+
+for i in range(len(array)) : 
+    
+    if current == 0 :
+        start = i 
+    
+    current += array[i] 
+    
+    if current > maximum :
+        maximum = current 
+        ans_start = start 
+        ans_end = i 
+    
+    if current < 0 :
+        current = 0 
+
+print(f"maximum sum is {maximum} and subarray is {array[ans_start : ans_end+1]} ") 

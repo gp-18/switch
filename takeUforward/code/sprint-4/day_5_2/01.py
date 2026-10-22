@@ -36,3 +36,25 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+
+index = -1 
+
+for i in range(len(array) - 1 , -1 , -1 ) :
+    if array[i] < array[i + 1] :
+        index = i 
+        break 
+
+if index == -1 :
+    array.reverse() 
+    print(f"Your array has become: {array}") 
+
+else :
+    
+    for i in range(len(array) - 1 , index , -1 ) :
+        if array[i] > array[index] :
+            array[i] , array[index] = array[index] , array[i] 
+            break 
+    
+    array[index + 1 : ] = array[index + 1 : ][::-1] 
+    
+    print(f"Your array has become: {array}") 

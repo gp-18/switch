@@ -41,3 +41,15 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+
+current = 0 
+maximum = float("-inf")
+
+for i in range(len(array)) :
+    current += array[i] 
+    maximum = max(current , maximum) 
+    
+    if current < 0 :
+        current = 0 
+        
+print(f"maximum subarray sum is: {maximum}")
