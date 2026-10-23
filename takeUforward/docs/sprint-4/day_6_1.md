@@ -245,6 +245,8 @@ if __name__ == "__main__":
     print("Access via mangled name:", account._BankAccount__balance)  # Prints: 4500.0
 ```
 
+**Runnable Code:** [01.py](../../code/sprint-4/day_6_1/01.py)
+
 ---
 
 ## 8. The Pythonic Way: The `@property` Decorator
@@ -379,3 +381,12 @@ Java-style getters (`get_x()`, `set_x()`) force callers to use verbose method sy
 │                          │ Abstraction   = Hides IMPLEMENTATION        │
 └──────────────────────────┴─────────────────────────────────────────────┘
 ```
+
+---
+
+## 🔗 Next Steps & Hands-on Practice
+
+Master OOP Encapsulation through 10 real-world design problems (Book catalog, audit logging, account locking, tamper-proof odometers, and role-based medical records):
+
+👉 **[Day 6.1.1 — Encapsulation Practice Questions](./day_6_1_1.md)**
+
