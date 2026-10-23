@@ -39,3 +39,13 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+min_sum = float("inf")
+current_sum = 0 
+
+for i in range(len(array)) :
+    current_sum += array[i]
+
+    min_sum = min(current_sum , min_sum)
+    
+    if current_sum > 0 : 
+        current_sum = 0

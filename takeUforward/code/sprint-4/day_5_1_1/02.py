@@ -37,3 +37,28 @@ for i in range(length):
 print(f"Your array has become: {array} and now doing the operations on it.")
 
 # Write your solution below
+max_sum = float("-inf")
+min_sum = float("inf")
+
+cur_max = 0
+cur_min = 0
+
+for i in range(len(array)):
+    # Normal Kadane: find maximum subarray sum
+    cur_max += array[i]
+    max_sum = max(max_sum, cur_max)
+
+    if cur_max < 0:
+        cur_max = 0
+
+    # Inverted Kadane: find minimum subarray sum
+    cur_min += array[i]
+    min_sum = min(min_sum, cur_min)
+
+    if cur_min > 0:
+        cur_min = 0
+
+# Choose the larger absolute sum
+answer = max(max_sum, abs(min_sum))
+
+print(f"Maximum absolute subarray sum: {answer}")
