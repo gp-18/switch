@@ -28,3 +28,26 @@ for i in range(length):
 print(f"Your array has become : {array} and now doing the operations on it.")
 
 # Write your solution below:
+value = 0 
+count = 0 
+
+for num in array:
+    if count == 0:
+        value = num 
+    if num == value:
+        count += 1 
+    else:
+        count -= 1 
+
+
+count = 0 
+
+for num in array : 
+    if num == value: 
+        count += 1 
+
+if count > length // 2: 
+    print(f"The majority element is : {value}")
+else: 
+    print("No majority element found.") 
+        

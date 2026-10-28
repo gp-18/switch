@@ -35,3 +35,39 @@ k = int(input("Enter threshold divisor k: "))
 print(f"Your array has become : {array} with k = {k}.")
 
 # Write your solution below:
+
+# Optimal Approach: Misra-Gries Heavy Hitters Algorithm
+# Time Complexity: O(N * k) | Space Complexity: O(k)
+
+if k <= 1 or length == 0:
+    print(f"Elements appearing strictly more than n/{k} times are: []")
+else:
+    # 1. Candidate Selection (at most k - 1 candidates)
+    candidates = {}
+
+    for num in array:
+        if num in candidates:
+            candidates[num] += 1
+        elif len(candidates) < k - 1:
+            candidates[num] = 1
+        else:
+            # Decrement all candidate counts by 1 (cancelling k distinct elements)
+            to_delete = []
+            for cand in candidates:
+                candidates[cand] -= 1
+                if candidates[cand] == 0:
+                    to_delete.append(cand)
+            for cand in to_delete:
+                del candidates[cand]
+
+    # 2. Verification Pass
+    threshold = length // k
+    result = []
+
+    for cand in candidates:
+        actual_count = array.count(cand)
+        if actual_count > threshold:
+            result.append(cand)
+
+    print(f"Elements appearing strictly more than n/{k} times are: {sorted(result)}")
+

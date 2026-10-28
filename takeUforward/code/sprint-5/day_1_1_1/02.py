@@ -30,3 +30,15 @@ target = int(input("Enter target number x to verify: "))
 print(f"Your array has become : {array} and target is {target}.")
 
 # Write your solution below:
+
+# Time Complexity: O(N) | Space Complexity: O(1)
+count = 0
+
+for num in array:
+    if num == target:
+        count += 1
+
+is_majority = count > length // 2
+
+print(f"Is {target} a majority element? {is_majority}")
+
