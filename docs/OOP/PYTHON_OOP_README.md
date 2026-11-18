@@ -1,6 +1,10 @@
 # 🐍 Python OOP Master — Fundamentals, Internals, Dunder Methods & Interview Prep
 
-> **One file. One source of truth.** From "what is a class?" to "walk me through what `type.__call__` does when you instantiate a class" — with the code, the internals, the traps, and the interview answers.
+> **One file, interview-focused.** Everything you need for Python OOP interview rounds and for starting LLD, with the code, the traps and the interview answers.
+>
+> **Trimmed for interviews + LLD.** Deep internals that are rarely asked for backend roles (the full descriptor protocol, metaclasses in depth, async dunders, weak references, GC internals, generics) have been removed or cut down to the one paragraph you need.
+>
+> **How to study it:** follow `OOP_STUDY_GUIDE.md` (one 2-hour session at a time). **Part I–V (M0–M17) is the OOP course. Part VI (M18–M20) is read at the start of LLD, not now.**
 >
 > Version: **Python 3.12** (notes where behaviour differs across versions) · Target: **Product-based company backend interviews (Python)** · Foundation reference: **[takeUforward OOPS sheet](https://takeuforward.org/prep-hub/oops)** (Java-based — every concept here is re-explained the *Python* way)
 
@@ -31,18 +35,18 @@
 **Part IV — Python internals (where interviews get deep)**
 - [M8. Object creation & lifecycle (`__new__` vs `__init__`)](#m8-object-creation--lifecycle)
 - [M9. `super()` and MRO](#m9-super-and-mro)
-- [M10. Attribute lookup & descriptors](#m10-attribute-lookup--descriptors)
+- [M10. Attribute lookup](#m10-attribute-lookup)
 - [M11. Properties & decorators](#m11-properties--decorators)
-- [M12. Dunder methods — the complete data model](#m12-dunder-methods--the-complete-data-model)
+- [M12. Dunder methods (the ones interviews use)](#m12-dunder-methods)
 - [M13. `__str__` vs `__repr__` — master module](#m13-__str__-vs-__repr__--master-module)
 - [M14. Identity, equality, hashing & copying](#m14-identity-equality-hashing--copying)
 - [M15. Iterators, generators & context managers](#m15-iterators-generators--context-managers)
 - [M16. Exceptions as classes](#m16-exceptions-as-classes)
 
 **Part V — Advanced Python OOP**
-- [M17. Advanced OOP: protocols, mixins, DI, metaclasses, dataclasses, slots, generics](#m17-advanced-python-oop)
+- [M17. Practical advanced OOP: DI, dataclasses, enums, slots](#m17-practical-advanced-oop)
 
-**Part VI — Design**
+**Part VI — Design (read at the start of LLD)**
 - [M18. SOLID principles in Python](#m18-solid-principles-in-python)
 - [M19. Design patterns in Python](#m19-design-patterns-in-python)
 - [M20. Real-world backend examples](#m20-real-world-backend-examples)
@@ -109,11 +113,11 @@ The [takeUforward OOPS sheet](https://takeuforward.org/prep-hub/oops) has **6 mo
 | **1. Introduction to OOPS** | Java basics, What is OOPS, Classes & Objects, Attributes & Methods, Constructors | [M0](#m0-python-foundations-for-oop), [M1](#m1-oop-fundamentals), [M8](#m8-object-creation--lifecycle) | No `new` keyword; construction is split into `__new__` (create) + `__init__` (initialise); explicit `self`; attributes can be added at runtime |
 | **2. Core Principles** | Encapsulation, Inheritance, Polymorphism, Abstraction | [M4](#m4-encapsulation)–[M7](#m7-polymorphism) | Encapsulation by convention + name mangling, not enforcement; multiple inheritance with MRO; duck typing; no signature overloading |
 | **3. Advanced OOP features** | Access modifiers, Interfaces, `static` keyword, Inner classes | [M4](#m4-encapsulation), [M5](#m5-abstraction), [M2](#m2-method-types), [M3](#m3-object-relationships) | `_x` / `__x` conventions; ABCs & `Protocol` instead of `interface`; `@staticmethod` **and** `@classmethod`; nested classes rarely used |
-| **4. Relationships & Object Behaviour** | Association, Aggregation, Composition | [M3](#m3-object-relationships), [M17](#m17-advanced-python-oop) | Same concepts; Python leans heavily on composition + dependency injection |
-| **5. Advanced Programming** | Object cloning, Exception handling, Generics, File handling | [M14](#m14-identity-equality-hashing--copying), [M16](#m16-exceptions-as-classes), [M17](#m17-advanced-python-oop), [M15](#m15-iterators-generators--context-managers) | `copy`/`deepcopy` instead of `clone()`; exceptions are class hierarchies; generics are type hints only (no runtime enforcement); files via context managers |
+| **4. Relationships & Object Behaviour** | Association, Aggregation, Composition | [M3](#m3-object-relationships), [M17](#m17-practical-advanced-oop) | Same concepts; Python leans heavily on composition + dependency injection |
+| **5. Advanced Programming** | Object cloning, Exception handling, Generics, File handling | [M14](#m14-identity-equality-hashing--copying), [M16](#m16-exceptions-as-classes), [M17](#m17-practical-advanced-oop), [M15](#m15-iterators-generators--context-managers) | `copy`/`deepcopy` instead of `clone()`; exceptions are class hierarchies; generics are just type hints in Python (not enforced at runtime, rarely asked); files via context managers |
 | **6. Design & Lifecycle** | Design principles, Object lifecycle | [M18](#m18-solid-principles-in-python)–[M20](#m20-real-world-backend-examples), [M8](#m8-object-creation--lifecycle) | Reference counting + cyclic GC instead of JVM GC; `__del__` vs `finalize()` |
 
-**Python-specific topics TUF doesn't cover (but Python interviews do):** names vs objects, `__new__`, metaclasses, the descriptor protocol, the complete dunder data model, `__str__`/`__repr__`, `__eq__`/`__hash__` contract, MRO & C3, cooperative `super()`, properties, `__slots__`, dataclasses, protocols, context managers, generators, `__getattr__` vs `__getattribute__`.
+**Python-specific topics TUF doesn't cover (but Python interviews do):** names vs objects, `__new__` vs `__init__`, dunder methods, `__str__`/`__repr__`, the `__eq__`/`__hash__` contract, MRO & cooperative `super()`, properties, dataclasses, protocols, context managers, generators, `__getattr__`.
 
 ---
 
@@ -162,7 +166,7 @@ M8 Object lifecycle  M9 super() & MRO
  │                    │
  └────────┬───────────┘
           ▼
-M10 Attribute lookup & descriptors ──► M11 Properties & decorators
+M10 Attribute lookup ──► M11 Properties & decorators
           │
           ▼
 M12 Dunder data model ──► M13 str vs repr ──► M14 Equality/hashing/copying ──► M15 Iterators/context managers
@@ -181,8 +185,8 @@ M16 Exceptions as classes ──────────────────
 - **M0 before everything:** 80% of "weird" OOP behaviour (shared class lists, `self.x` shadowing, mutable defaults, `is` vs `==`) is actually *names-and-references* behaviour. Learn it once, and OOP stops being surprising.
 - **Encapsulation before abstraction:** properties (encapsulation) are needed for abstract properties.
 - **Inheritance before polymorphism:** overriding is the most common form of polymorphism.
-- **MRO before descriptors:** attribute lookup walks the MRO; you can't explain lookup without it.
-- **Descriptors before properties/dunders:** `@property`, `@classmethod`, `@staticmethod`, and even bound methods *are* descriptors — learning descriptors makes all of them one idea.
+- **MRO before attribute lookup:** lookup walks the MRO; you can't explain one without the other.
+- **Attribute lookup before properties/dunders:** knowing where Python looks for `obj.x` explains why properties, methods and instance attributes behave the way they do.
 - **Dunders before SOLID/patterns:** patterns in Python use `__call__`, `__getattr__` (proxies), `__iter__` (iterator), context managers.
 - **Design last:** you can't judge "composition vs inheritance" until you know both mechanically.
 
@@ -190,20 +194,7 @@ M16 Exceptions as classes ──────────────────
 
 ## 0.5 Study plan
 
-Designed to run **alongside** your DSA and system design prep (≈ 45–60 min/day for OOP).
-
-| Week | Modules | Exit criteria |
-|---|---|---|
-| 1 | M0, M1, M2 | Explain names vs objects; class vs instance attribute shadowing; three method types with code |
-| 2 | M3, M4, M5 | Write a class with validated properties; an ABC and a Protocol; explain name mangling |
-| 3 | M6, M7, M9 | Predict any diamond-inheritance `super()` output; compute an MRO by hand with C3 |
-| 4 | M8, M10, M11 | Explain `type.__call__` → `__new__` → `__init__`; full attribute lookup order; write a descriptor |
-| 5 | M12, M13, M14 | Implement a Vector and a custom collection; explain the `__eq__`/`__hash__` contract |
-| 6 | M15, M16, M17 | Write iterator, generator, context manager (sync + async); dataclasses, slots, metaclass basics |
-| 7 | M18, M19 | Refactor bad code using each SOLID principle; implement 10 core patterns from memory |
-| 8 | M20–M23 | Two LLD case studies end-to-end; 42/42 output predictions; 4 mock interviews |
-
-> **Falling behind?** Never skip M0, M1, M6, M8, M9, M12, M13, M14 — they're the highest-yield interview modules. Patterns can be done at "core 10" depth (Singleton, Factory, Builder, Adapter, Decorator, Facade, Proxy, Strategy, Observer, Template Method).
+Follow **`OOP_STUDY_GUIDE.md`**: 11 weekend sessions (15 Nov → 19 Dec), each listing what to read, which output questions to predict, which exercise to code and which questions to answer out loud. Part VI (M18–M20) is done in week 1 of LLD.
 
 ---
 
@@ -530,7 +521,7 @@ print(type(Dog))              # <class 'type'>   ← the class is an object too
 d1.bark()          # what you write
 Dog.bark(d1)       # what effectively happens
 ```
-**Internal mechanism:** `d1.bark` looks up `bark` on the class, finds a **function**, and because functions are **descriptors** ([M10](#m10-attribute-lookup--descriptors)), accessing it through an instance produces a **bound method** that remembers `d1`. Calling the bound method inserts `d1` as the first argument.
+**Internal mechanism:** `d1.bark` looks up `bark` on the class, finds a **function**, and accessing it through an instance produces a **bound method** that remembers `d1`. Calling the bound method inserts `d1` as the first argument.
 ```python
 m = d1.bark
 print(m)                     # <bound method Dog.bark of <__main__.Dog object at 0x...>>
@@ -547,7 +538,7 @@ Why explicit `self`? "Explicit is better than implicit" — it makes instance ac
 | Shared? | No — one per object | Yes — one for the class |
 | Use for | Per-object state | Constants, defaults, counters, config |
 
-**Lookup rule (simplified):** `obj.x` checks `obj.__dict__` first, then the class, then base classes (full rules in [M10](#m10-attribute-lookup--descriptors)).
+**Lookup rule (simplified):** `obj.x` checks `obj.__dict__` first, then the class, then base classes (full rules in [M10](#m10-attribute-lookup)).
 
 **Shadowing:** assigning `obj.x = ...` **always** writes to the instance dict; it never modifies the class attribute.
 ```python
@@ -603,7 +594,7 @@ print('x' in dir(p), 'kind' in dir(p), 'norm' in dir(p))  # True True True  ← 
 ```
 - `obj.__dict__` / `vars(obj)`: only attributes stored **on that object**.
 - `dir(obj)`: everything reachable — instance, class, bases (sorted list; customisable via `__dir__`).
-- Objects using `__slots__` have no `__dict__` ([M17](#m17-advanced-python-oop)).
+- Objects using `__slots__` have no `__dict__` ([M17](#m17-practical-advanced-oop)).
 
 **Dynamic attributes:** Python lets you add attributes at runtime (`p.y = 10`). Powerful, but adding attributes outside `__init__` makes classes hard to reason about — avoid in production code (linters flag it).
 
@@ -633,7 +624,7 @@ Two objects can have equal state but different identity (`a == b` but `a is not 
 - Creating attributes outside `__init__`.
 
 ### 🎤 Interview-ready answer: "What is `self`?"
-> "`self` is the conventional name for the first parameter of an instance method. When I call `obj.method(arg)`, Python looks up `method` on the class; since functions are descriptors, accessing it through the instance creates a bound method with `obj` attached, and calling it passes `obj` as the first argument — so it's equivalent to `Class.method(obj, arg)`. It's explicit by design, which is why instance attributes are always written as `self.x`."
+> "`self` is the conventional name for the first parameter of an instance method. When I call `obj.method(arg)`, Python looks up `method` on the class; accessing it through the instance creates a bound method with `obj` attached, and calling it passes `obj` as the first argument — so it's equivalent to `Class.method(obj, arg)`. It's explicit by design, which is why instance attributes are always written as `self.x`."
 
 ### 🎤 "Class attribute vs instance attribute?"
 > "Class attributes live in the class's `__dict__` and are shared; instance attributes live in each object's `__dict__`. Reads look in the instance first, then the class and its MRO. Writes through an instance always create or update an instance attribute, so `self.count += 1` shadows the class attribute instead of updating it. The classic bug is a mutable class attribute like a list, which all instances end up sharing."
@@ -641,7 +632,7 @@ Two objects can have equal state but different identity (`a == b` but `a is not 
 ### 📝 Revision notes
 ```
 class = object (instance of type) ; instance = object built by calling the class
-obj.m(a) == type(obj).m(obj, a) via bound method (functions are descriptors)
+obj.m(a) == type(obj).m(obj, a) via a bound method
 reads: instance __dict__ → class → bases ; writes via instance → instance __dict__
 mutable class attr = shared ; self.x += 1 shadows class attr
 vars/__dict__ = own attrs ; dir = everything reachable
@@ -706,8 +697,8 @@ print(Password().is_strong("abc"))            # False (...or instance)
 **When to use:** the function conceptually belongs to the class's namespace (validation, parsing helpers) and doesn't need class or instance.
 **When not:** if it doesn't relate to the class at all, a module-level function is more Pythonic. If you find yourself writing `ClassName.something` inside it, it should be a `@classmethod`.
 
-### Internal mechanism (preview of [M10](#m10-attribute-lookup--descriptors))
-All three are **descriptors** stored in the class `__dict__`:
+### Internal mechanism (preview of [M10](#m10-attribute-lookup))
+All three are stored in the class `__dict__`, and each behaves differently when accessed:
 | Stored object | `obj.m` returns | `Cls.m` returns |
 |---|---|---|
 | plain function | bound method (bound to `obj`) | the plain function |
@@ -751,14 +742,14 @@ All three can be overridden in subclasses. Overriding a classmethod with a regul
 - Thinking `@staticmethod` is "faster" or "more efficient" — the difference is negligible; choose by meaning.
 
 ### 🎤 Interview-ready answer: "Instance vs class vs static method?"
-> "An instance method receives the instance as `self` and works with per-object state. A classmethod receives the class as `cls` — whichever class it was called on, so it's subclass-aware — and is the idiomatic way to write alternative constructors like `from_json`. A staticmethod receives nothing automatically; it's just a function namespaced inside the class. Internally all three are descriptors: functions bind to the instance, classmethod binds to the class, and staticmethod returns the raw function."
+> "An instance method receives the instance as `self` and works with per-object state. A classmethod receives the class as `cls` — whichever class it was called on, so it's subclass-aware — and is the idiomatic way to write alternative constructors like `from_json`. A staticmethod receives nothing automatically; it's just a function namespaced inside the class. Internally, a plain function binds to the instance, a classmethod binds to the class, and a staticmethod returns the raw function."
 
 ### 📝 Revision notes
 ```
 instance: self ; classmethod: cls (caller's class → subclass-aware) ; staticmethod: nothing
 alternative constructors → @classmethod returning cls(...)
 static = namespaced utility; if it references the class name → make it classmethod
-all three are descriptors in Class.__dict__
+all three live in Class.__dict__; access binds them differently
 ```
 
 ---
@@ -933,7 +924,7 @@ Why this is a big deal: in Java you write getters "just in case" because changin
 - SDK clients hiding `_session`, `_retry_policy`.
 - Django model properties for computed fields (`full_name`).
 
-### 13. Interview questions
+### 12. Interview questions
 | Question | Follow-up |
 |---|---|
 | How do you make an attribute private in Python? | Can it still be accessed? How? |
@@ -1454,15 +1445,6 @@ Because `isinstance(obj, Shape)` is True, `type.__call__` runs `type(obj).__init
 
 **(e) Unpickling and `copy.copy`** create instances via `cls.__new__(cls)` (or `__reduce_ex__`) **without calling `__init__`** — so invariants set only in `__init__` won't be re-run.
 
-### 7. `object.__new__` argument rules (a confusing error explained)
-```python
-class P:
-    def __new__(cls, *args):
-        return super().__new__(cls, *args)   # ❌ passing args to object.__new__
-    def __init__(self, x): self.x = x
-```
-`object.__new__` raises `TypeError: object.__new__() takes exactly one argument` if you pass extra args **and** you've overridden `__new__`. Always call `super().__new__(cls)` (just `cls`) unless the parent is a type whose `__new__` needs the value (like `int`, `str`, `tuple`).
-
 ### 8. Immutable types need `__new__`
 For immutable built-ins, the value is fixed **at allocation**. By the time `__init__` runs, it's too late to change it.
 ```python
@@ -1497,25 +1479,21 @@ class Money:
     def from_rupees(cls, rupees: float): return cls(round(rupees * 100))
 ```
 
-### 10. `__new__` in metaclasses (preview — full detail in [M17](#m17-advanced-python-oop))
-When Python executes a `class` statement, it calls the metaclass: `Meta(name, bases, namespace)` → `Meta.__new__(Meta, name, bases, ns)` creates the **class object**, then `Meta.__init__` initialises it. Same `__new__`/`__init__` split, one level up.
+### 10. Object lifetime & garbage collection (short version)
+- **Reference counting:** every object counts how many references point to it. When the count hits **0**, CPython frees it immediately (calling `__del__` first, if defined). `del name` removes a *name*, not the object.
+- **Cyclic garbage collector:** reference counting can't free cycles (`a.other = b; b.other = a`), so CPython also runs a periodic cycle collector (`gc` module).
+- **Don't rely on `__del__` for cleanup.** Its timing isn't guaranteed (other Python implementations, cycles, interpreter shutdown) and exceptions inside it are ignored. ✅ Use **context managers (`with`)** for files, connections and locks ([M15](#m15-iterators-generators--context-managers)).
 
-### 11. Object lifetime & garbage collection (CPython)
-
-**References and reference counting**
-- Every object has a reference count: how many references point to it (names, list slots, attributes…).
-- When it drops to **0**, CPython frees the object **immediately** (and calls `__del__` first if defined).
-- `del name` removes a **name**, decrementing the count — it doesn't directly destroy the object.
 ```python
 class Res:
     def __init__(self, n): self.n = n
     def __del__(self): print(f"__del__ {self.n}")
 
 a = Res(1)
-b = a            # refcount 2
-del a            # refcount 1 → nothing printed
+b = a            # two references
+del a            # one left → nothing printed
 print("after del a")
-del b            # refcount 0 → finalised now (in CPython)
+del b            # zero → freed now (in CPython)
 print("after del b")
 ```
 ```text
@@ -1524,66 +1502,7 @@ __del__ 1
 after del b
 ```
 
-**Cyclic garbage collection**
-Reference counting can't free cycles (`a.other = b; b.other = a` — each keeps the other at count ≥ 1). CPython's **generational cyclic GC** (`gc` module) periodically finds groups of objects reachable only from each other and frees them. Objects start in generation 0; survivors get promoted to 1, then 2 (checked less often). `gc.collect()` forces a collection.
-
-**`__del__` — the finaliser**
-- Called when the object is about to be destroyed — **not** when `del` is written.
-- Since Python 3.4 (PEP 442), objects with `__del__` in cycles **are** collected (previously they leaked into `gc.garbage`).
-
-**Why `__del__` is unreliable for cleanup:**
-1. **Timing is not guaranteed** — on PyPy/Jython (no refcounting) or in cycles, it runs whenever the GC decides.
-2. **May not run at all** at interpreter shutdown.
-3. **Exceptions inside it are ignored** (printed as "Exception ignored in…").
-4. Globals it references may already be torn down at shutdown.
-5. Any lingering reference (traceback, cache, closure) keeps the object alive.
-
-✅ **Use context managers (`with`) for deterministic cleanup** ([M15](#m15-iterators-generators--context-managers)); use `weakref.finalize` for a safety net.
-
-**Weak references**
-A weak reference refers to an object **without** increasing its refcount — the object can still be collected.
-```python
-import weakref
-
-class Session: pass
-s = Session()
-r = weakref.ref(s)
-print(r() is s)           # True — dereference by calling
-del s
-print(r())                # None — object was collected
-
-cache = weakref.WeakValueDictionary()   # entries vanish when values are no longer used elsewhere
-```
-Use cases: caches, observer lists that shouldn't keep observers alive, parent back-references in trees.
-```python
-class Conn:
-    def __init__(self):
-        self._finalizer = weakref.finalize(self, print, "closing connection")  # safer than __del__
-    def close(self): self._finalizer()         # idempotent: runs at most once
-```
-
-**Object resurrection**
-`__del__` can store `self` somewhere reachable, bringing the object back to life. Since PEP 442, `__del__` is called **at most once** per object — a resurrected object won't have its finaliser run again.
-```python
-graveyard = []
-class Phoenix:
-    def __del__(self):
-        print("__del__ called")
-        graveyard.append(self)       # resurrect!
-p = Phoenix()
-del p                                # __del__ called
-print(len(graveyard))                # 1 — still alive
-graveyard.clear()                    # destroyed for real; __del__ NOT called again
-print("done")
-```
-```text
-__del__ called
-1
-done
-```
-
-### 12. Common mistakes
-- Passing extra args to `object.__new__`.
+### 11. Common mistakes
 - Doing validation for immutable subclasses in `__init__`.
 - Singleton via `__new__` without guarding `__init__`.
 - Relying on `__del__` to close files/connections.
@@ -1597,24 +1516,21 @@ done
 | 3 | When is `__init__` not called? | What if `__new__` returns a cached instance? |
 | 4 | How do you subclass `int`/`str` with custom values? | Why doesn't `__init__` work? |
 | 5 | How does Python free memory? | What about cycles? Generations? |
-| 6 | Should you use `__del__`? | Alternatives? What is resurrection? |
-| 7 | What are weak references for? | `WeakValueDictionary` use case |
+| 6 | Should you use `__del__`? | What should you use instead? |
 
 ### 🎤 Interview-ready answer: "What happens when you instantiate a class?"
 > "A class is a callable object, so `MyClass(args)` invokes `type(MyClass).__call__` — normally `type.__call__`, since `type` is the default metaclass. That calls `MyClass.__new__(cls, *args)`, which allocates and returns the new instance — by default via `object.__new__`. If the returned object is an instance of `MyClass`, `type.__call__` then calls `__init__` on it with the same arguments to initialise state; `__init__` must return `None`. Finally the instance is returned and bound to the name. The interesting edge cases are: if `__new__` returns something that isn't an instance, `__init__` is skipped; if it returns a cached instance, `__init__` runs again — which is the classic singleton bug; and immutable types like `int` or `str` must be customised in `__new__` because their value is fixed at allocation."
 
 ### 🎤 "How does garbage collection work in Python?"
-> "CPython primarily uses reference counting: each object tracks how many references point to it, and when the count hits zero it's deallocated immediately, calling `__del__` first if defined. Reference counting can't reclaim cycles, so there's also a generational cyclic garbage collector that periodically finds groups of objects only reachable from each other. Because finalisation timing isn't guaranteed across implementations or at shutdown, I don't rely on `__del__` for cleanup — I use context managers, or `weakref.finalize` as a safety net."
+> "CPython primarily uses reference counting: each object tracks how many references point to it, and when the count hits zero it's freed immediately, calling `__del__` first if defined. Reference counting can't reclaim cycles, so there's also a cyclic garbage collector that periodically finds groups of objects only reachable from each other. Because finalisation timing isn't guaranteed, I don't rely on `__del__` for cleanup — I use context managers."
 
 ### 📝 Revision notes
 ```
 MyClass(a) → type(MyClass).__call__ → cls.__new__(cls, a) → if isinstance: type(obj).__init__(obj, a) → return obj
 __new__: implicit staticmethod, gets cls, RETURNS instance ; __init__: gets self, returns None
 __new__ returns non-instance → __init__ skipped ; returns existing → __init__ re-runs
-returns subclass instance → subclass __init__ runs ; copy/pickle skip __init__
-immutables (int/str/tuple) → customise in __new__ ; super().__new__(cls) only cls
-refcount → immediate free ; cyclic GC (generations 0/1/2) for cycles
-__del__ unreliable → with / weakref.finalize ; __del__ runs at most once (PEP 442)
+immutables (int/str/tuple) → customise in __new__ ; call super().__new__(cls)
+refcount → immediate free ; cyclic GC for cycles ; __del__ unreliable → use `with`
 ```
 
 ---
@@ -1660,30 +1576,7 @@ L[D] = D + merge(BAO, CAO, BC)
      O                                                   → D B C A O
 ```
 
-**Worked example 2 — a harder one**
-```python
-class O: pass
-class A(O): pass
-class B(O): pass
-class C(A, B): pass
-class D(B): pass
-class E(C, D): pass
-```
-```text
-L[C] = C + merge(AO, BO, AB) = C A B O
-L[D] = D B O
-L[E] = E + merge(CABO, DBO, CD)
-  C (not in tails ABO, BO, D)             → E C        lists: ABO, DBO, D
-  A (not in tails BO, BO, —)              → E C A      lists: BO, DBO, D
-  B is in tail of DBO → skip; D ok        → E C A D    lists: BO, BO, —
-  B                                       → E C A D B
-  O                                       → E C A D B O
-```
-```python
-print([k.__name__ for k in E.__mro__])   # ['E', 'C', 'A', 'D', 'B', 'O', 'object']
-```
-
-**Worked example 3 — an impossible hierarchy**
+**Worked example 2 — an impossible hierarchy**
 ```python
 class X: pass
 class Y(X): pass
@@ -1834,23 +1727,7 @@ print(u.to_json())  # {"name": "Parth", "email": "p@x.com"}
 ```
 Convention: mixins go **left** of the main base class (`class MyView(LoginRequiredMixin, View)` in Django) so their methods come first in the MRO and can `super()` into the base.
 
-### 9. `super()` in other contexts
-```python
-class Base:
-    @classmethod
-    def create(cls): return cls()
-
-class Child(Base):
-    @classmethod
-    def create(cls):
-        obj = super().create()        # works in classmethods: super(Child, cls)
-        obj.extra = True
-        return obj
-
-print(type(Child.create()).__name__, Child.create().extra)   # Child True
-```
-
-### 10. Common MRO mistakes
+### 9. Common MRO mistakes
 - Assuming `super()` calls the direct parent.
 - Mixing `Parent.method(self)` calls with `super()` calls in one hierarchy.
 - Forgetting `super().__init__()` in one class → breaks the chain for everyone after it.
@@ -1872,181 +1749,39 @@ Parent.__init__(self) in diamonds → double init ; mixins go left
 
 ---
 
-## M10. Attribute Lookup & Descriptors
+## M10. Attribute Lookup
 
-> 🔷 This module unifies **properties, methods, classmethods, staticmethods, `__slots__`, and ORMs** into one mechanism. Master it and half of Python's "magic" disappears.
+> 🔶 Interviewers ask "what happens when you write `obj.x`?" and "`__getattr__` vs `__getattribute__`?". This module gives you exactly that, without the full descriptor-protocol internals.
 
-### 1. What is a descriptor?
-Any object that defines at least one of these methods, **stored as a class attribute** of another class:
-| Method | Called on | Signature |
-|---|---|---|
-| `__get__` | `obj.attr` (read) | `__get__(self, instance, owner)` → value |
-| `__set__` | `obj.attr = v` | `__set__(self, instance, value)` → None |
-| `__delete__` | `del obj.attr` | `__delete__(self, instance)` → None |
-| `__set_name__` | when the owner class is created | `__set_name__(self, owner, name)` |
-
-- **Data descriptor:** defines `__set__` or `__delete__` (e.g. `property`, `__slots__` members).
-- **Non-data descriptor:** only `__get__` (e.g. functions, `classmethod`, `staticmethod`, `functools.cached_property`).
-
-The difference determines **priority** against the instance `__dict__`.
-
-### 2. The full attribute lookup algorithm — `obj.name`
-`obj.name` calls `type(obj).__getattribute__(obj, "name")` — normally `object.__getattribute__`, which does:
+### 1. Where Python looks for `obj.x` (the order to remember)
 ```text
-1. cls_attr = search for "name" in type(obj).__mro__ (each class's __dict__, in order)
-
-2. if cls_attr is a DATA descriptor:
-       return cls_attr.__get__(obj, type(obj))            ← beats the instance dict
-
-3. if "name" in obj.__dict__:
-       return obj.__dict__["name"]                         ← instance attribute
-
-4. if cls_attr is a NON-DATA descriptor:
-       return cls_attr.__get__(obj, type(obj))             ← e.g. function → bound method
-
-5. if cls_attr was found (plain class attribute):
-       return cls_attr
-
-6. raise AttributeError
-       → if the class defines __getattr__, Python calls type(obj).__getattr__(obj, "name") instead
+1. Properties (and other "managed" attributes) defined on the class   ← win even over the instance
+2. The instance's own __dict__                                        ← self.x = ... lives here
+3. The class, then its parents in MRO order (methods, class attributes)
+4. Not found anywhere → __getattr__(self, "x") if the class defines it
+5. Still nothing → AttributeError
 ```
-**Mnemonic:** **Data descriptor > instance dict > non-data descriptor > class attribute > `__getattr__`.**
+**Assignment** `obj.x = v` always writes to the instance `__dict__`, **unless** the class has a property named `x` (then its setter runs, or `AttributeError` if there's no setter).
 
-### Setting — `obj.name = value` (`object.__setattr__`)
-```text
-1. cls_attr = search "name" in type(obj).__mro__
-2. if cls_attr has __set__        → cls_attr.__set__(obj, value)
-   (if it's a data descriptor with only __delete__ / property without setter → AttributeError)
-3. else                           → obj.__dict__["name"] = value
-```
-Note there's no "non-data descriptor" step: assignment always goes to the instance dict unless a data descriptor intercepts it. That's why instance attributes can **shadow methods**.
-
-### Class-level lookup — `Cls.name`
-Handled by `type.__getattribute__`: it checks the metaclass for data descriptors, then searches `Cls.__mro__` and calls `__get__(None, Cls)` on descriptors found there. That's why `Cls.method` gives you the plain function and `Cls.prop` gives you the property object itself (property's `__get__` returns itself when `instance is None`).
-
-### 3. Proof: data vs non-data priority
+### 2. Three facts that follow from this order
 ```python
-class DataDesc:
-    def __get__(self, inst, owner): return "from data descriptor"
-    def __set__(self, inst, value): print("DataDesc.__set__ intercepted")
-
-class NonDataDesc:
-    def __get__(self, inst, owner): return "from non-data descriptor"
-
 class C:
-    d = DataDesc()
-    n = NonDataDesc()
+    kind = "class attr"
+    def method(self): return "method"
+    @property
+    def prop(self): return "property"
 
 c = C()
-c.__dict__["d"] = "instance value"        # bypass __set__ by writing the dict directly
-c.__dict__["n"] = "instance value"
-print(c.d)    # from data descriptor      ← data descriptor beats instance dict
-print(c.n)    # instance value            ← instance dict beats non-data descriptor
-c.d = 5       # DataDesc.__set__ intercepted
+c.__dict__.update(kind="instance attr", method=lambda: "shadowed", prop="ignored")
+print(c.kind)      # instance attr   ← instance dict beats class attributes
+print(c.method())  # shadowed        ← an instance attribute can shadow a method
+print(c.prop)      # property        ← but a property beats the instance dict
 ```
+- **Methods** are just functions stored on the class. Accessing one through an instance gives a **bound method** with `self` filled in (`obj.m()` → `type(obj).m(obj)`).
+- **Properties** are special class attributes that intercept get/set. That's why they win over the instance dict, and why they make read-only attributes possible.
+- Under the hood, both use Python's **descriptor protocol** (`__get__`/`__set__`). For interviews, one sentence is enough: *"Properties, methods, classmethods and staticmethods are all descriptors: class attributes that control what happens when they're accessed through an instance."*
 
-### 4. Functions are descriptors → that's how methods bind
-```python
-class Greeter:
-    def hello(self): return f"hello from {id(self)}"
-
-g = Greeter()
-f = Greeter.__dict__["hello"]           # the raw function in the class namespace
-print(type(f).__name__)                 # function
-bound = f.__get__(g, Greeter)           # what g.hello does under the hood
-print(bound() == g.hello())             # True
-print(f.__get__(None, Greeter) is f)    # True ← Greeter.hello returns the plain function
-```
-Because functions are **non-data** descriptors, an instance attribute shadows a method:
-```python
-g.hello = lambda: "shadowed"
-print(g.hello())      # shadowed
-```
-
-### 5. Re-implementing `property`, `staticmethod`, `classmethod` in pure Python
-```python
-class MyProperty:                                   # DATA descriptor
-    def __init__(self, fget=None, fset=None):
-        self.fget, self.fset = fget, fset
-    def __get__(self, inst, owner):
-        if inst is None: return self                # accessed on the class
-        return self.fget(inst)
-    def __set__(self, inst, value):
-        if self.fset is None: raise AttributeError("can't set attribute")
-        self.fset(inst, value)
-    def setter(self, fset):
-        return type(self)(self.fget, fset)          # returns a NEW property (that's why names must match)
-
-class MyStaticMethod:                               # NON-data
-    def __init__(self, f): self.f = f
-    def __get__(self, inst, owner): return self.f   # no binding at all
-
-class MyClassMethod:                                # NON-data
-    def __init__(self, f): self.f = f
-    def __get__(self, inst, owner):
-        return self.f.__get__(owner, type(owner))   # bind to the CLASS (owner), not the instance
-
-class Demo:
-    def __init__(self): self._x = 1
-    @MyProperty
-    def x(self): return self._x
-    @x.setter
-    def x(self, v): self._x = v
-    @MyStaticMethod
-    def s(): return "static"
-    @MyClassMethod
-    def c(cls): return cls.__name__
-
-d = Demo(); d.x = 42
-print(d.x, d.s(), d.c(), Demo.c())     # 42 static Demo Demo
-```
-
-### 6. Writing a real descriptor: reusable validated fields (+ `__set_name__`)
-```python
-class Positive:
-    def __set_name__(self, owner, name):        # called at class creation; learns its attribute name
-        self.private = "_" + name
-    def __get__(self, inst, owner):
-        if inst is None: return self
-        return getattr(inst, self.private)
-    def __set__(self, inst, value):
-        if not isinstance(value, (int, float)) or value <= 0:
-            raise ValueError(f"{self.private[1:]} must be a positive number")
-        setattr(inst, self.private, value)
-
-class Product:
-    price = Positive()           # one descriptor instance per FIELD, shared by all products
-    quantity = Positive()
-    def __init__(self, price, quantity):
-        self.price = price       # → Positive.__set__
-        self.quantity = quantity
-
-p = Product(99.5, 3)
-print(p.price, vars(p))          # 99.5 {'_price': 99.5, '_quantity': 3}
-try:
-    p.quantity = -1
-except ValueError as e:
-    print(e)                     # quantity must be a positive number
-```
-⚠️ Store per-instance data **on the instance** (or in a `WeakKeyDictionary`), never on `self` of the descriptor — the descriptor is shared by all instances.
-
-This is exactly how Django model fields, SQLAlchemy columns, and Pydantic-like libraries work.
-
-### 7. `functools.cached_property` — a non-data descriptor trick
-It computes once, then **writes the result into the instance `__dict__`**. Since it's non-data, the instance dict wins on later lookups → the method is never called again.
-```python
-from functools import cached_property
-class Report:
-    @cached_property
-    def data(self):
-        print("computing...")
-        return [1, 2, 3]
-r = Report()
-r.data; r.data         # "computing..." printed once
-print("data" in vars(r))   # True
-```
-
-### 8. `__getattribute__` vs `__getattr__`
+### 3. `__getattribute__` vs `__getattr__`
 | | `__getattribute__(self, name)` | `__getattr__(self, name)` |
 |---|---|---|
 | Called | On **every** attribute access | **Only** when normal lookup raises `AttributeError` |
@@ -2083,34 +1818,29 @@ class LoggingClient:
 ```
 ⚠️ **`__setattr__` recursion trap:** inside `__setattr__`, `self.x = v` calls `__setattr__` again → infinite recursion. Use `super().__setattr__(name, value)` or `object.__setattr__(self, name, value)`.
 
-### 9. Special method lookup bypasses the instance (and `__getattribute__`)
-Implicit invocations (`len(obj)`, `obj + x`, `with obj`) look up the dunder **on the type**, not the instance, and skip `__getattribute__`/`__getattr__`:
+### 4. Special methods are looked up on the class, not the instance
 ```python
 class Box: pass
 b = Box()
 b.__len__ = lambda: 5
-print(b.__len__())          # 5  ← explicit attribute access finds the instance attr
+print(b.__len__())          # 5  ← normal attribute access finds the instance attribute
 try:
-    len(b)                  # implicit: looks at type(b).__len__ → not there
+    len(b)                  # len() looks at type(b).__len__ → not there
 except TypeError:
     print("TypeError: object of type 'Box' has no len()")
 ```
-This is why proxies using `__getattr__` must explicitly define dunders like `__len__` and `__iter__`.
+That's why a proxy using `__getattr__` must still define dunders like `__len__` and `__iter__` itself.
 
-### 10. `__dir__`
-`dir(obj)` calls `type(obj).__dir__(obj)`. Override to advertise dynamic attributes (useful with `__getattr__` for IDE/REPL autocompletion).
-
-### 🎤 Interview-ready answer: "Explain attribute lookup / the descriptor protocol."
-> "A descriptor is an object with `__get__`, `__set__`, or `__delete__` stored as a class attribute; it customises what happens when that attribute is accessed on instances. `object.__getattribute__` resolves `obj.x` in a fixed order: first it searches the type's MRO; if it finds a data descriptor — one with `__set__` or `__delete__`, like a property — that wins. Otherwise the instance `__dict__` wins. Then non-data descriptors — like plain functions, which is how bound methods are created — and then plain class attributes. If all that fails it raises `AttributeError`, and `__getattr__` is called as a fallback if defined. Properties, methods, classmethods, staticmethods, `cached_property`, and `__slots__` are all built on this."
+### 🎤 Interview-ready answer: "What happens when you access `obj.x`?"
+> "Python first checks whether the class defines `x` as a property or similar managed attribute; if so, that wins. Otherwise it looks in the instance's own `__dict__`, then in the class and its parents in MRO order, where methods live and come back as bound methods. If nothing is found, it calls `__getattr__` if the class defines one, otherwise raises `AttributeError`. Assignment goes to the instance `__dict__` unless a property intercepts it. `__getattribute__` runs on every access and is rarely overridden; `__getattr__` runs only on misses and is useful for delegation."
 
 ### 📝 Revision notes
 ```
-descriptor = class attr with __get__/__set__/__delete__ ; __set_name__(owner, name)
-DATA (has __set__/__delete__) > instance __dict__ > NON-DATA (__get__ only) > class attr > __getattr__
-set: data descriptor __set__ else instance __dict__
-function = non-data descriptor → bound method ; property = data ; cached_property = non-data writing __dict__
-__getattribute__ every access (recursion risk → object.__getattribute__) ; __getattr__ only on miss
-implicit dunder lookup uses type(obj), bypasses instance & __getattr__
+obj.x: property on class > instance __dict__ > class/MRO > __getattr__ > AttributeError
+obj.x = v → instance __dict__ (unless a property intercepts)
+instance attr can shadow a method, NOT a property
+__getattribute__ every access (recursion risk) ; __getattr__ only on miss (delegation)
+len(obj) etc. look up dunders on type(obj), not the instance
 ```
 
 ---
@@ -2118,7 +1848,7 @@ implicit dunder lookup uses type(obj), bypasses instance & __getattr__
 ## M11. Properties & Decorators
 
 ### Properties in depth
-`property` is a built-in **data descriptor** class: `property(fget=None, fset=None, fdel=None, doc=None)`.
+`property` is a built-in class: `property(fget=None, fset=None, fdel=None, doc=None)`.
 ```python
 class Circle:
     def __init__(self, r): self.radius = r
@@ -2190,7 +1920,7 @@ print(flaky(), calls["n"])   # ok 3
 def f(): ...      # f = a(b(f)) → calling f runs a's wrapper first, then b's
 ```
 
-**5. Decorators on methods** — the wrapper receives `self` as the first positional arg automatically, because the decorated result is still a function (a descriptor) stored in the class:
+**5. Decorators on methods** — the wrapper receives `self` as the first positional arg automatically, because the decorated result is still a function stored in the class:
 ```python
 def log_call(func):
     @functools.wraps(func)
@@ -2205,27 +1935,7 @@ class Service:
 print(Service().process(5))    # Service.process(5,)  then 10
 ```
 
-**6. Class-based decorators (stateful)** — and the method-binding trap:
-```python
-class CountCalls:
-    def __init__(self, func):
-        functools.update_wrapper(self, func)
-        self.func, self.count = func, 0
-    def __call__(self, *args, **kwargs):
-        self.count += 1
-        return self.func(*args, **kwargs)
-    def __get__(self, inst, owner):             # needed to work on METHODS
-        if inst is None: return self
-        return functools.partial(self.__call__, inst)   # bind the instance like a function would
-
-@CountCalls
-def ping(): return "pong"
-ping(); ping()
-print(ping.count)        # 2
-```
-Without `__get__`, decorating a method with a class instance breaks: an instance of `CountCalls` isn't a descriptor, so `obj.method()` wouldn't pass `self`.
-
-**7. Class decorators** — take a class, return a (usually the same, modified) class:
+**6. Class decorators** — take a class, return a (usually the same, modified) class:
 ```python
 REGISTRY = {}
 def register(cls):
@@ -2239,26 +1949,26 @@ print(REGISTRY)          # {'stripegateway': <class '__main__.StripeGateway'>}
 `@dataclass`, `@functools.total_ordering`, and `@runtime_checkable` are class decorators.
 
 ### 🎤 Interview-ready answer: "How does `@property` work?"
-> "`property` is a built-in data descriptor class. `@property` replaces the method with a property object holding it as `fget`; `@x.setter` returns a copy with `fset` added, which is why the setter must reuse the name. When I access `obj.x`, attribute lookup finds the property in the class, and since it's a data descriptor it takes priority over the instance `__dict__` and calls `fget(obj)`. Assignment calls `fset`, or raises `AttributeError` if there's none — that's how read-only attributes work. I use properties for validation and cheap computed values while keeping attribute syntax, so a plain attribute can become managed later without changing callers."
+> "`@property` turns a method into a managed attribute: reading `obj.x` calls the getter, and `@x.setter` adds a setter — which is why the setter must reuse the name `x`. Because a property lives on the class and takes priority over the instance `__dict__`, `obj.x` always goes through it. Assignment calls `fset`, or raises `AttributeError` if there's none — that's how read-only attributes work. I use properties for validation and cheap computed values while keeping attribute syntax, so a plain attribute can become managed later without changing callers."
 
 ### 📝 Revision notes
 ```
-property(fget, fset, fdel, doc) = data descriptor ; setter returns copy → same name
+property(fget, fset, fdel, doc) = managed attribute on the class ; setter returns copy → same name
 property: cheap data-like ; method: work/side effects/args ; cached_property: expensive once
 decorator: f = deco(f) ; with args: factory→decorator→wrapper ; always functools.wraps
-stack: @a @b f → a(b(f)) ; class-based decorator on methods needs __get__
+stack: @a @b f → a(b(f))
 class decorators: registries, @dataclass, @total_ordering
 ```
 
 ---
 
-## M12. Dunder Methods — The Complete Data Model
+## M12. Dunder Methods
 
 ### What are they?
 **Dunder** ("double underscore") / **magic** / **special** methods are hooks that let your objects plug into Python's syntax and built-ins. You **implement** them; Python **calls** them. You almost never call them directly (`len(x)`, not `x.__len__()`).
 
 ### Three rules that apply to every dunder
-1. **Looked up on the type, not the instance** (`type(obj).__len__`) — and implicit calls bypass `__getattribute__`/`__getattr__` ([M10 §9](#m10-attribute-lookup--descriptors)).
+1. **Looked up on the type, not the instance** (`type(obj).__len__`), see [M10 §4](#m10-attribute-lookup).
 2. **Return `NotImplemented`** (a singleton, not an exception) from binary operators/comparisons when you don't support the other operand — Python then tries the other side. Don't confuse with `raise NotImplementedError` (for abstract methods).
 3. **Never invent your own `__names__`** — the namespace is reserved for Python.
 
@@ -2337,7 +2047,7 @@ try:
 except AttributeError as e:
     print(e)                # cannot modify 'pool': object is frozen
 ```
-Lookup order and recursion traps: [M10](#m10-attribute-lookup--descriptors).
+Lookup order and recursion traps: [M10](#m10-attribute-lookup).
 
 ---
 
@@ -2567,41 +2277,20 @@ print(d["a"], d["zzz"])                  # 1 0
 
 ---
 
-### Category K: Boolean & numeric conversion
-| Method | Triggered by | Must return | Fallback | Level |
-|---|---|---|---|---|
-| `__bool__` | `bool(obj)`, `if obj`, `while obj`, `and/or/not` | `bool` | `__len__() != 0`, else **True** | ⭐ |
-| `__int__` | `int(obj)` | `int` | `__index__` (the old `__trunc__` fallback is deprecated since 3.11), else `TypeError` | 🔶 |
-| `__float__` | `float(obj)` | `float` | `__index__` | 🔶 |
-| `__complex__` | `complex(obj)` | `complex` | `__float__` / `__index__` | ⚪ |
-| `__index__` | slicing/indexing, `bin()`, `hex()`, `oct()`, `operator.index()`, `range()` | `int` (lossless!) | `TypeError` | 🔷 |
-| `__abs__` | `abs(obj)` | number | `TypeError` | 🔶 |
-| `__round__(self, n=None)` | `round(obj[, n])` | number | `TypeError` | ⚪ |
-| `__trunc__` / `__floor__` / `__ceil__` | `math.trunc/floor/ceil(obj)` | number | `TypeError` (floor/ceil fall back to `__float__`) | ⚪ |
+### Category K: Truthiness
+| Method | Triggered by | Fallback |
+|---|---|---|
+| `__bool__` ⭐ | `bool(obj)`, `if obj`, `while obj` | `__len__() != 0`, else **True** |
 
 ```python
-import math
 class Basket:
     def __init__(self, items): self.items = items
     def __len__(self): return len(self.items)          # no __bool__ → truthiness uses __len__
 print(bool(Basket([])), bool(Basket([1])))             # False True
 class Plain: pass
 print(bool(Plain()))                                   # True  ← default for any object
-
-class Slot:
-    def __init__(self, n): self.n = n
-    def __index__(self): return self.n                 # "I am an integer" — lossless conversion
-print([10, 20, 30][Slot(2)], bin(Slot(5)), list(range(Slot(3))))   # 30 0b101 [0, 1, 2]
-
-class Price:
-    def __init__(self, v): self.v = v
-    def __float__(self): return float(self.v)
-    def __round__(self, n=None): return Price(round(self.v, n))
-    def __floor__(self): return math.floor(self.v)
-    def __repr__(self): return f"Price({self.v})"
-print(float(Price(9.99)), round(Price(9.987), 2), math.floor(Price(9.99)))  # 9.99 Price(9.99) 9
 ```
-`__int__` vs `__index__`: `__int__` may lose information (`int(3.9) → 3`); `__index__` promises the object *is* an integer — that's why floats can't be list indices.
+*Numeric conversions (`__int__`, `__float__`, `__index__`, `__round__`…) exist but are rarely asked; look them up when needed.*
 
 ---
 
@@ -2612,126 +2301,30 @@ print(float(Price(9.99)), round(Price(9.987), 2), math.floor(Price(9.99)))  # 9.
 | `__exit__(self, exc_type, exc, tb)` | leaving the block (normally or via exception) | truthy → **suppress** the exception | ⭐ |
 | `__aenter__` / `__aexit__` | `async with` | awaitables (async def) | 🔶 |
 
-Full treatment with execution order: [M15](#m15-iterators-generators--context-managers).
+Full treatment with execution order (and `async with`): [M15](#m15-iterators-generators--context-managers).
 
 ---
 
-### Category M: Async special methods
-| Method | Triggered by | Returns | Level |
-|---|---|---|---|
-| `__await__` | `await obj` | an **iterator** (usually via `yield from` another awaitable's `__await__()`) | 🔷 |
-| `__aiter__` | `async for x in obj` | an async iterator (regular `def`, returns object with `__anext__`) | 🔶 |
-| `__anext__` | each `async for` step | awaitable; raise `StopAsyncIteration` to stop | 🔶 |
-| `__aenter__` / `__aexit__` | `async with obj` | awaitables | 🔶 |
-
-```python
-import asyncio
-
-class Countdown:                                   # async iterator
-    def __init__(self, n): self.n = n
-    def __aiter__(self): return self
-    async def __anext__(self):
-        if self.n <= 0: raise StopAsyncIteration
-        await asyncio.sleep(0)                      # pretend I/O
-        self.n -= 1
-        return self.n + 1
-
-class DBConnection:                                # async context manager
-    async def __aenter__(self):
-        print("connect"); return self
-    async def __aexit__(self, exc_type, exc, tb):
-        print("disconnect"); return False
-
-class Answer:                                      # custom awaitable
-    def __await__(self):
-        yield from asyncio.sleep(0).__await__()
-        return 42
-
-async def main():
-    async with DBConnection() as db:
-        async for i in Countdown(3):
-            print(i, end=" ")
-        print()
-    print(await Answer())
-
-asyncio.run(main())
-```
-```text
-connect
-3 2 1
-disconnect
-42
-```
-In practice, `async def` coroutines and async generators (`async def` + `yield`) replace most hand-written `__await__`/`__anext__`; `contextlib.asynccontextmanager` replaces hand-written `__aenter__`/`__aexit__`.
-
----
-
-### Category N: Descriptors & class creation hooks
-| Method | Defined on | Triggered by | Level |
-|---|---|---|---|
-| `__get__`, `__set__`, `__delete__` | descriptor class | attribute access on owner's instances | 🔷 |
-| `__set_name__(self, owner, name)` | descriptor class | owner class creation | 🔷 |
-| `__init_subclass__(cls, **kw)` | base class (implicit classmethod) | a subclass being created | 🔶 |
-| `__class_getitem__(cls, item)` | class (implicit classmethod) | `Cls[int]` (generic aliases) | ⚪ |
-| `__prepare__(name, bases, **kw)` | **metaclass** (classmethod) | before class body executes → returns namespace mapping | ⚪ |
-| `__instancecheck__` / `__subclasscheck__` | **metaclass** | `isinstance` / `issubclass` | ⚪ |
-| `__subclasshook__` | ABC (classmethod) | `issubclass` against an ABC | ⚪ |
-| `__mro_entries__` | non-class base object | used in a `class` statement's bases | ⚪ |
-
-```python
-class Plugin:
-    registry = {}
-    def __init_subclass__(cls, name=None, **kwargs):     # runs for every SUBCLASS definition
-        super().__init_subclass__(**kwargs)
-        Plugin.registry[name or cls.__name__.lower()] = cls
-
-class CSVExporter(Plugin, name="csv"): pass
-class JSONExporter(Plugin): pass
-print(Plugin.registry)   # {'csv': <class '__main__.CSVExporter'>, 'jsonexporter': <class '__main__.JSONExporter'>}
-```
-`__init_subclass__` replaces most metaclass use cases (registries, validation of subclasses). Descriptors: [M10](#m10-attribute-lookup--descriptors). Metaclasses & `__prepare__`: [M17](#m17-advanced-python-oop).
-
----
-
-### Category O: Other important special methods & attributes
-| Name | Purpose | Level |
+### 📊 Dunder revision table
+| Category | Must know | Good to know |
 |---|---|---|
-| `__copy__`, `__deepcopy__(memo)` | Customise `copy.copy` / `copy.deepcopy` ([M14](#m14-identity-equality-hashing--copying)) | 🔶 |
-| `__getstate__`, `__setstate__` | Customise pickling/copying state (e.g., drop a DB connection) | 🔷 |
-| `__reduce__`, `__reduce_ex__` | Low-level pickling protocol | ⚪ |
-| `__sizeof__` | `sys.getsizeof` | ⚪ |
-| `__fspath__` | `os.fspath`, makes object accepted where paths are (`open(obj)`) | ⚪ |
-| `__match_args__` | Positional patterns in `match` statements | ⚪ |
-| `__buffer__` / `__release_buffer__` | Buffer protocol (3.12+) | ⚪ |
-| `__post_init__` | **Not data model** — dataclass hook after generated `__init__` | 🔶 |
-| `__slots__` | Class attribute: fixed attribute set, no `__dict__` ([M17](#m17-advanced-python-oop)) | 🔶 |
-| `__dict__`, `__class__`, `__module__`, `__name__`, `__qualname__`, `__doc__`, `__mro__`, `__bases__`, `__annotations__` | Introspection attributes | 🔶 |
-
----
-
-### 📊 Complete dunder revision table
-| Category | ⭐ Essential | 🔶 Important | 🔷 Advanced | ⚪ Rare |
-|---|---|---|---|---|
-| Creation | `__init__` | `__new__` | `__del__` | — |
-| Representation | `__repr__`, `__str__` | `__format__` | — | `__bytes__` |
-| Attributes | — | `__getattr__`, `__setattr__` | `__getattribute__`, `__delattr__` | `__dir__` |
-| Callable | `__call__` | — | — | — |
-| Comparison | `__eq__`, `__lt__` (+ others) | `__ne__` behaviour | — | — |
-| Hashing | `__hash__` | — | — | — |
-| Arithmetic | `__add__`, `__sub__`, `__mul__` | `__truediv__`, `__floordiv__`, `__mod__`, `__pow__`, `__r*__`, `__i*__`, `__neg__` | `__matmul__`, bitwise | `__divmod__`, shifts |
-| Containers | `__len__`, `__getitem__`, `__setitem__`, `__contains__`, `__iter__`, `__next__` | `__delitem__`, `__reversed__`, `__missing__` | — | `__length_hint__` |
-| Conversion | `__bool__` | `__int__`, `__float__`, `__abs__` | `__index__` | `__complex__`, `__round__`, `__trunc__`, `__floor__`, `__ceil__` |
-| Context | `__enter__`, `__exit__` | `__aenter__`, `__aexit__` | — | — |
-| Async | — | `__aiter__`, `__anext__` | `__await__` | — |
-| Class machinery | — | `__init_subclass__` | `__get__`, `__set__`, `__delete__`, `__set_name__` | `__prepare__`, `__class_getitem__`, `__instancecheck__`, `__subclasscheck__`, `__subclasshook__`, `__mro_entries__` |
-| Copy/pickle | — | `__copy__`, `__deepcopy__` | `__getstate__`, `__setstate__` | `__reduce__`, `__reduce_ex__` |
+| Creation | `__init__`, `__new__` | `__del__` (and why not to rely on it) |
+| Representation | `__repr__`, `__str__` | `__format__` |
+| Attributes | `__getattr__`, `__setattr__` | `__getattribute__` |
+| Callable | `__call__` | — |
+| Comparison & hashing | `__eq__`, `__lt__`, `__hash__`, `@total_ordering` | `__ne__` default |
+| Arithmetic | `__add__`, `__sub__`, `__mul__`, `__radd__`, `__iadd__` | `__truediv__`, `__neg__`, `__abs__` |
+| Containers | `__len__`, `__getitem__`, `__setitem__`, `__contains__`, `__iter__`, `__next__` | `__delitem__`, `__reversed__`, `__missing__` |
+| Truthiness | `__bool__` | — |
+| Context managers | `__enter__`, `__exit__` | `__aenter__`, `__aexit__` |
+| Class hooks | — | `__init_subclass__` (plugin registries, used in M17/M18) |
 
 ### Common mistakes with dunders
 - Raising `NotImplementedError` (or `TypeError`) instead of **returning** `NotImplemented` in operators.
 - `__iadd__` that forgets `return self`.
 - `__eq__` without `__hash__` (unhashable) or hashing mutable fields.
 - `__repr__`/`__str__` returning non-strings.
-- Setting dunders on instances (`obj.__len__ = ...`) — implicit calls ignore them.
+- Setting dunders on instances (`obj.__len__ = ...`): implicit calls ignore them.
 - `__bool__` returning a non-bool (e.g., `0` → `TypeError`).
 - Overloading operators with surprising semantics (`+` that mutates).
 
@@ -3272,24 +2865,12 @@ raise ServiceError("upstream failed") from err   # explicit chaining → err sto
 
 ---
 
-# PART V — ADVANCED PYTHON OOP
+# PART V — PRACTICAL ADVANCED OOP
 
-## M17. Advanced Python OOP
+## M17. Practical Advanced OOP
 
-### When are these features worth it?
-| Feature | Use when | Unnecessary when |
-|---|---|---|
-| Protocols | Decoupled interfaces, typing third-party classes | Single implementation, no type checking |
-| ABCs | Enforcing implementations, shared template code | Duck typing suffices |
-| Mixins | Small orthogonal capabilities reused across classes | Only one class needs it (just write the method) |
-| Composition / DI | Swappable dependencies, testability | Trivial scripts |
-| Metaclasses | Frameworks (ORMs, plugin systems) that must control class creation | Almost always — use `__init_subclass__` or class decorators |
-| `__init_subclass__` | Registries, validating subclasses | No subclass hooks needed |
-| Dataclasses | Data-holding classes with little behaviour | Classes with complex invariants or custom `__init__` logic |
-| `NamedTuple` | Immutable, tuple-compatible records | Need mutability or methods-heavy classes |
-| `Enum` | Fixed set of named constants (status, role) | Open-ended values |
-| `__slots__` | Millions of instances, memory-sensitive | Need dynamic attributes; few instances |
-| Generics | Reusable typed containers/repositories | Untyped code |
+### What's in this module
+Only the "advanced" features you'll actually use in LLD rounds and backend code: composition/DI, dataclasses, `NamedTuple`/`Enum`, `__slots__`, and `__init_subclass__` for registries. Metaclasses get one paragraph (know what they are; you won't write one in an interview).
 
 ### 1. Duck typing → Protocols → ABCs (recap)
 See [M5](#m5-abstraction). Decision rule: **duck typing** for flexibility, **Protocol** to document & type-check that flexibility, **ABC** when you need enforcement at instantiation or shared implementation.
@@ -3331,107 +2912,24 @@ svc = UserService(FakeRepo(), InMemoryCache())     # tests inject fakes; prod in
 print(svc.get_user(1))                             # {'id': 1, 'name': 'Parth'}
 ```
 - **Composition:** `UserService` *has* a repo and a cache.
-- **Delegation:** it forwards work to them (`__getattr__` can automate delegation — [M10](#m10-attribute-lookup--descriptors)).
+- **Delegation:** it forwards work to them (`__getattr__` can automate delegation — [M10](#m10-attribute-lookup)).
 - **Dependency injection:** the *caller* decides which implementations to use → loose coupling, easy testing. Frameworks: FastAPI `Depends`, `dependency-injector`; often plain constructor injection is enough.
 
-### 3. Classes are objects → dynamic class creation
+### 3. Metaclasses (know the definition only)
+A **metaclass is the class of a class**: classes are objects, and `type` is the default class that creates them (`type(MyClass) is type`). Frameworks use custom metaclasses to control class creation (Django models, `ABCMeta`, `Enum`). In application and LLD code you almost never need one: **`__init_subclass__`** handles the common use case of reacting to subclass creation, e.g. a plugin registry:
 ```python
-def make_model(name, fields):                        # class factory
-    def __init__(self, **kw):
-        for f in fields: setattr(self, f, kw.get(f))
-    def __repr__(self):
-        return f"{name}(" + ", ".join(f"{f}={getattr(self, f)!r}" for f in fields) + ")"
-    return type(name, (object,), {"__init__": __init__, "__repr__": __repr__, "fields": fields})
+class Plugin:
+    registry = {}
+    def __init_subclass__(cls, name=None, **kwargs):   # runs every time a subclass is defined
+        super().__init_subclass__(**kwargs)
+        Plugin.registry[name or cls.__name__.lower()] = cls
 
-User = make_model("User", ["id", "email"])           # type(name, bases, namespace) creates a class
-print(User(id=1, email="a@b.com"))                   # User(id=1, email='a@b.com')
-print(type(User), type(type))                        # <class 'type'> <class 'type'>
-```
-The object model's two key relationships:
-```text
-instance-of:  obj ──► MyClass ──► type ──► type   (type is an instance of itself)
-subclass-of:  MyClass ──► object ;  type ──► object
+class CSVExporter(Plugin, name="csv"): pass
+class JSONExporter(Plugin): pass
+print(Plugin.registry)   # {'csv': <class '__main__.CSVExporter'>, 'jsonexporter': <class '__main__.JSONExporter'>}
 ```
 
-### 4. Metaclasses
-**What:** a metaclass is **the class of a class** — it controls how classes are created and behave. The default metaclass is `type`.
-
-**What happens when Python executes a `class` statement:**
-```text
-class Order(Base, metaclass=Meta, flag=True):  BODY
- 1. determine the metaclass (explicit, or most-derived metaclass of the bases)
- 2. ns = Meta.__prepare__("Order", (Base,), flag=True)        → namespace mapping (default: dict)
- 3. execute BODY inside ns                                     → methods, attributes collected
- 4. cls = Meta("Order", (Base,), ns, flag=True)
-       → Meta.__new__(Meta, ...)  → type.__new__ builds the class object, which:
-            a. calls __set_name__ on every attribute that defines it (descriptors)
-            b. calls parent's __init_subclass__(flag=True)
-       → Meta.__init__(cls, ...)
- 5. apply class decorators (bottom-up)
- 6. bind the name Order
-```
-```python
-class Meta(type):
-    @classmethod
-    def __prepare__(mcls, name, bases, **kw):
-        print(f"1 __prepare__ {name}")
-        return {}
-    def __new__(mcls, name, bases, ns, **kw):
-        print(f"3 Meta.__new__ {name}")
-        return super().__new__(mcls, name, bases, ns)
-    def __init__(cls, name, bases, ns, **kw):
-        print(f"6 Meta.__init__ {name}")
-        super().__init__(name, bases, ns)
-
-class Field:
-    def __set_name__(self, owner, name): print(f"4 __set_name__ {name}")
-
-class Base(metaclass=Meta):
-    def __init_subclass__(cls, **kw): print(f"5 __init_subclass__ {cls.__name__}")
-
-def deco(cls):
-    print(f"7 decorator {cls.__name__}")
-    return cls
-
-print("--- defining Order ---")
-@deco
-class Order(Base):
-    print("2 executing class body")
-    total = Field()
-```
-```text
-1 __prepare__ Base
-3 Meta.__new__ Base
-6 Meta.__init__ Base
---- defining Order ---
-1 __prepare__ Order
-2 executing class body
-3 Meta.__new__ Order
-4 __set_name__ total
-5 __init_subclass__ Order
-6 Meta.__init__ Order
-7 decorator Order
-```
-**Practical metaclass: enforce an interface at class-definition time**
-```python
-class RequireHandle(type):
-    def __new__(mcls, name, bases, ns):
-        cls = super().__new__(mcls, name, bases, ns)
-        if bases and "handle" not in ns:
-            raise TypeError(f"{name} must define handle()")
-        return cls
-
-class Handler(metaclass=RequireHandle): pass
-try:
-    class BadHandler(Handler): pass
-except TypeError as e:
-    print(e)                # BadHandler must define handle()
-```
-**Metaclass `__call__`** controls *instantiation* (see [M8](#m8-object-creation--lifecycle)) — e.g., a singleton metaclass that caches one instance per class.
-
-**When NOT to use metaclasses:** almost always. Prefer, in order: plain code → class decorators → `__init_subclass__` → `__set_name__` descriptors → metaclass. Metaclasses also conflict when combining classes from different frameworks (metaclass conflict errors). Real users: Django ORM (`ModelBase`), SQLAlchemy declarative base, `ABCMeta`, `EnumMeta`.
-
-### 5. Dataclasses
+### 4. Dataclasses
 ```python
 from dataclasses import dataclass, field, asdict, replace
 
@@ -3467,7 +2965,7 @@ except Exception as e:
 ```
 Generated: `__init__`, `__repr__`, `__eq__`; optionally ordering (`order=True`), hashing (`frozen`/`unsafe_hash`), `__slots__` (`slots=True`), `__match_args__`. Options: `kw_only=True`, `field(compare=False)`, `InitVar`. A bare mutable default (`skills: list = []`) raises `ValueError` at class definition.
 
-### 6. `NamedTuple` and `Enum`
+### 5. `NamedTuple` and `Enum`
 ```python
 from typing import NamedTuple
 from enum import Enum, auto
@@ -3493,7 +2991,7 @@ print([m.name for m in OrderStatus])            # ['PENDING', 'PAID', 'SHIPPED']
 ```
 `StrEnum` (3.11) members are also `str` — handy for JSON/DB values. `IntEnum`, `Flag` for bitflags.
 
-### 7. `__slots__`
+### 6. `__slots__`
 ```python
 class PointSlots:
     __slots__ = ("x", "y")          # fixed attribute set; no per-instance __dict__
@@ -3505,58 +3003,28 @@ try:
 except AttributeError:
     print("AttributeError: no __dict__, can't add z")
 print(hasattr(p, "__dict__"))      # False
-print(type(PointSlots.__dict__["x"]).__name__)   # member_descriptor  ← slots are DATA descriptors
 ```
-- **Benefits:** less memory per instance (no dict — often 40–60% smaller), slightly faster attribute access, prevents typos creating new attributes.
-- **Costs/caveats:** no dynamic attributes; no `__weakref__` unless listed; a slot can't have a class-level default of the same name (`ValueError: 'x' in __slots__ conflicts with class variable`); subclasses without `__slots__` get a `__dict__` again; multiple inheritance with non-empty slots in several bases fails.
+- **Benefits:** less memory per instance (no dict), slightly faster attribute access, prevents typos creating new attributes.
+- **Costs:** no dynamic attributes; subclasses without `__slots__` get a `__dict__` again.
 - Use for: high-volume objects (events, rows, graph nodes). `@dataclass(slots=True)` is the easy way.
 
-### 8. Generics, `Self`, and typing
-```python
-from typing import Generic, TypeVar, Self
-
-T = TypeVar("T")
-
-class Repository(Generic[T]):                   # classic syntax
-    def __init__(self): self._items: dict[int, T] = {}
-    def add(self, id: int, item: T) -> None: self._items[id] = item
-    def get(self, id: int) -> T | None: return self._items.get(id)
-
-class Stack[T]:                                 # PEP 695 syntax (Python 3.12+)
-    def __init__(self) -> None: self._data: list[T] = []
-    def push(self, item: T) -> None: self._data.append(item)
-    def pop(self) -> T: return self._data.pop()
-
-class QueryBuilder:
-    def __init__(self): self.parts: list[str] = []
-    def where(self, cond: str) -> Self:          # Self (3.11): subclasses keep their own type in chains
-        self.parts.append(cond)
-        return self
-
-users: Repository[dict] = Repository()
-users.add(1, {"name": "Parth"})
-print(users.get(1), QueryBuilder().where("a=1").where("b=2").parts)
-```
-**Runtime vs static typing:** Python never enforces these hints at runtime — `Repository[int]().add(1, "str")` runs fine. Type checkers (mypy/pyright) catch it before deployment. Runtime validation needs explicit code or libraries (Pydantic, attrs validators).
-
-### 🎤 Interview-ready answer: "What is a metaclass? When would you use one?"
-> "Classes are objects, and a metaclass is the class that creates them — `type` by default. When Python executes a `class` statement it calls the metaclass's `__prepare__` to get a namespace, runs the class body in it, then calls the metaclass with the name, bases, and namespace; `type.__new__` builds the class, calling `__set_name__` on descriptors and the parent's `__init_subclass__`, then decorators run. Metaclasses let frameworks like Django's ORM or `ABCMeta` customise class creation. In application code I almost never need one: `__init_subclass__` covers registration and validation of subclasses, class decorators cover post-processing, and descriptors cover per-attribute behaviour."
+### 🎤 Interview-ready answer: "What is a metaclass?"
+> "Classes are objects too, and a metaclass is the class that creates them: `type` by default. Frameworks like Django's ORM and `ABCMeta` use custom metaclasses to customise class creation. In application code I rarely need one: `__init_subclass__` covers things like registering or validating subclasses, and class decorators cover post-processing."
 
 ### 📝 Revision notes
 ```
 DI = pass dependencies in (constructor) → swap fakes in tests ; composition + delegation
-type(name, bases, ns) creates classes ; type is its own metaclass
-class stmt: metaclass → __prepare__ → body → Meta.__new__ (type.__new__: __set_name__, __init_subclass__) → Meta.__init__ → decorators
-prefer decorators/__init_subclass__ over metaclasses
+metaclass = class of a class (type) ; prefer __init_subclass__ for registries
 dataclass: field(default_factory=list), __post_init__, frozen → hashable, order, slots
 NamedTuple immutable tuple ; Enum singletons (compare with is)
-__slots__: no __dict__, less memory, no dynamic attrs, slots are data descriptors
-generics & Self are static-only hints
+__slots__: no __dict__, less memory, no dynamic attrs
 ```
 
 ---
 
-# PART VI — DESIGN
+# PART VI — DESIGN (read at the start of LLD, not now)
+
+> These three modules are your bridge into LLD. Study them in week 1 of the LLD phase.
 
 ## M18. SOLID Principles in Python
 
@@ -4830,7 +4298,7 @@ c = LRUCache(2)
 c.set("a", 1); c.set("b", 2); c.get("a"); c.set("c", 3)
 print("a" in c, "b" in c, len(c))     # True False 2
 ```
-For functions: `functools.lru_cache(maxsize=...)` / `functools.cache`. In production: Redis with TTL; Cache-aside pattern in services ([M17 DI example](#m17-advanced-python-oop)).
+For functions: `functools.lru_cache(maxsize=...)` / `functools.cache`. In production: Redis with TTL; Cache-aside pattern in services ([M17 DI example](#m17-practical-advanced-oop)).
 
 ### Example 12: Retry Mechanism
 ```python
@@ -4979,7 +4447,7 @@ In FastAPI, the same idea is `Depends(get_user_service)`; in tests you override 
 
 **I2. `__str__` vs `__repr__`?** · *M13* — Must mention fallback direction (str → repr only) and containers using repr.
 
-**I3. Instance vs class vs static methods?** · *M2* — Must mention: classmethods are subclass-aware (`cls`), used for alternative constructors; all three are descriptors.
+**I3. Instance vs class vs static methods?** · *M2* — Must mention: classmethods are subclass-aware (`cls`), used for alternative constructors.
 
 **I4. Method overriding vs overloading in Python?** · *M7*
 - **Answer:** Overriding = subclass redefines a base method (supported, dynamic dispatch). Overloading by signature isn't supported — later `def` rebinds the name. Alternatives: defaults, `*args/**kwargs`, `singledispatch`, classmethod constructors.
@@ -5000,7 +4468,7 @@ In FastAPI, the same idea is `Depends(get_user_service)`; in tests you override 
 
 **I11. What is duck typing?** · *M5/M7* — Behaviour over type: any object with the needed methods works; EAFP style.
 
-**I12. How does `@property` work?** · *M11* — Data descriptor; `fget`/`fset`/`fdel`; setter returns a new property (same name); beats instance dict.
+**I12. How does `@property` work?** · *M11* — Managed attribute on the class; `fget`/`fset`/`fdel`; setter returns a new property (same name); beats instance dict.
 
 **I13. What is an abstract class? Can it have concrete methods / a constructor?** · *M5* — Yes to both; instantiation fails while any `@abstractmethod` remains unimplemented (`__abstractmethods__`).
 
@@ -5022,27 +4490,16 @@ In FastAPI, the same idea is `Depends(get_user_service)`; in tests you override 
 
 **A1. Walk through what happens when a class is instantiated.** · *M8* — `type(Cls).__call__` → `Cls.__new__(Cls, ...)` → if `isinstance(obj, Cls)`: `type(obj).__init__(obj, ...)` → return. Edge cases: non-instance skips init; cached instance re-inits; metaclass `__call__` can override everything.
 
-**A2. What happens when Python executes a `class` statement?** · *M17* — Metaclass resolution → `__prepare__` → body executed into namespace → `Meta(name, bases, ns)` → `type.__new__` (→ `__set_name__`, `__init_subclass__`) → `Meta.__init__` → decorators → name bound.
-
-**A3. Explain the attribute lookup order.** · *M10* — Data descriptor (from type MRO) > instance `__dict__` > non-data descriptor > class attribute > `__getattr__`.
-- **Follow-up:** "Why can an instance attribute shadow a method but not a property?" → functions are non-data descriptors; property is a data descriptor.
+**A3. Explain the attribute lookup order.** · *M10* — Property on the class > instance `__dict__` > class and MRO (methods, class attributes) > `__getattr__` > `AttributeError`.
+- **Follow-up:** "Why can an instance attribute shadow a method but not a property?" → a property takes priority over the instance dict; methods don't.
 
 **A4. `__getattribute__` vs `__getattr__`?** · *M10* — Every access vs only on `AttributeError`; recursion risk; delegation use case; dunders bypass both.
 
-**A5. What is the descriptor protocol? Data vs non-data?** · *M10* — `__get__/__set__/__delete__`; `__set__` or `__delete__` ⇒ data descriptor ⇒ priority over instance dict.
-- 🎤 see [M10](#m10-attribute-lookup--descriptors).
+**A7. What's a metaclass? When would you need one?** · *M17* — 🎤 see [M17](#m17-practical-advanced-oop). Strong answer: "rarely — `__init_subclass__` and class decorators cover most needs".
 
-**A6. How are bound methods created?** · *M10* — Functions implement `__get__`; `func.__get__(obj, type(obj))` returns a bound method object with `__self__` and `__func__`.
+**A9. What does `__slots__` do and what are its trade-offs?** · *M17* — No per-instance `__dict__`; memory/speed win; no dynamic attributes.
 
-**A7. What's a metaclass? When have you needed one?** · *M17* — 🎤 see [M17](#m17-advanced-python-oop). Strong answer: "rarely — `__init_subclass__` and class decorators cover most needs".
-
-**A8. `__init_subclass__` and `__set_name__` — what are they for?** · *M12-N/M10* — Subclass registration/validation without metaclasses; descriptors learning their attribute names at class creation.
-
-**A9. What does `__slots__` do and what are its trade-offs?** · *M17* — No per-instance `__dict__`; slot descriptors; memory/speed win; no dynamic attrs, no class-level defaults of the same name, inheritance caveats.
-
-**A10. How does garbage collection work? Should you use `__del__`?** · *M8* — Refcounting + generational cyclic GC; `__del__` timing unreliable, exceptions ignored; prefer context managers / `weakref.finalize`.
-
-**A11. What is object resurrection?** · *M8* — `__del__` storing `self` somewhere reachable; since PEP 442 the finaliser runs at most once.
+**A10. How does garbage collection work? Should you use `__del__`?** · *M8* — Reference counting + cyclic GC; `__del__` timing unreliable; prefer context managers.
 
 **A12. How does cooperative multiple inheritance work with different `__init__` signatures?** · *M9* — Keyword args; each class consumes its own and forwards `**kwargs`; root class stops before `object`.
 
@@ -5056,9 +4513,7 @@ In FastAPI, the same idea is `Depends(get_user_service)`; in tests you override 
 
 **A17. How do you make a class usable as a dict key safely?** · *M14* — Immutable fields (frozen dataclass/read-only properties), `__eq__` + `__hash__` over the same tuple of fields.
 
-**A18. How do `property`, `classmethod`, and `staticmethod` differ as descriptors?** · *M10* — Data descriptor calling fget/fset; non-data binding to the owner class; non-data returning the raw function.
-
-**A19. Why does `len(obj)` fail after `obj.__len__ = lambda: 3`?** · *M10 §9* — Implicit special-method lookup goes to `type(obj)`, bypassing the instance.
+**A19. Why does `len(obj)` fail after `obj.__len__ = lambda: 3`?** · *M10 §4* — Implicit special-method lookup goes to `type(obj)`, bypassing the instance.
 
 **A20. Explain SOLID with Python examples; which do you violate most often and why?** · *M18* — Honest answer + trade-offs (YAGNI, avoid premature abstraction).
 
@@ -5374,7 +4829,7 @@ print(a._y, a._A__x, hasattr(a, "__x"))
 ```
 </details>
 
-#### Q17. Property vs instance dict · 🔴 · *data descriptor priority*
+#### Q17. Property vs instance dict · 🔴 · *property beats the instance dict*
 ```python
 class P:
     @property
@@ -5393,10 +4848,10 @@ print(p.x)
 AttributeError
 10
 ```
-No setter → assignment fails. Even after sneaking a value into `__dict__`, the property (data descriptor) wins on lookup.
+No setter → assignment fails. Even after sneaking a value into `__dict__`, the property wins on lookup.
 </details>
 
-#### Q18. Instance attribute shadows a method · 🟡 · *non-data descriptor*
+#### Q18. Instance attribute shadows a method · 🟡 · *instance dict beats methods*
 ```python
 class M:
     def f(self): return "method"
@@ -5409,7 +4864,7 @@ print(m.f(), M().f())
 ```text
 instance method
 ```
-Functions are non-data descriptors, so the instance `__dict__` entry wins for `m` only.
+The instance `__dict__` is checked before the class's methods, so the lambda wins for `m` only.
 </details>
 
 #### Q19. `__getattr__` fallback · 🟡 · *only on miss*
@@ -5685,22 +5140,31 @@ print(Base.subs)
 It fires for every descendant, including grandchildren (B inherits the hook via A).
 </details>
 
-#### Q35. Custom data descriptor · 🔴 · *`__get__` wins*
+#### Q35. Property with validation · 🟡 · *setter runs in `__init__` too*
 ```python
-class D:
-    def __get__(self, i, o): return "desc"
-    def __set__(self, i, v): i.__dict__["val"] = v
-class C:
-    val = D()
-c = C()
-c.val = 5
-print(c.val, c.__dict__)
+class Temp:
+    def __init__(self, c): self.c = c
+    @property
+    def c(self): return self._c
+    @c.setter
+    def c(self, v):
+        if v < -273: raise ValueError("too cold")
+        self._c = v
+t = Temp(10)
+try:
+    Temp(-300)
+except ValueError as e:
+    print(e)
+t.c += 5
+print(t.c, t.__dict__)
 ```
 <details><summary>Answer</summary>
 
 ```text
-desc {'val': 5}
+too cold
+15 {'_c': 15}
 ```
+`self.c = c` in `__init__` already goes through the setter, so validation also protects construction. The value is stored as `_c`; `c` itself is the property on the class.
 </details>
 
 #### Q36. Dataclass equality & hashing · 🟡 · *frozen*
@@ -5983,58 +5447,55 @@ print(s, s[1:3], 4 in s, list(reversed(s)))    # SortedList([1, 3, 4, 5]) Sorted
 ```
 </details>
 
-#### E4. Mini ORM fields (descriptors + `__set_name__` + `__init_subclass__`) · 🔴
-Create `Field` descriptors with type checking (`IntField`, `StrField(max_len)`), and a `Model` base that collects declared fields into `cls._fields` and generates a keyword `__init__` and `__repr__`.
+#### E4. Shapes (ABC, polymorphism, sorting) · 🟡
+Create an abstract `Shape` with `area()` and `perimeter()`, concrete `Circle`, `Rectangle`, `Square`; make shapes sortable by area (`sorted(shapes)` works) and printable with a good `__repr__`. `Square` should **not** inherit from a mutable `Rectangle` (why? see M18 LSP).
 <details><summary>Hints</summary>
 
-1. `__set_name__` gives each field its name; store values in `instance.__dict__[name]`.
-2. `__init_subclass__` can scan `cls.__dict__` for `Field` instances.
-3. `Model.__init__(self, **kwargs)` loops over `type(self)._fields`.
+1. `class Shape(ABC)` with two `@abstractmethod`s; put `__lt__` and `__repr__` on `Shape` once.
+2. `__lt__` compares `self.area() < other.area()`; return `NotImplemented` for non-shapes.
+3. `Square` and `Rectangle` are siblings under `Shape`.
 </details>
 <details><summary>Solution</summary>
 
 ```python
-class Field:
-    expected = object
-    def __set_name__(self, owner, name): self.name = name
-    def __get__(self, inst, owner):
-        if inst is None: return self
-        return inst.__dict__.get(self.name)
-    def __set__(self, inst, value):
-        if not isinstance(value, self.expected):
-            raise TypeError(f"{self.name} must be {self.expected.__name__}")
-        self.validate(value)
-        inst.__dict__[self.name] = value
-    def validate(self, value): pass
+import math
+from abc import ABC, abstractmethod
+from functools import total_ordering
 
-class IntField(Field): expected = int
-class StrField(Field):
-    expected = str
-    def __init__(self, max_len=255): self.max_len = max_len
-    def validate(self, value):
-        if len(value) > self.max_len: raise ValueError(f"{self.name} too long")
-
-class Model:
-    _fields: tuple = ()
-    def __init_subclass__(cls, **kw):
-        super().__init_subclass__(**kw)
-        cls._fields = tuple(n for n, v in vars(cls).items() if isinstance(v, Field))
-    def __init__(self, **kwargs):
-        for name in self._fields:
-            setattr(self, name, kwargs[name])
+@total_ordering
+class Shape(ABC):
+    @abstractmethod
+    def area(self) -> float: ...
+    @abstractmethod
+    def perimeter(self) -> float: ...
+    def __eq__(self, other):
+        if not isinstance(other, Shape): return NotImplemented
+        return self.area() == other.area()
+    def __lt__(self, other):
+        if not isinstance(other, Shape): return NotImplemented
+        return self.area() < other.area()
+    __hash__ = None                                   # mutable-ish, compared by area → not hashable
     def __repr__(self):
-        args = ", ".join(f"{n}={getattr(self, n)!r}" for n in self._fields)
-        return f"{type(self).__name__}({args})"
+        return f"{type(self).__name__}(area={self.area():.2f})"
 
-class User(Model):
-    id = IntField()
-    name = StrField(max_len=5)
+class Circle(Shape):
+    def __init__(self, r): self.r = r
+    def area(self): return math.pi * self.r ** 2
+    def perimeter(self): return 2 * math.pi * self.r
 
-print(User(id=1, name="Parth"))          # User(id=1, name='Parth')
-try:
-    User(id="1", name="x")
-except TypeError as e:
-    print(e)                             # id must be int
+class Rectangle(Shape):
+    def __init__(self, w, h): self.w, self.h = w, h
+    def area(self): return self.w * self.h
+    def perimeter(self): return 2 * (self.w + self.h)
+
+class Square(Shape):
+    def __init__(self, s): self.s = s
+    def area(self): return self.s ** 2
+    def perimeter(self): return 4 * self.s
+
+shapes = [Circle(1), Rectangle(2, 3), Square(1.5)]
+print(sorted(shapes))           # [Square(area=2.25), Circle(area=3.14), Rectangle(area=6.00)]
+print(max(shapes), sum(s.perimeter() for s in shapes) > 0)
 ```
 </details>
 
@@ -6200,9 +5661,9 @@ Run these with the [Interview mode prompt](#06-mentor-modes) or a friend. Speak 
 1. Types of inheritance in Python. 2. Compute the MRO of a given hierarchy by hand (C3). 3. Predict a diamond `super()` output (Q11–Q13). 4. Why does `super()` in B reach C? 5. Cooperative `__init__` with different arguments — write it. 6. Composition vs inheritance — refactor a 6-subclass notifier hierarchy.
 *Strong signals:* "super is MRO-relative to type(self)", `**kwargs` forwarding, class-explosion argument.
 
-**Mock 3 — Data model & descriptors**
-1. Make `Vector` support `+`, `*` (both sides), `abs`, `==`, use as dict key, `sum()`. 2. What's returned when an operator doesn't support the operand? 3. Attribute lookup order. 4. Why can an instance shadow a method but not a property? 5. Write a validated descriptor with `__set_name__`. 6. `__getattr__` vs `__getattribute__`.
-*Strong signals:* `NotImplemented`, `__radd__` for `sum`, eq/hash contract, data vs non-data descriptor priority.
+**Mock 3 — Data model & attribute lookup**
+1. Make `Vector` support `+`, `*` (both sides), `abs`, `==`, use as dict key, `sum()`. 2. What's returned when an operator doesn't support the operand? 3. Attribute lookup order. 4. Why can an instance shadow a method but not a property? 5. Write a class with a validated property. 6. `__getattr__` vs `__getattribute__`.
+*Strong signals:* `NotImplemented`, `__radd__` for `sum`, eq/hash contract, property-vs-instance-dict priority.
 
 **Mock 4 — Design (LLD) round**
 "Design a notification service that supports email, SMS, push, and WhatsApp; users choose channels; providers fail sometimes; we'll add more channels." Expect: requirements clarification → entities → interfaces (Protocol/ABC) → Strategy + Factory + retry policy + DI → class diagram → code for core parts → testing with fakes → extensions (queues, idempotency, rate limits, templates).
@@ -6234,16 +5695,16 @@ Run these with the [Interview mode prompt](#06-mentor-modes) or a friend. Speak 
 | M5 Abstraction | M4 | ☐ | ☐ | Q38 | I9, I13 | | | ⬜ |
 | M6 Inheritance | M5 | ☐ | ☐ | Q40 | I10 | | | ⬜ |
 | M7 Polymorphism | M6 | ☐ | ☐ | Q39 | I4, I11 | | | ⬜ |
-| M8 Lifecycle | M1, M6 | ☐ | ☐ | Q5–Q7, Q41 | I1, A1, A10, A11 | | | ⬜ |
+| M8 Lifecycle | M1, M6 | ☐ | ☐ | Q5–Q7, Q41 | I1, A1, A10 | | | ⬜ |
 | M9 super & MRO | M6 | ☐ | ☐ | Q11–Q14 | I5–I7, A12 | | | ⬜ |
-| M10 Descriptors | M9 | ☐ | ☐ | Q17–Q20, Q35 | A3–A6, A18, A19 | | | ⬜ |
-| M11 Properties & decorators | M10 | ☐ | ☐ | Q17 | I12 | | | ⬜ |
+| M10 Attribute lookup | M9 | ☐ | ☐ | Q17–Q20 | A3, A4, A19 | | | ⬜ |
+| M11 Properties & decorators | M10 | ☐ | ☐ | Q17, Q35 | I12 | | | ⬜ |
 | M12 Dunders | M10 | ☐ | ☐ | Q21–Q25, Q29, Q42 | A13–A15 | | | ⬜ |
 | M13 str vs repr | M12 | ☐ | ☐ | Q8, Q9 | I2 | | | ⬜ |
 | M14 Equality/hash/copy | M12 | ☐ | ☐ | Q10, Q30, Q31, Q36 | I16–I19, A17 | | | ⬜ |
 | M15 Iterators & context mgrs | M12 | ☐ | ☐ | Q25–Q28 | I20, A16 | | | ⬜ |
 | M16 Exceptions | M6 | ☐ | ☐ | — | — | | | ⬜ |
-| M17 Advanced | M10–M15 | ☐ | ☐ | Q34, Q36, Q37 | I14, I15, A2, A7–A9 | | | ⬜ |
+| M17 Practical advanced | M10–M15 | ☐ | ☐ | Q34, Q36, Q37 | I14, I15, A7, A9 | | | ⬜ |
 | M18 SOLID | M4–M7 | ☐ | ☐ | — | A20 | | | ⬜ |
 | M19 Patterns | M18 | ☐ | ☐ | — | Pattern table | | | ⬜ |
 | M20 Real-world | M18, M19 | ☐ | ☐ | — | LLD table | | | ⬜ |
@@ -6259,23 +5720,21 @@ ATTRIBUTES   read: inst dict → class → MRO ; write via instance → inst dic
 METHODS      instance(self) | @classmethod(cls, subclass-aware, alt constructors) | @staticmethod(nothing)
 CREATION     Cls() → type.__call__ → __new__(cls) returns obj → if isinstance: __init__(self) returns None
              non-instance → init skipped ; cached → init re-runs ; immutables customise in __new__
-LIFECYCLE    refcount + cyclic GC ; __del__ unreliable → with / weakref.finalize ; finaliser once (PEP 442)
+LIFECYCLE    refcount + cyclic GC ; __del__ unreliable → use with
 ENCAPSULATE  _x convention ; __x → _Class__x (anti-clash) ; @property for validation/computed/read-only
 ABSTRACT     ABC + @abstractmethod → TypeError at instantiation ; Protocol = structural, static ; duck typing
 INHERIT      MRO = C3 (child first, base order kept, each once) ; super() = next in type(self).__mro__
              cooperative: everyone calls super(), **kwargs ; mixins left ; composition > inheritance
 POLYMORPH    dynamic dispatch ; duck typing ; operators via dunders ; no overloading → defaults/singledispatch
-LOOKUP       data descriptor > instance __dict__ > non-data descriptor > class attr > __getattr__
-             functions = non-data (bound methods) ; property = data ; implicit dunders use type(obj)
+LOOKUP       property on class > instance __dict__ > class/MRO > __getattr__ ; implicit dunders use type(obj)
 DUNDERS      return NotImplemented ; a+b → __add__ → __radd__ ; += → __iadd__ (return self) or rebinding
              __bool__ → __len__ → True ; __contains__ → __iter__ → __getitem__ ; looked up on the type
 REPR         always __repr__ (unambiguous, !r, type(self).__name__) ; __str__ falls back to repr ; containers use repr
 HASH         a == b ⇒ hash equal ; __eq__ alone → __hash__ None ; hash immutable fields ; frozen dataclass
 COPY         alias vs shallow (shared inner) vs deep (memo) ; __copy__/__deepcopy__
 ITER/CTX     iterable(__iter__) vs iterator(__next__, single-use) ; generators lazy ; with → __enter__/__exit__(truthy suppresses)
-ADVANCED     class stmt: __prepare__ → body → metaclass → __set_name__ → __init_subclass__ → decorators
-             prefer __init_subclass__/decorators over metaclasses ; dataclass(frozen, slots, default_factory)
-             __slots__: no __dict__, less memory ; generics/Self = static only
+ADVANCED     metaclass = class of a class (rarely needed) ; __init_subclass__ for registries
+             dataclass(frozen, slots, default_factory) ; Enum ; __slots__: no __dict__, less memory
 SOLID        S one reason to change | O extend not modify | L substitutable | I small interfaces | D depend on abstractions + DI
 PATTERNS     Strategy, Factory, Adapter, Decorator, Facade, Proxy, Observer, State, Command, Template, Chain, Builder, Singleton(module)
 ```
